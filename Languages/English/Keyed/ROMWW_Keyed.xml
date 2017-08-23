@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ROM_WerewolfEscaped>{0} has leaped forth from its containment in the {1}.</ROM_WerewolfEscaped>
+<ROM_WerewolfLimbRegen>{0} has regenerated their {1}.</ROM_WerewolfLimbRegen>
+<ROM_WerewolfDecyberize>{0} has regenerated their {1} and lost their {2} in the process.</ROM_WerewolfDecyberize>
+<ROM_NeedsRest>{0} needs time to rest and recharge.</ROM_NeedsRest>
+<ROM_WerewolfRevert>{0} has reverted back to their original form.</ROM_WerewolfRevert>
+<ROM_CannotApplySilverTreatment>Cannot apply silver treatment</ROM_CannotApplySilverTreatment>
+<ROM_ApplySilverTreatment>Apply silver treatment to {0}. ({1} silver)</ROM_ApplySilverTreatment>
+<ROM_NeedsSilver> needs {0} silver</ROM_NeedsSilver>
+<ROM_SilverAmmo> (silver ammo)</ROM_SilverAmmo>
+<ROM_ApplySilverTreatment>Apply silver treatment</ROM_ApplySilverTreatment>
+<ROM_FullMoonFury>Moon Fury</ROM_FullMoonFury>
+<ROM_FullMoonFuryDesc>When toggled, the werewolf will go into a furious rampage during a full moon. During furies, Werewolves can randomly transform into new forms and level up existing Werewolf forms.\n\nWARNING: No one is safe from a wild werewolf, not even other werewolves! Be sure to keep the Werewolves away from other colonists during the full moon.</ROM_FullMoonFuryDesc>
+<ROM_FormLevel>{0} Form: Level {1}</ROM_FormLevel>
+<ROM_FormNextLevel>Current Level {0} Next Level:</ROM_FormNextLevel>
+<ROM_FormHealth>Health: +{0}% {1} +{2}%</ROM_FormHealth>
+<ROM_FormSize>Size: +{0}% {1} +{2}%</ROM_FormSize>
+<ROM_FormImmunity>Immunity +{0}% {1} +{2}%</ROM_FormImmunity>
+<ROM_FormNote>Note: Damage immunity only works on non-silver treated weapons.</ROM_FormNote>
+<ROM_RageLeft>Rage Left</ROM_RageLeft>
+<ROM_WerewolfTransformation>{0} has transformed into a {1} Werewolf!</ROM_WerewolfTransformation>
+<ROM_MoonCycle_FullMoonPasses>The full moon of {0} passes.</ROM_MoonCycle_FullMoonPasses>
+<ROM_MoonCycle_FullMoonDesc>The planet's moon, {0}, has reached its most clearly visible form. Colonists will receive minor mood boosts. Unblooded Werewolves may transform at this time.</ROM_MoonCycle_FullMoonDesc>
+<ROM_MoonCycle_FullMoonArgless>full moon</ROM_MoonCycle_FullMoonArgless>
+<ROM_MoonCycle_FullMoon>Full Moon ({0})</ROM_MoonCycle_FullMoon>
+<ROM_MoonCycle_UntilNextFullMoon>{0} days until next full moon</ROM_MoonCycle_UntilNextFullMoon>
+<ROM_MoonCycle_FullMoonImminentArgless>Full moon approaching</ROM_MoonCycle_FullMoonImminentArgless>
+<ROM_MoonCycle_FullMoonImminent>{0} (Full Moon Approaching)</ROM_MoonCycle_FullMoonImminent>
+<ROM_MoonCycle_Moon>Moon</ROM_MoonCycle_Moon>
+<ROM_MoonCycle_Moons>Moons of {0}</ROM_MoonCycle_Moons>
+<ROM_MoonCycle_CurrentPhaseDesc>Each moon on your colony's planet, {0}, has a moon cycle. At the end of the cycle, a beautiful full moon will be visible to your colony.\n\nAny werewolves with active transformations will be triggered at that time.</ROM_MoonCycle_CurrentPhaseDesc>
+<ROM_MoonCycle_CurrentPhase>{0} ({1} days until full)</ROM_MoonCycle_CurrentPhase>
+
+</LanguageData>

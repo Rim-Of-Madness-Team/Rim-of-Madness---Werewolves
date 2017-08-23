@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<JobDefs>
+
+  <JobDef>
+		<defName>ROM_ApplySilverTreatment</defName>
+		<driverClass>Werewolf.JobDriver_ApplySilverTreatment</driverClass>
+		<reportString>applying silver treatment.</reportString>
+	</JobDef>
+
+	
+	
+</JobDefs>

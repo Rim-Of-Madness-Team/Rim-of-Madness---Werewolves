@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TraitDefs>
+
+  <TraitDef>
+    <defName>ROM_Werewolf</defName>
+    <commonality>0.1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Werewolf (?)</label>
+        <description>NAME could be a shapeshifter that blends forms between man and wolf. When a special moon rises, HE may have HIS first horrific transformation, or something else may happen...</description>
+        <degree>-1</degree>
+      </li>
+      <li>
+        <label>Werewolf (Unblooded)</label>
+        <description>NAME is unknowingly a shapeshifter that blends forms between man and wolf. When a special moon rises, HE will have HIS first horrific transformation.</description>
+        <degree>0</degree>
+      </li>
+      <li>
+        <label>Werewolf</label>
+        <description>NAME is a shapeshifter that blends its form with that of a wolf.</description>
+		    <degree>1</degree>
+      </li>
+      <li>
+        <label>Werewolf (Sworn)</label>
+        <description>Having sworn a blood oath to their clan in good faith, NAME is a shapeshifter that blends HIS form with that of a wolf, and cannot be recruited.</description>
+		    <degree>2</degree>
+      </li>
+      <li>
+        <label>Werewolf (Metis)</label>
+        <description>NAME is a genetic abberation known as the Metis. Somewhere in HIS genetic line, a werewolf mated with a werewolf and forever corrupted their werewolf line. This Werewolf can only transform into the Metis form.</description>
+        <degree>3</degree>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+
+</TraitDefs>

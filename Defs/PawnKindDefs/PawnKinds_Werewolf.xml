@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PawnKindDefs>
+
+  <PawnKindDef Name="WerewolfBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>ROM_WerewolfClan</defaultFactionType>
+    <backstoryCategory>Tribal</backstoryCategory>
+    <baseRecruitDifficulty>0.88</baseRecruitDifficulty>
+    <chemicalAddictionChance>0.10</chemicalAddictionChance>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <invNutrition>2.55</invNutrition>
+    <apparelTags>
+      <li>Tribal</li>
+    </apparelTags>
+  </PawnKindDef>
+
+    <PawnKindDef ParentName="WerewolfBase">
+      <defName>ROM_WerewolfNewBlood</defName>
+      <label>newblood</label>
+      <combatPower>50</combatPower>
+      <invNutrition>2.5</invNutrition>
+      <gearHealthRange>
+        <min>0.5</min>
+        <max>1.8</max>
+      </gearHealthRange>
+      <apparelMoney>
+        <min>180</min>
+        <max>350</max>
+      </apparelMoney>
+      <apparelTags>
+        <li>Tribal</li>
+      </apparelTags>
+  		<weaponMoney>
+  			<min>60</min>
+  			<max>400</max>
+  		</weaponMoney>
+  		<weaponTags>
+  			<li>NeolithicMelee</li>
+  		</weaponTags>
+    </PawnKindDef>
+
+  <PawnKindDef ParentName="WerewolfBase">
+    <defName>ROM_WolfHandler</defName>
+    <label>companion</label>
+    <combatPower>290</combatPower>
+    <invNutrition>2.5</invNutrition>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.8</max>
+    </gearHealthRange>
+    <apparelMoney>
+      <min>180</min>
+      <max>350</max>
+    </apparelMoney>
+    <apparelTags>
+      <li>Tribal</li>
+    </apparelTags>
+		<weaponMoney>
+			<min>60</min>
+			<max>400</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>NeolithicMelee</li>
+		</weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WerewolfBase">
+    <defName>ROM_Werewolf</defName>
+    <label>claw</label>
+    <combatPower>500</combatPower>
+    <invNutrition>2.5</invNutrition>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.8</max>
+    </gearHealthRange>
+    <apparelMoney>
+      <min>180</min>
+      <max>350</max>
+    </apparelMoney>
+    <apparelTags>
+      <li>Tribal</li>
+    </apparelTags>
+		<weaponMoney>
+			<min>60</min>
+			<max>400</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>NeolithicMelee</li>
+		</weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WerewolfBase">
+    <defName>ROM_WerewolfFang</defName>
+    <label>fang</label>
+    <combatPower>750</combatPower>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.8</max>
+    </gearHealthRange>
+    <apparelMoney>
+      <min>180</min>
+      <max>350</max>
+    </apparelMoney>
+    <apparelTags>
+      <li>Tribal</li>
+    </apparelTags>
+		<weaponMoney>
+			<min>60</min>
+			<max>400</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>NeolithicMelee</li>
+		</weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WerewolfBase">
+    <defName>ROM_WerewolfAlpha</defName>
+    <label>head</label>
+    <race>Human</race>
+    <combatPower>1000</combatPower>
+    <itemQuality>Poor</itemQuality>
+    <backstoryCryptosleepCommonality>0.2</backstoryCryptosleepCommonality>
+    <maxGenerationAge>100</maxGenerationAge>
+    <factionLeader>true</factionLeader>
+    <gearHealthRange>
+      <min>0.7</min>
+      <max>3.0</max>
+    </gearHealthRange>
+    <apparelMoney>
+      <min>600</min>
+      <max>1600</max>
+    </apparelMoney>
+    <apparelTags>
+      <li>Tribal</li>
+    </apparelTags>
+    <weaponMoney>
+			<min>800</min>
+			<max>1000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>NeolithicRanged</li>
+		</weaponTags>
+  </PawnKindDef>
+
+</PawnKindDefs>

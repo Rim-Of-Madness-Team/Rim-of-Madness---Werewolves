@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Rim of Madness - Werewolves</name>
+  <author>Jecrell</author>
+  <targetversion>0.17.0</targetversion>
+  <description>
+  V1.17.0.2
+  Adds Werewolves to RimWorld.
+
+  Quick Werewolf Guide
+  1) Find a character with the Werewolf trait.
+  2) Werewolves will unlock their first transformation during a full moon.
+  3) When a Werewolf has transformed at least one time, it is called a blooded werewolf, and blooded Werewolves can learn more forms with Full Moon Fury enabled (next to the Draft button) during future full moons.
+
+  Werewolf Forms
+  -> Glabro - Near Man
+  -> Crinos - Battle Form Werewolf
+  -> Hispo  - Near Wolf
+  -> Lupus  - Wolf Form
+  -> ?????  - Secret
+
+</description>
+</ModMetaData>
