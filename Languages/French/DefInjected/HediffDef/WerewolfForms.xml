@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Added body parts -->
+
+  <ROM_GlabroHediff.label>Forme de Lycanthrope (Glabro)</ROM_GlabroHediff.label>
+  <ROM_GlabroClaw.label>griffe de loup-garou (glabro)</ROM_GlabroClaw.label>
+  <ROM_GlabroJaw.label>morsure de loup-garou (Glabro)</ROM_GlabroJaw.label>
+  <ROM_CrinosHediff.label>Forme de Lycanthrope (Crinos)</ROM_CrinosHediff.label>
+  <ROM_CrinosClaw.label>griffe de loup-garou (Crinos)</ROM_CrinosClaw.label>
+  <ROM_CrinosJaw.label>morsure de loup-garou (Crinos)</ROM_CrinosJaw.label>
+  <ROM_HispoHediff.label>Forme de Lycanthrope (Hispo)</ROM_HispoHediff.label>
+  <ROM_HispoClaw.label>griffe de loup-garou (Hispo)</ROM_HispoClaw.label>
+  <ROM_HispoJaw.label>morsure de loup-garou (Hispo)</ROM_HispoJaw.label>
+  <ROM_LupusHediff.label>Forme de Lycanthrope (Lupus)</ROM_LupusHediff.label>
+  <ROM_LupusClaw.label>griffe de loup-garou (Lupus)</ROM_LupusClaw.label>
+  <ROM_LupusJaw.label>morsure de loup-garou (Lupus)</ROM_LupusJaw.label>
+  <ROM_MetisHediff.label>Forme de Lycanthrope (Metis)</ROM_MetisHediff.label>
+  <ROM_MetisClaw.label>griffe de loup-garou (Metis)</ROM_MetisClaw.label>
+  <ROM_MetisJaw.label>morsure de loup-garou (Metis)</ROM_MetisJaw.label>
+
+
+</LanguageData>

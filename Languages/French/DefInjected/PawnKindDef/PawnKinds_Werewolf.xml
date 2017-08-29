@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ROM_WerewolfNewBlood.label>sang-mêlé</ROM_WerewolfNewBlood.label>
+  <ROM_WerewolfNewBlood.labelPlural>sang-mêlés</ROM_WerewolfNewBlood.labelPlural>
+
+  <ROM_WolfHandler.label>companion</ROM_WolfHandler.label>
+  <ROM_WolfHandler.labelPlural>companions</ROM_WolfHandler.labelPlural>
+
+  <ROM_Werewolf.label>griffe</ROM_Werewolf.label>
+  <ROM_Werewolf.labelPlural>griffes</ROM_Werewolf.labelPlural>
+
+  <ROM_WerewolfFang.label>croc</ROM_WerewolfFang.label>
+  <ROM_WerewolfFang.labelPlural>crocs</ROM_WerewolfFang.labelPlural>
+
+  <ROM_WerewolfAlpha.label>chef</ROM_WerewolfAlpha.label>
+  <ROM_WerewolfAlpha.labelPlural>chefs</ROM_WerewolfAlpha.labelPlural>
+
+
+</LanguageData>

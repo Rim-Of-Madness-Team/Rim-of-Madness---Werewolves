@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ROM_WerewolfEscaped>{0} s'est échappé de son confinement dans le {1}.</ROM_WerewolfEscaped>
+  <ROM_WerewolfLimbRegen>{0} a régénéré leur {1}.</ROM_WerewolfLimbRegen>
+  <ROM_WerewolfDecyberize>{0} a régénéré leur {1} et perdu leur {2} dans le processus.</ROM_WerewolfDecyberize>
+  <ROM_NeedsRest>{0} à besoin de temps pour se reposer et rechargé.</ROM_NeedsRest>
+  <ROM_WerewolfRevert>{0} est revenu à sa forme d'origine.</ROM_WerewolfRevert>
+  <ROM_CannotApplySilverTreatment>Ne peut appliquer le traitement contre l'argent</ROM_CannotApplySilverTreatment>
+  <ROM_ApplySilverTreatment>appliquer le traitement contre l'argent à {0}. ({1} silver)</ROM_ApplySilverTreatment>
+  <ROM_NeedsSilver> besoin de  {0} argent</ROM_NeedsSilver>
+  <ROM_SilverAmmo> (munition en argent)</ROM_SilverAmmo>
+  <ROM_ApplySilverTreatment>appliquer le traitement contre l'argent</ROM_ApplySilverTreatment>
+  <ROM_FullMoonFury>Eveille de la Lune</ROM_FullMoonFury>
+  <ROM_FullMoonFuryDesc>Quand activé, le Loup-Garou entrera dans une fureur lors de la pleine lune. Durant les fureur, Les Loups-Garous peuvent se transformer aléatoirement dans de nouvelles formes et améliorer les présentes\n\nATTENTION: personne n'est en sécurité face à un Loup-Garou sauvage, pas même un autre Loup-Garou! Prenez les précautions nécessaires pour éloigner le Loup-Garou des colons durant la pleine Lune..</ROM_FullMoonFuryDesc>
+  <ROM_FormLevel>{0} Form: Niveau {1}</ROM_FormLevel>
+  <ROM_FormNextLevel>Niveau Actuel {0} Prochain Niveau:</ROM_FormNextLevel>
+  <ROM_FormHealth>Santé: +{0}% {1} +{2}%</ROM_FormHealth>
+  <ROM_FormSize>Taille: +{0}% {1} +{2}%</ROM_FormSize>
+  <ROM_FormImmunity>Immunité +{0}% {1} +{2}%</ROM_FormImmunity>
+  <ROM_FormNote>Note: L'immunité aux dégâts fonctionne uniquement pour des armes qui ne sont pas en argent.</ROM_FormNote>
+  <ROM_RageLeft>Rage Restante</ROM_RageLeft>
+  <ROM_WerewolfTransformation>{0} c'est transformer en {1} Loup-Garou!</ROM_WerewolfTransformation>
+  <ROM_MoonCycle_FullMoonPasses>La pleine Lune de {0} se termine.</ROM_MoonCycle_FullMoonPasses>
+  <ROM_MoonCycle_FullMoonDesc>La Lune de la planète, {0}, a atteint son apogée la plus visible. Les Colons vont obtenir un boost d'hummeur mineur. Les Loups-Garou de sang-mêlés peuvent se transformer.</ROM_MoonCycle_FullMoonDesc>
+  <ROM_MoonCycle_FullMoonArgless>Pleinne Lune</ROM_MoonCycle_FullMoonArgless>
+  <ROM_MoonCycle_FullMoon>Pleine Lune ({0})</ROM_MoonCycle_FullMoon>
+  <ROM_MoonCycle_UntilNextFullMoon>{0} jours avant la prochaine pleine lune</ROM_MoonCycle_UntilNextFullMoon>
+  <ROM_MoonCycle_FullMoonImminentArgless>La pleine lune arrive</ROM_MoonCycle_FullMoonImminentArgless>
+  <ROM_MoonCycle_FullMoonImminent>{0} (La pleine lune arrive)</ROM_MoonCycle_FullMoonImminent>
+  <ROM_MoonCycle_Moon>Lune</ROM_MoonCycle_Moon>
+  <ROM_MoonCycle_Moons>Lune de {0}</ROM_MoonCycle_Moons>
+  <ROM_MoonCycle_CurrentPhaseDesc>Chaque lune de la planète {0} de votre colonie, possède un cycle lunaire. A la fin d'un cycle, une magnifique pleine lune sera visible par votre colonie.\n\nN'importe quel Loup-Garou avec éveille de la lune activé se transformeront à ce moment précis.</ROM_MoonCycle_CurrentPhaseDesc>
+  <ROM_MoonCycle_CurrentPhase>{0} ({1} jours avant pleine lune)</ROM_MoonCycle_CurrentPhase>
+
+</LanguageData>

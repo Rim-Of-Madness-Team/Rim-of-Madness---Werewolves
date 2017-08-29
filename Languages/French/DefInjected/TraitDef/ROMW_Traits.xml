@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ROM_Werewolf.degreeDatas.0.label>Loup-Garou (?)</ROM_Werewolf.degreeDatas.0.label>
+  <ROM_Werewolf.degreeDatas.0.description>NAME peut être un métamorphe qui peut changé de forme entre homme et Loup. Lorsqu'une lune particulière s'élève, il pourrait avoir sa première transformation horrifique, ou quelque chose d'autre pourrait arrivé... </ROM_Werewolf.degreeDatas.0.description>
+  <ROM_Werewolf.degreeDatas.1.label>Loup-Garou (Sang-Mêlé)</ROM_Werewolf.degreeDatas.1.label>
+  <ROM_Werewolf.degreeDatas.1.description>NAME est inconciement un métamorphe qui peut changé de forme entre homme et loup. Lorsqu'une lune particulière s'élève, il pourrait avoir sa première transformation horrifique.</ROM_Werewolf.degreeDatas.1.description>
+  <ROM_Werewolf.degreeDatas.2.label>Loup-Garou</ROM_Werewolf.degreeDatas.2.label>
+  <ROM_Werewolf.degreeDatas.2.description>NAME est un métamorphe qui peut changé de forme entre homme et loup.</ROM_Werewolf.degreeDatas.2.description>
+  <ROM_Werewolf.degreeDatas.3.label>Loup-Garou (Assermenté)</ROM_Werewolf.degreeDatas.3.label>
+  <ROM_Werewolf.degreeDatas.3.description>Ayant juré serment de sang à son clan en foi, NAME est un lycanthrope entre loup et homme, et ne peut être recruté.</ROM_Werewolf.degreeDatas.3.description>
+  <ROM_Werewolf.degreeDatas.4.label>Loup-Garou (Metis)</ROM_Werewolf.degreeDatas.4.label>
+  <ROM_Werewolf.degreeDatas.4.description>NAME est un accident génétique connu sous le nom de "Metis". Quelque part dans sa lignée génétique, un lycanthrope s'est accouplé à un autre lycanthrope résultant d'une malédiction de toute la lignée. Ce Loup-Garou peut uniquement se changer dans la forme du Metis.</ROM_Werewolf.degreeDatas.4.description>
+
+
+</LanguageData>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Added body parts -->
+
+  <ROM_Glabro.label>Glabro</ROM_Glabro.label>
+  <ROM_Glabro.description>La forme "homme-Garou" ou "Homme-Loup" la plus proche de l'homme. Dans la forme Glabro, un Loup-Garou peut ressembler à un hummain tout en ayant une portion de leur puissance sauvage.</ROM_Glabro.description>
+
+  <ROM_Crinos.label>Crinos</ROM_Crinos.label>
+  <ROM_Crinos.description>La transformation de guerre. Fusion entre les attributs les plus mortels de l'homme et de la bête dans un corps ayant pour but de déchiqueté, tuer et ravagé tout ce qui est sur son chemin.\n\nBonus Passif\nAttaque: à chaque attaque, Crinos peut touché une cible supplémentaire à portée.</ROM_Crinos.description>
+
+  <ROM_Hispo.label>Hispo</ROM_Hispo.label>
+  <ROM_Hispo.description>Cette forme est le Loup démentiel de l'horreur, un retour à la préhistoire où les Loups térrifiants étaient de la taille d'un cheval. C'est une forme faite pour chasser -et tuer.\n\nBonus Passif\nPuissance: Hispos Attaque deux fois à chaque coup.</ROM_Hispo.description>
+
+  <ROM_Lupus.label>Lupus</ROM_Lupus.label>
+  <ROM_Lupus.description>Cette forme est le véritable loup, permettant aux Loups-Garous de chasser et de vivre en meute ou de posséder la vitesse et les sens supérieur d'un loup.\n\nBonus Passif\nEnvironnement: les Lupus ne reçoivent pas de pénalité de mouvement à travers les arbres.</ROM_Lupus.description>
+
+  <ROM_Metis.label>Metis</ROM_Metis.label>
+  <ROM_Metis.description>Résultant d'une lignée génétique catastrophique entre deux Loups-Garous, le Métis à été conçu avec un défaut inné ou une apparence étrange qui le rend différent d'un Loup-Garou normal.\n\nMalédiction:\nles Loup-Garou Metis ne peuvent se transformer en autre forme de loup-garou.</ROM_Metis.description>
+
+
+</LanguageData>
