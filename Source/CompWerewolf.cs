@@ -122,6 +122,7 @@ namespace Werewolf
         }
 
         //Utilitarian Properties
+        public bool IsSimpleSidearmsLoaded => (ModLister.AllInstalledMods.FirstOrDefault(x => x.Name == "Simple sidearms" && x.Active) != null);
         public bool IsTransformed => CurrentWerewolfForm != null;
         public bool IsWerewolf { get => WerewolfTrait != null; }
         public bool CanTransformNow => IsWerewolf && !IsTransformed && CooldownTicksLeft <= 0;
@@ -510,10 +511,33 @@ namespace Werewolf
             StoredWeapons = new List<ThingWithComps>();
             UpperBodyItems = new List<Apparel>();
 
+
             if (Pawn?.inventory is Pawn_InventoryTracker inventory)
             {
-                ResolveWeaponStorage(inventory);
-                ResolveApparelStorage(inventory);
+                if (!IsSimpleSidearmsLoaded)
+                {
+                    ResolveWeaponStorage(inventory);
+                    ResolveApparelStorage(inventory);
+                }
+                else
+                {
+                    if (Pawn.apparel.WornApparel is List<Apparel> apps && !apps.NullOrEmpty())
+                    {
+                        List<Apparel> temp = new List<Apparel>(apps);
+                        foreach (Apparel app in temp)
+                        {
+                            Pawn.apparel.TryDrop(app, out Apparel s, Pawn.PositionHeld);
+                        }
+                    }
+                    if (Pawn.equipment.AllEquipmentListForReading is List<ThingWithComps> weps && !weps.NullOrEmpty())
+                    {
+                        List<ThingWithComps> temp = new List<ThingWithComps>(weps);
+                        foreach (ThingWithComps wep in temp)
+                        {
+                            Pawn.equipment.TryDropEquipment(wep, out ThingWithComps thing, Pawn.PositionHeld);
+                        }
+                    }
+                }
             }
 
         }
