@@ -24,6 +24,8 @@
     <rageUsageFactor>1.0</rageUsageFactor>
     <sizeFactor>1.25</sizeFactor>
     <healthFactor>1.5</healthFactor>
+    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+    <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
     <transformSound>ROM_Werewolf_GlabroHowl</transformSound>
 
   </Werewolf.WerewolfFormDef>
@@ -140,6 +142,8 @@
       <rageUsageFactor>2.0</rageUsageFactor>
       <sizeFactor>1.75</sizeFactor>
       <healthFactor>2.5</healthFactor>
+      <rageFactorPerLevel>0.5</rageFactorPerLevel>
+      <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
       <transformSound>ROM_Werewolf_CrinosHowl</transformSound>
       <attackSound>ROM_Werewolf_CrinosAttack</attackSound>
     </Werewolf.WerewolfFormDef>
@@ -249,7 +253,8 @@
       </graphicData>
       <rageUsageFactor>1.25</rageUsageFactor>
       <sizeFactor>1.25</sizeFactor>
-      <healthFactor>1.25</healthFactor>
+      <healthFactor>1.25</healthFactor>    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+      <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
       <formHediff>ROM_HispoHediff</formHediff>
       <clawHediff>ROM_HispoClaw</clawHediff>
       <jawHediff>ROM_HispoJaw</jawHediff>
@@ -373,6 +378,8 @@
       <rageUsageFactor>1.25</rageUsageFactor>
       <sizeFactor>1.25</sizeFactor>
       <healthFactor>1.25</healthFactor>
+      <rageFactorPerLevel>0.5</rageFactorPerLevel>
+      <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
       <formHediff>ROM_LupusHediff</formHediff>
       <clawHediff>ROM_LupusClaw</clawHediff>
       <jawHediff>ROM_LupusJaw</jawHediff>
@@ -489,7 +496,8 @@
     <iconTexPath>UI/Button/FormMetis</iconTexPath>
     <rageUsageFactor>1.0</rageUsageFactor>
     <sizeFactor>1.25</sizeFactor>
-    <healthFactor>1.5</healthFactor>
+    <healthFactor>1.5</healthFactor>    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+    <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
     <transformSound>ROM_Werewolf_MetisHowl</transformSound>
     <attackSound>ROM_Werewolf_MetisAttack</attackSound>
   </Werewolf.WerewolfFormDef>

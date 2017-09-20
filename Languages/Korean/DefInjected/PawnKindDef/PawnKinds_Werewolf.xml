@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ROM_WerewolfNewBlood.label>새로운 혈통</ROM_WerewolfNewBlood.label>
+  <ROM_WerewolfNewBlood.labelPlural>새로운 혈통</ROM_WerewolfNewBlood.labelPlural>
+
+  <ROM_WolfHandler.label>컴패니언</ROM_WolfHandler.label>
+  <ROM_WolfHandler.labelPlural>컴패니언</ROM_WolfHandler.labelPlural>
+
+  <ROM_Werewolf.label>크로우</ROM_Werewolf.label>
+  <ROM_Werewolf.labelPlural>크로우</ROM_Werewolf.labelPlural>
+
+  <ROM_WerewolfFang.label>팽</ROM_WerewolfFang.label>
+  <ROM_WerewolfFang.labelPlural>팽</ROM_WerewolfFang.labelPlural>
+
+  <ROM_WerewolfAlpha.label>머리</ROM_WerewolfAlpha.label>
+  <ROM_WerewolfAlpha.labelPlural>머리</ROM_WerewolfAlpha.labelPlural>
+
+
+</LanguageData>

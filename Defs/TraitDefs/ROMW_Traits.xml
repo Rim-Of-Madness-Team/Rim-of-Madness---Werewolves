@@ -19,11 +19,13 @@
         <label>Werewolf</label>
         <description>NAME is a shapeshifter that blends its form with that of a wolf.</description>
 		    <degree>1</degree>
+        <commonality>0.00001</commonality>
       </li>
       <li>
         <label>Werewolf (Sworn)</label>
         <description>Having sworn a blood oath to their clan in good faith, NAME is a shapeshifter that blends HIS form with that of a wolf, and cannot be recruited.</description>
 		    <degree>2</degree>
+        <commonality>0.00001</commonality>
       </li>
       <li>
         <label>Werewolf (Metis)</label>

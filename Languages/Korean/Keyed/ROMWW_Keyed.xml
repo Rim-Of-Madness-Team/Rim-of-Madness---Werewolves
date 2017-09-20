@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ROM_WerewolfEscaped>{0}는 {1}의 포위에서 도망쳤습니다.</ROM_WerewolfEscaped>
+  <ROM_WerewolfLimbRegen>{0}는 그들의 {1}를 재생시켰습니다..</ROM_WerewolfLimbRegen>
+  <ROM_WerewolfDecyberize>{0}는 {1}를 재생시키고 그 과정에서 {2}를 잃어버렸습니다.</ROM_WerewolfDecyberize>
+  <ROM_NeedsRest>{0}는 쉴 시간과 여유가 필요합니다.</ROM_NeedsRest>
+  <ROM_WerewolfRevert>{0}는 그들의 본래 모습으로 돌아왔습니다..</ROM_WerewolfRevert>
+  <ROM_CannotApplySilverTreatment>은 치료가 먹히지 않습니다.</ROM_CannotApplySilverTreatment>
+  <ROM_ApplySilverTreatment>{0}에게 은 치료를 시술합니다. ({1} 은)</ROM_ApplySilverTreatment>
+  <ROM_NeedsSilver>는 {0}은이 필요합니다.</ROM_NeedsSilver>
+  <ROM_SilverAmmo> (은제 총알)</ROM_SilverAmmo>
+  <ROM_ApplySilverTreatment>은 치료를 시술합니다.</ROM_ApplySilverTreatment>
+  <ROM_FullMoonFury>광란의 달</ROM_FullMoonFury>
+  <ROM_FullMoonFuryDesc>켜질시에, 늑대인간은 보름달 동안 미쳐날뜁니다. 광폭화된 상태동안, 늑대인간은 무작위의 새로운 형태로 변하거나 지금 형태에서 진화합니다.\n\n경고: 아무도, 심지어 같은 다른 늑대인간 역시 광폭화 과정 중에서는 안전하지 않으니 보름달 동안에는 다른 콜로니스트를 안전하게 대피시키세요!</ROM_FullMoonFuryDesc>
+  <ROM_FormLevel>{0} 형태: 레벨 {1}</ROM_FormLevel>
+  <ROM_FormNextLevel>현재 레벨 {0} 다음 레벨:</ROM_FormNextLevel>
+  <ROM_FormHealth>건강: +{0}% {1} +{2}%</ROM_FormHealth>
+  <ROM_FormSize>크기: +{0}% {1} +{2}%</ROM_FormSize>
+  <ROM_FormImmunity>데미지 무시 +{0}% {1} +{2}%</ROM_FormImmunity>
+  <ROM_FormNote>주의: 데미지 무시 능력은 비 은제 무기에만 통합니다.</ROM_FormNote>
+  <ROM_RageLeft>분노 가라앉음</ROM_RageLeft>
+  <ROM_WerewolfTransformation>{0}는 {1}의 늑대인간으로 변신하였습니다!</ROM_WerewolfTransformation>
+  <ROM_MoonCycle_FullMoonPasses>{0}의 보름달이 지나갔습니다.</ROM_MoonCycle_FullMoonPasses>
+  <ROM_MoonCycle_FullMoonDesc>이 행성의 달인, {0}는 그것이 빛날 수 있는 최대로 빛나고 있습니다. 콜로니스트들은 무드에 보너스를 받을것입니다. 피가 부족한 늑대인간들도 이 시기에는 변신할 것입니다.</ROM_MoonCycle_FullMoonDesc>
+  <ROM_MoonCycle_FullMoonArgless>보름달</ROM_MoonCycle_FullMoonArgless>
+  <ROM_MoonCycle_FullMoon>보름달 ({0})</ROM_MoonCycle_FullMoon>
+  <ROM_MoonCycle_UntilNextFullMoon>다음 보름달 까지는 {0}일이 남았습니다.</ROM_MoonCycle_UntilNextFullMoon>
+  <ROM_MoonCycle_FullMoonImminentArgless>보름달이 다가오고 있습니다.</ROM_MoonCycle_FullMoonImminentArgless>
+  <ROM_MoonCycle_FullMoonImminent>{0} (보름달 접근 중)</ROM_MoonCycle_FullMoonImminent>
+  <ROM_MoonCycle_Moon>달</ROM_MoonCycle_Moon>
+  <ROM_MoonCycle_Moons>{0}의 달</ROM_MoonCycle_Moons>
+  <ROM_MoonCycle_CurrentPhaseDesc>당신의 행성의 각 달마다, {0}는 순환 과정을 가집니다. 순환 과정의 끝에는, 아름다운 보름달이 당신의 콜로니를 빛출것입니다.\n\n이 시기에는 모든 늑대인간들이 변이하며 활동을 개시할 것입니다.</ROM_MoonCycle_CurrentPhaseDesc>
+  <ROM_MoonCycle_CurrentPhase>{0} ({1}일이 채워지기 전까지 남았습니다.)</ROM_MoonCycle_CurrentPhase>
+
+</LanguageData>

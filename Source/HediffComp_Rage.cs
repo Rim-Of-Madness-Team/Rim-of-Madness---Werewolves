@@ -107,12 +107,12 @@ namespace Werewolf
             if (!baseRageDuration.HasValue)
             {
                 float math = 0;
-                float bonusFactor = 0.05f;
+                //float bonusFactor = 0.05f;
                 if (Pawn?.GetComp<CompWerewolf>() is CompWerewolf compWerewolf && compWerewolf.CurrentWerewolfForm != null)
                 {
-                    math = bonusFactor * compWerewolf.CurrentWerewolfForm.level;
+                    math = compWerewolf.CurrentWerewolfForm.def.rageFactorPerLevel * compWerewolf.CurrentWerewolfForm.level;
                     math *= this.Props.baseRageSeconds;
-                    math = Mathf.Clamp(math, 0f, 60.0f);
+                    math = Mathf.Clamp(math, 0f, compWerewolf.CurrentWerewolfForm.def.rageFactorPerLevelMax);
                 }
                 baseRageDuration = this.Props.baseRageSeconds + math;
             }

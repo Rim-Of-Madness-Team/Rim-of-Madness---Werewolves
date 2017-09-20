@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Added body parts -->
+
+  <ROM_GlabroHediff.label>늑대인간 형태 (글래브로)</ROM_GlabroHediff.label>
+  <ROM_GlabroClaw.label>늑대인간의 발톱 (글래브로)</ROM_GlabroClaw.label>
+  <ROM_GlabroJaw.label>늑대인간의 이빨 (글래브로)</ROM_GlabroJaw.label>
+  <ROM_CrinosHediff.label>늑대인간 형태 (크리노스)</ROM_CrinosHediff.label>
+  <ROM_CrinosClaw.label>늑대인간의 발톱 (크리노스)</ROM_CrinosClaw.label>
+  <ROM_CrinosJaw.label>늑대인간의 이빨 (크리노스)</ROM_CrinosJaw.label>
+  <ROM_HispoHediff.label>늑대인간 형태 (히스포)</ROM_HispoHediff.label>
+  <ROM_HispoClaw.label>늑대인간의 발톱 (히스포)</ROM_HispoClaw.label>
+  <ROM_HispoJaw.label>늑대인간의 이빨 (히스포)</ROM_HispoJaw.label>
+  <ROM_LupusHediff.label>늑대인간 형태 (루푸스)</ROM_LupusHediff.label>
+  <ROM_LupusClaw.label>늑대인간의 발톱 (루푸스)</ROM_LupusClaw.label>
+  <ROM_LupusJaw.label>늑대인간의 이빨 (루푸스)</ROM_LupusJaw.label>
+  <ROM_MetisHediff.label>늑대인간 형태 (메티스)</ROM_MetisHediff.label>
+  <ROM_MetisClaw.label>늑대인간의 발톱 (메티스)</ROM_MetisClaw.label>
+  <ROM_MetisJaw.label>늑대인간의 이빨 (메티스)</ROM_MetisJaw.label>
+
+
+</LanguageData>
