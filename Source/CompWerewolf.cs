@@ -146,12 +146,14 @@ namespace Werewolf
             if (Pawn is Pawn p)
             {
                 if (p.Faction == Faction.OfPlayer) p.ClearMind();
-                if (currentWerewolfForm != null)
+                if (form != null)
                 {
+                    //Log.Message("ResolveTransformationEffects");
                     ResolveTransformEffects(p, currentWerewolfForm, moonTransformation);
                     ResolveEquipmentStorage();
                     return;
                 }
+                //Log.Message("Restore");
                 RestoreEquipment();
                 p.Drawer.renderer.graphics.ResolveAllGraphics();
                 Messages.Message("ROM_WerewolfRevert".Translate(Pawn), MessageSound.Silent);
@@ -373,6 +375,7 @@ namespace Werewolf
                     p.health.AddHediff(transformedHediff, transformableParts.Key, null);
                 }
             }
+            HealthUtility.AdjustSeverity(p, HediffDefOf.BloodLoss, -9999);
         }
 
         /// Adds a fury to the Werewolf. 
@@ -519,7 +522,7 @@ namespace Werewolf
                     ResolveWeaponStorage(inventory);
                     ResolveApparelStorage(inventory);
                 }
-                else
+                else if (CurrentWerewolfForm != null)
                 {
                     if (Pawn.apparel.WornApparel is List<Apparel> apps && !apps.NullOrEmpty())
                     {
@@ -558,11 +561,27 @@ namespace Werewolf
 
                         foreach (ThingWithComps c in storedWeapons)
                         {
-                            if (invTracker.innerContainer.InnerListForReading.Contains(c))
+                            if (invTracker.innerContainer.InnerListForReading.Contains(c) &&
+                                !equipTracker.Contains(c))
                             {
                                 invTracker.innerContainer.InnerListForReading.Remove(c);
                                 c.holdingOwner = null;
                                 equipTracker.AddEquipment(c);
+                                Log.Message(c.ToString());
+                            }
+                        }
+
+                        if (!storedWeapons.NullOrEmpty())
+                        {
+                            foreach (ThingWithComps c in storedWeapons)
+                            {
+                                if (!equipTracker.Contains(c))
+                                {
+                                    c.holdingOwner = null;
+                                    equipTracker.AddEquipment(c);
+                                    Log.Message(c.ToString());
+                                }
+
                             }
                         }
 
@@ -574,13 +593,30 @@ namespace Werewolf
                 {
                     if (p?.apparel is Pawn_ApparelTracker apparelTracker)
                     {
-                        foreach (Apparel a in UpperBodyItems)
+                        HashSet<Apparel> tempItems = new HashSet<Apparel>(UpperBodyItems);
+                        foreach (Apparel a in tempItems)
                         {
-                            if (invTracker.innerContainer.InnerListForReading.Contains(a))
+                            if (invTracker.innerContainer.InnerListForReading.Contains(a) &&
+                                !apparelTracker.Contains(a))
                             {
                                 invTracker.innerContainer.InnerListForReading.Remove(a);
                                 a.holdingOwner = null;
                                 apparelTracker.Wear(a);
+                                Log.Message(a.ToString());
+                                UpperBodyItems.Remove(a);
+                            }
+                        }
+                        if (!UpperBodyItems.NullOrEmpty())
+                        {
+                            foreach (Apparel a in UpperBodyItems)
+                            {
+                                if (!apparelTracker.Contains(a))
+                                {
+                                    a.holdingOwner = null;
+                                    apparelTracker.Wear(a);
+                                    Log.Message(a.ToString());
+                                }
+
                             }
                         }
 
@@ -713,10 +749,10 @@ namespace Werewolf
         /// 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            foreach (Gizmo x in base.CompGetGizmosExtra())
-            {
-                yield return x;
-            }
+            //foreach (Gizmo x in base.CompGetGizmosExtra())
+            //{
+            //    yield return x;
+            //}
 
             if (!IsTransformed && IsBlooded)
             {
