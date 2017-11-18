@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<FactionDefs>
+<Defs>
 
   <FactionDef>
 	<defName>ROM_WerewolfClan</defName>
@@ -10,7 +10,12 @@
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <maxCountAtGameStart>1</maxCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
-    <raidCommonality>10</raidCommonality>
+	<raidCommonalityFromPointsCurve>
+		<points>
+			<li>(1000, 0.3)</li>
+			<li>(2500, 0.8)</li>
+		</points>
+	</raidCommonalityFromPointsCurve>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <expandingIconTexture>World/WorldObjects/Expanding/WolfPack</expandingIconTexture>
@@ -70,8 +75,8 @@
         </guards>
       </li>
       <li>
-				<!-- Normal fights, standard mix -->
-				<kindDef>Normal</kindDef>
+		<!-- Normal, standard mix -->
+	    <kindDef>Normal</kindDef>
         <commonality>100</commonality>
         <options>
           <ROM_WerewolfNewBlood>15</ROM_WerewolfNewBlood>
@@ -82,8 +87,8 @@
         </options>
       </li>
       <li>
-				<!-- Base defense -->
-				<kindDef>FactionBase</kindDef>
+		<!-- Base defense -->
+		<kindDef>FactionBase</kindDef>
         <options>
           <ROM_WerewolfNewBlood>15</ROM_WerewolfNewBlood>
           <ROM_WolfHandler>100</ROM_WolfHandler>
@@ -96,4 +101,4 @@
     <homeIconPath>World/WorldObjects/DefaultFactionBase</homeIconPath>
   </FactionDef>
 
-</FactionDefs>
+</Defs>

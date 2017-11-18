@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace Werewolf
 {
-    class JobDriver_ApplySilverTreatment : JobDriver
+    public class JobDriver_ApplySilverTreatment : JobDriver
     {
         private float workLeft;
 
@@ -20,7 +20,7 @@ namespace Werewolf
         {
             get
             {
-                return base.CurJob.targetA.Thing;
+                return base.job.targetA.Thing;
             }
         }
 
@@ -47,6 +47,12 @@ namespace Werewolf
             base.ExposeData();
             Scribe_Values.Look<float>(ref this.workLeft, "workLeft", 0f, false);
             Scribe_Values.Look<float>(ref this.totalNeededWork, "totalNeededWork", 0f, false);
+        }
+
+        public override bool TryMakePreToilReservations()
+        {
+            return this.pawn.Reserve(this.job.targetA, this.job, 1, -1, null) && this.pawn.Reserve(this.job.targetB, this.job, 1, -1, null) &&
+                this.pawn.Reserve(this.job.targetC, this.job, 1, -1, null);
         }
 
         [DebuggerHidden]

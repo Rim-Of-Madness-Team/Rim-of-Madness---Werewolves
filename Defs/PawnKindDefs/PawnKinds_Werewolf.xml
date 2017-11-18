@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<PawnKindDefs>
+<Defs>
 
   <PawnKindDef Name="WerewolfBase" Abstract="True">
     <race>Human</race>
-    <defaultFactionType>ROM_WerewolfClan</defaultFactionType>
-    <backstoryCategory>Tribal</backstoryCategory>
+	<defaultFactionType>ROM_WerewolfClan</defaultFactionType>
+    <backstoryCategory>Tribal</backstoryCategory> 
+	<chemicalAddictionChance>0.10</chemicalAddictionChance>
     <baseRecruitDifficulty>0.88</baseRecruitDifficulty>
-    <chemicalAddictionChance>0.10</chemicalAddictionChance>
-    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
     <invNutrition>2.55</invNutrition>
-    <apparelTags>
-      <li>Tribal</li>
-    </apparelTags>
+    <invFoodDef>Pemmican</invFoodDef>	
   </PawnKindDef>
 
     <PawnKindDef ParentName="WerewolfBase">
       <defName>ROM_WerewolfNewBlood</defName>
       <label>newblood</label>
       <combatPower>50</combatPower>
-      <invNutrition>2.5</invNutrition>
+      <maxGenerationAge>25</maxGenerationAge>
       <gearHealthRange>
         <min>0.5</min>
         <max>1.8</max>
@@ -35,7 +33,7 @@
   			<max>400</max>
   		</weaponMoney>
   		<weaponTags>
-  			<li>NeolithicMelee</li>
+  			<li>NeolithicMeleeBasic</li>
   		</weaponTags>
     </PawnKindDef>
 
@@ -56,11 +54,11 @@
       <li>Tribal</li>
     </apparelTags>
 		<weaponMoney>
-			<min>60</min>
-			<max>400</max>
+			<min>400</min>
+			<max>500</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>NeolithicMelee</li>
+			<li>NeolithicRangedHeavy</li>
 		</weaponTags>
   </PawnKindDef>
 
@@ -81,11 +79,11 @@
       <li>Tribal</li>
     </apparelTags>
 		<weaponMoney>
-			<min>60</min>
+			<min>300</min>
 			<max>400</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>NeolithicMelee</li>
+			<li>NeolithicMeleeBasic</li>
 		</weaponTags>
   </PawnKindDef>
 
@@ -105,11 +103,11 @@
       <li>Tribal</li>
     </apparelTags>
 		<weaponMoney>
-			<min>60</min>
-			<max>400</max>
+			<min>500</min>
+			<max>800</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>NeolithicMelee</li>
+			<li>NeolithicMeleeAdvanced</li>
 		</weaponTags>
   </PawnKindDef>
 
@@ -138,8 +136,8 @@
 			<max>1000</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>NeolithicRanged</li>
+			<li>NeolithicRangedHeavy</li>
 		</weaponTags>
   </PawnKindDef>
 
-</PawnKindDefs>
+</Defs>

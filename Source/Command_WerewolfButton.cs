@@ -119,7 +119,7 @@ namespace Werewolf
                 {
                     if (!this.disabledReason.NullOrEmpty())
                     {
-                        Messages.Message(this.disabledReason, MessageSound.RejectInput);
+                        Messages.Message(this.disabledReason, MessageTypeDefOf.RejectInput);// MessageTypeDefOf.RejectInput);
                     }
                     return new GizmoResult(GizmoState.Mouseover, null);
                 }

@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="AI\JobGiver_ManageWerewolfForm.cs" />
     <Compile Include="Command_WerewolfButton.cs" />
+    <Compile Include="HediffWithComps_WerewolfExtraInfo.cs" />
     <Compile Include="SilverTreated\CompSilverTreated.cs" />
     <Compile Include="CompWerewolf.cs" />
     <Compile Include="GameCondition_FullMoon.cs" />

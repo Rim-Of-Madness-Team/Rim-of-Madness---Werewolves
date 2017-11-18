@@ -71,12 +71,14 @@ namespace Werewolf
             {
                 return new Job(JobDefOf.WaitCombat, JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange, true);
             }
-            pawn.Map.pawnDestinationManager.ReserveDestinationFor(pawn, intVec);
-            return new Job(JobDefOf.Goto, intVec)
+            Job newJob = new Job(JobDefOf.Goto, intVec)
             {
                 expiryInterval = JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange,
                 checkOverrideOnExpire = true
             };
+            pawn.Map.pawnDestinationReservationManager.Reserve(pawn, newJob, intVec);
+            return newJob;
+
 
         }
 

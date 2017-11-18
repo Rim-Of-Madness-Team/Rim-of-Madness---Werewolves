@@ -22,7 +22,8 @@ namespace Werewolf
                 nameof(WerewolfBodySize)), null);
             harmony.Patch(AccessTools.Method(typeof(Pawn), "get_HealthScale"), null, new HarmonyMethod(typeof(HarmonyPatches),
                 nameof(WerewolfHealthScale)), null);
-            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal", new Type[] { typeof(Vector3), typeof(Quaternion), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool) }), new HarmonyMethod(typeof(HarmonyPatches), 
+            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal", 
+                new Type[] { typeof(Vector3), typeof(Quaternion), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool) }), new HarmonyMethod(typeof(HarmonyPatches), 
                 nameof(RenderWerewolf)), null);
             harmony.Patch(AccessTools.Method(typeof(Building_Door), "PawnCanOpen"), null, new HarmonyMethod(typeof(HarmonyPatches),
                 nameof(WerewolfCantOpen)), null);
@@ -52,6 +53,37 @@ namespace Werewolf
                 nameof(DebugDownWerewolf)), null);
             harmony.Patch(AccessTools.Method(typeof(JobGiver_OptimizeApparel), "TryGiveJob"), new HarmonyMethod(typeof(HarmonyPatches),
                 nameof(DontOptimizeWerewolfApparel)), null);
+            harmony.Patch((typeof(DamageWorker_AddInjury).GetMethods(AccessTools.all)
+                .Where(mi => mi.GetParameters().Count() >= 4 &&
+                mi.GetParameters().ElementAt(1).ParameterType == typeof(Hediff_Injury)).First()),
+                new HarmonyMethod(typeof(HarmonyPatches), nameof(WerewolfDmgFixFinalizeAndAddInjury)), null);
+
+        }
+
+        public static bool ShouldModifyDamage(Pawn instigator)
+        {
+            if (!instigator?.TryGetComp<CompWerewolf>()?.IsTransformed ?? false)
+                return true;
+            return false;
+        }
+
+        //public class DamageWorker_AddInjury : DamageWorker
+        public static void WerewolfDmgFixFinalizeAndAddInjury(DamageWorker_AddInjury __instance, Pawn pawn, ref Hediff_Injury injury, ref DamageInfo dinfo, ref DamageWorker.DamageResult result)
+        {
+            if (dinfo.Amount > 0 && pawn.TryGetComp<CompWerewolf>() is CompWerewolf ww && ww.IsWerewolf && ww.CurrentWerewolfForm != null)
+            {
+                if (dinfo.Instigator is Pawn a && ShouldModifyDamage(a))
+                {
+                    if (a?.equipment?.Primary is ThingWithComps b && !b.IsSilverTreated())
+                    {
+                        int math = (int)(dinfo.Amount) - (int)(dinfo.Amount * (ww.CurrentWerewolfForm.DmgImmunity)); //10% damage. Decimated damage.
+                        dinfo.SetAmount(math);
+                        injury.Severity = math;
+                        Log.Message(dinfo.Amount.ToString());
+                    }
+
+                }
+            }
         }
 
         // RimWorld.JobGiver_OptimizeApparel

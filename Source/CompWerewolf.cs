@@ -156,7 +156,7 @@ namespace Werewolf
                 //Log.Message("Restore");
                 RestoreEquipment();
                 p.Drawer.renderer.graphics.ResolveAllGraphics();
-                Messages.Message("ROM_WerewolfRevert".Translate(Pawn), MessageSound.Silent);
+                Messages.Message("ROM_WerewolfRevert".Translate(Pawn), MessageTypeDefOf.SilentInput);//MessageTypeDefOf.SilentInput);
             }
             isReverting = false;
         }
@@ -295,7 +295,7 @@ namespace Werewolf
                 Messages.Message("ROM_WerewolfEscaped".Translate(new object[] {
                         Pawn.LabelShort,
                         casket.Label
-                    }), new RimWorld.Planet.GlobalTargetInfo(Pawn), MessageSound.Silent);
+                    }), new RimWorld.Planet.GlobalTargetInfo(Pawn), MessageTypeDefOf.SilentInput);
             }
         }
 
@@ -321,7 +321,7 @@ namespace Werewolf
                                 Pawn.LabelShort,
                                 rec.def.label,
                                 hediff_AddedPart.Label
-                            }), MessageSound.Negative);
+                            }), MessageTypeDefOf.NegativeEvent);//MessageTypeDefOf.NegativeEvent);
                     }
                 }
             }
@@ -339,7 +339,7 @@ namespace Werewolf
                     Messages.Message("ROM_WerewolfLimbRegen".Translate(new object[] {
                         p.LabelShort,
                         part.Label
-                    }), MessageSound.Benefit);
+                    }), MessageTypeDefOf.PositiveEvent);//MessageSound.Benefit);
                 }
             }
         }
@@ -427,7 +427,7 @@ namespace Werewolf
             {
                         p.LabelShort,
                         currentWerewolfForm.def.label
-            }), MessageSound.Silent);
+            }), MessageTypeDefOf.SilentInput);
 
 
         }
@@ -731,20 +731,10 @@ namespace Werewolf
         #endregion Methods
 
         #region Pawn Overrides
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
-        {
-            if (IsWerewolf)
-            {
-                if (dinfo.Instigator is Pawn a && a?.equipment?.Primary is ThingWithComps b && !b.IsSilverTreated())
-                {
-                    absorbed = false;
-                    int math = (int)(dinfo.Amount * (CurrentWerewolfForm?.DmgImmunity ?? 1)); //10% damage. Decimated damage.
-                    dinfo.SetAmount(math);
-                    return;
-                }
-            }
-            base.PostPreApplyDamage(dinfo, out absorbed);
-        }
+        //public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+        //{
+
+        //}
 
         /// 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

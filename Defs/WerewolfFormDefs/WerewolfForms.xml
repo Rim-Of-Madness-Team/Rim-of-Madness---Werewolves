@@ -2,7 +2,14 @@
 <Defs>
     <!-- Added body parts -->
 
-    <HediffDef Name="TransformedBodyPartBase" Abstract="True">
+	<HediffDef Name="ROMWW_TransformedBody" Abstract="True">
+      <hediffClass>Werewolf.HediffWithComps_WerewolfExtraInfo</hediffClass>
+      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+      <scenarioCanAdd>false</scenarioCanAdd>
+      <maxSeverity>1.0</maxSeverity>
+    </HediffDef>
+	
+    <HediffDef Name="ROMWW_TransformedBodyPartBase" Abstract="True">
       <hediffClass>JecsTools.Hediff_TransformedPart</hediffClass>
       <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
       <isBad>false</isBad>
@@ -29,13 +36,11 @@
     <transformSound>ROM_Werewolf_GlabroHowl</transformSound>
 
   </Werewolf.WerewolfFormDef>
-  <HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
     <defName>ROM_GlabroHediff</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Werewolf Form (Glabro)</label>
-    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-    <scenarioCanAdd>false</scenarioCanAdd>
-    <maxSeverity>1.0</maxSeverity>
+
     <comps>
       <li Class="Werewolf.HediffCompProperties_Rage">
         <baseRageSeconds>60</baseRageSeconds>
@@ -71,19 +76,21 @@
         </li>
       </stages>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_GlabroClaw</defName>
     <label>werewolf claw (glabro)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>1.65</defaultCooldownTime>
-            <meleeDamageBaseAmount>30</meleeDamageBaseAmount>
-            <meleeDamageDef>Scratch</meleeDamageDef>
+		    <label>claws</label>
+			<capacities>
+			  <li>Scratch</li>
+		    </capacities>
+			<power>30</power>
+            <cooldownTime>1.6</cooldownTime>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -93,17 +100,19 @@
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_GlabroJaw</defName>
     <label>werewolf teeth (Glabro)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>2.1</defaultCooldownTime>
-            <meleeDamageBaseAmount>15</meleeDamageBaseAmount>
-            <meleeDamageDef>Bite</meleeDamageDef>
+		    <label>teeth</label>
+			<capacities>
+			  <li>Bite</li>
+		    </capacities>
+			<power>15</power>
+            <cooldownTime>2.1</cooldownTime>
             <surpriseAttack>
               <extraMeleeDamages>
                 <li>
@@ -113,7 +122,7 @@
               </extraMeleeDamages>
             </surpriseAttack>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -147,13 +156,9 @@
       <transformSound>ROM_Werewolf_CrinosHowl</transformSound>
       <attackSound>ROM_Werewolf_CrinosAttack</attackSound>
     </Werewolf.WerewolfFormDef>
-    <HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
       <defName>ROM_CrinosHediff</defName>
-      <hediffClass>HediffWithComps</hediffClass>
       <label>Werewolf Form (Crinos)</label>
-      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-      <scenarioCanAdd>false</scenarioCanAdd>
-      <maxSeverity>1.0</maxSeverity>
       <comps>
       <li Class="Werewolf.HediffCompProperties_Rage">
         <baseRageSeconds>30</baseRageSeconds>
@@ -189,19 +194,21 @@
         </li>
       </stages>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_CrinosClaw</defName>
     <label>werewolf claw (Crinos)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+	    <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>1.65</defaultCooldownTime>
-            <meleeDamageBaseAmount>50</meleeDamageBaseAmount>
-            <meleeDamageDef>ROM_CrinosSlash</meleeDamageDef>
+		    <label>claws</label>
+			<capacities>
+			  <li>Scratch</li>
+		    </capacities>
+			<power>50</power>
+            <cooldownTime>2.0</cooldownTime>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -211,17 +218,19 @@
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_CrinosJaw</defName>
     <label>werewolf teeth (Crinos)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+	    <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>2.1</defaultCooldownTime>
-            <meleeDamageBaseAmount>40</meleeDamageBaseAmount>
-            <meleeDamageDef>Bite</meleeDamageDef>
+		    <label>teeth</label>
+			<capacities>
+			  <li>Bite</li>
+		    </capacities>
+			<power>40</power>
+            <cooldownTime>2.1</cooldownTime>
             <surpriseAttack>
               <extraMeleeDamages>
                 <li>
@@ -231,7 +240,7 @@
               </extraMeleeDamages>
             </surpriseAttack>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -263,13 +272,9 @@
       <attackSound>ROM_Werewolf_HispoAttack</attackSound>
 
     </Werewolf.WerewolfFormDef>
-    <HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
       <defName>ROM_HispoHediff</defName>
-      <hediffClass>HediffWithComps</hediffClass>
       <label>Werewolf Form (Hispo)</label>
-      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-      <scenarioCanAdd>false</scenarioCanAdd>
-      <maxSeverity>1.0</maxSeverity>
       <comps>
       <li Class="Werewolf.HediffCompProperties_Rage">
         <baseRageSeconds>60</baseRageSeconds>
@@ -305,25 +310,21 @@
         </li>
       </stages>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_HispoClaw</defName>
     <label>werewolf claw (Hispo)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>1.60</defaultCooldownTime>
-            <meleeDamageBaseAmount>30</meleeDamageBaseAmount>
-            <meleeDamageDef>Scratch</meleeDamageDef>
+		    <label>claw</label>
+			<capacities>
+			  <li>Scratch</li>
+		    </capacities>
+			<power>30</power>
+            <cooldownTime>1.6</cooldownTime>
           </li>
-		  <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>1.50</defaultCooldownTime>
-            <meleeDamageBaseAmount>30</meleeDamageBaseAmount>
-            <meleeDamageDef>Scratch</meleeDamageDef>
-          </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -333,17 +334,19 @@
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_HispoJaw</defName>
     <label>werewolf teeth (Hispo)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>2.4</defaultCooldownTime>
-            <meleeDamageBaseAmount>25</meleeDamageBaseAmount>
-            <meleeDamageDef>Bite</meleeDamageDef>
+		    <label>teeth</label>
+			<capacities>
+			  <li>Bite</li>
+		    </capacities>
+			<power>25</power>
+            <cooldownTime>2.4</cooldownTime>
             <surpriseAttack>
               <extraMeleeDamages>
                 <li>
@@ -353,7 +356,7 @@
               </extraMeleeDamages>
             </surpriseAttack>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -386,13 +389,9 @@
       <iconTexPath>UI/Button/FormLupus</iconTexPath>
       <transformSound>ROM_Werewolf_LupusHowl</transformSound>
     </Werewolf.WerewolfFormDef>
-    <HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
       <defName>ROM_LupusHediff</defName>
-      <hediffClass>HediffWithComps</hediffClass>
       <label>Werewolf Form (Lupus)</label>
-      <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-      <scenarioCanAdd>false</scenarioCanAdd>
-      <maxSeverity>1.0</maxSeverity>
       <comps>
       <li Class="Werewolf.HediffCompProperties_Rage">
         <baseRageSeconds>60</baseRageSeconds>
@@ -428,19 +427,21 @@
         </li>
       </stages>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_LupusClaw</defName>
     <label>werewolf claw (Lupus)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>2.2</defaultCooldownTime>
-            <meleeDamageBaseAmount>25</meleeDamageBaseAmount>
-            <meleeDamageDef>Scratch</meleeDamageDef>
+		    <label>claws</label>
+			<capacities>
+			  <li>Scratch</li>
+		    </capacities>
+			<power>25</power>
+            <cooldownTime>2.2</cooldownTime>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -450,17 +451,19 @@
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_LupusJaw</defName>
     <label>werewolf teeth (Lupus)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>1.3</defaultCooldownTime>
-            <meleeDamageBaseAmount>25</meleeDamageBaseAmount>
-            <meleeDamageDef>Bite</meleeDamageDef>
+		    <label>teeth</label>
+			<capacities>
+			  <li>Bite</li>
+		    </capacities>
+			<power>25</power>
+            <cooldownTime>1.3</cooldownTime>
             <surpriseAttack>
               <extraMeleeDamages>
                 <li>
@@ -470,7 +473,7 @@
               </extraMeleeDamages>
             </surpriseAttack>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>
@@ -501,13 +504,9 @@
     <transformSound>ROM_Werewolf_MetisHowl</transformSound>
     <attackSound>ROM_Werewolf_MetisAttack</attackSound>
   </Werewolf.WerewolfFormDef>
-  <HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
     <defName>ROM_MetisHediff</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Werewolf Form (Metis)</label>
-    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
-    <scenarioCanAdd>false</scenarioCanAdd>
-    <maxSeverity>1.0</maxSeverity>
     <comps>
       <li Class="Werewolf.HediffCompProperties_Rage">
         <baseRageSeconds>60</baseRageSeconds>
@@ -541,12 +540,22 @@
         </li>
       </stages>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_MetisClaw</defName>
     <label>werewolf claw (Metis)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
+          <li>
+		    <label>claws</label>
+			<capacities>
+			  <li>Scratch</li>
+		    </capacities>
+			<power>30</power>
+            <cooldownTime>1.65</cooldownTime>
+          </li>
+        </tools>
+		<verbs>
           <li>
             <verbClass>Verb_MeleeAttack</verbClass>
             <defaultCooldownTime>1.65</defaultCooldownTime>
@@ -563,17 +572,19 @@
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <HediffDef ParentName="TransformedBodyPartBase">
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
     <defName>ROM_MetisJaw</defName>
     <label>werewolf teeth (Metis)</label>
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
-        <verbs>
+        <tools>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
-            <defaultCooldownTime>2.0</defaultCooldownTime>
-            <meleeDamageBaseAmount>20</meleeDamageBaseAmount>
-            <meleeDamageDef>Bite</meleeDamageDef>
+		    <label>teeth</label>
+			<capacities>
+			  <li>Bite</li>
+		    </capacities>
+			<power>20</power>
+            <cooldownTime>2.0</cooldownTime>
             <surpriseAttack>
               <extraMeleeDamages>
                 <li>
@@ -583,7 +594,7 @@
               </extraMeleeDamages>
             </surpriseAttack>
           </li>
-        </verbs>
+        </tools>
       </li>
     </comps>
     <addedPartProps>

@@ -64,7 +64,7 @@ namespace Werewolf
             ticksLeftInCycle = ticksInCycle;
             GameCondition_FullMoon fullMoon = new GameCondition_FullMoon(this);
             fullMoon.startTick = Find.TickManager.TicksGame;
-            fullMoon.duration = GenDate.TicksPerDay;
+            fullMoon.Duration = GenDate.TicksPerDay;
             Find.World.gameConditionManager.RegisterCondition(fullMoon);
             Log.Message("Full Moon Incident");
 

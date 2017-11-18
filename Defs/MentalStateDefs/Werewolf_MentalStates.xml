@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <MentalStateDef Abstract="True" Name="BaseMentalState">
+  <MentalStateDef Abstract="True" Name="ROMWW_BaseMentalState">
     <minTicksBeforeRecovery>10000</minTicksBeforeRecovery>
     <recoveryMtbDays>0.3</recoveryMtbDays>
   </MentalStateDef>
@@ -14,7 +14,7 @@
     <baseCommonality>0.00001</baseCommonality>
     <intensity>Extreme</intensity>
   </MentalBreakDef>
-  <MentalStateDef ParentName="BaseMentalState">
+  <MentalStateDef ParentName="ROMWW_BaseMentalState">
     <defName>ROM_WerewolfFury</defName>
     <stateClass>Werewolf.MentalState_WerewolfFury</stateClass>
     <label>werewolf fury</label>
@@ -24,7 +24,7 @@
     <nameColor>(0.9,0.2,0.5)</nameColor>
     <beginLetterLabel>werewolf fury</beginLetterLabel>
     <beginLetter>{0} has become a maddened werewolf!</beginLetter>
-    <beginLetterDef>BadUrgent</beginLetterDef>
+    <beginLetterDef>ThreatBig</beginLetterDef>
     <minTicksBeforeRecovery>10000</minTicksBeforeRecovery>
     <recoveryMtbDays>0.3</recoveryMtbDays>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
@@ -33,7 +33,6 @@
     <stateEffecter>Berserk</stateEffecter>
     <tale>MentalStateBerserk</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
   </MentalStateDef>
 

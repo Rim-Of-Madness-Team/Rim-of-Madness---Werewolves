@@ -10,9 +10,11 @@
 <ROM_ApplySilverTreatment>Apply silver treatment to {0}. ({1} silver)</ROM_ApplySilverTreatment>
 <ROM_NeedsSilver> needs {0} silver</ROM_NeedsSilver>
 <ROM_SilverAmmo> (silver ammo)</ROM_SilverAmmo>
-<ROM_ApplySilverTreatment>Apply silver treatment</ROM_ApplySilverTreatment>
 <ROM_FullMoonFury>Moon Fury</ROM_FullMoonFury>
 <ROM_FullMoonFuryDesc>When toggled, the werewolf will go into a furious rampage during a full moon. During furies, Werewolves can randomly transform into new forms and level up existing Werewolf forms.\n\nWARNING: No one is safe from a wild werewolf, not even other werewolves! Be sure to keep the Werewolves away from other colonists during the full moon.</ROM_FullMoonFuryDesc>
+<ROM_FormHealth_Tooltip>Health Scale: +{0}%</ROM_FormHealth_Tooltip>
+<ROM_FormSize_Tooltip>Body Size: +{0}%</ROM_FormSize_Tooltip>
+<ROM_FormDmg_Tooltip>Damage Immunity (non-silver): +{0}%</ROM_FormDmg_Tooltip>
 <ROM_FormLevel>{0} Form: Level {1}</ROM_FormLevel>
 <ROM_FormNextLevel>Current Level {0} Next Level:</ROM_FormNextLevel>
 <ROM_FormHealth>Health: +{0}% {1} +{2}%</ROM_FormHealth>

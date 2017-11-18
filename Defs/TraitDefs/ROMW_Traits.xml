@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<TraitDefs>
+<Defs>
 
   <TraitDef>
     <defName>ROM_Werewolf</defName>
@@ -36,4 +36,4 @@
   </TraitDef>
 
 
-</TraitDefs>
+</Defs>

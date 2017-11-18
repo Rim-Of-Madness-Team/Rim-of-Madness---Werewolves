@@ -52,7 +52,7 @@ namespace Werewolf
 
         public override void End()
         {
-            Messages.Message("ROM_MoonCycle_FullMoonPasses".Translate(Moon.Name), MessageSound.Standard);
+            Messages.Message("ROM_MoonCycle_FullMoonPasses".Translate(Moon.Name), MessageTypeDefOf.NeutralEvent);//MessageSound.Standard);
             this.gameConditionManager.ActiveConditions.Remove(this);
         }
 
