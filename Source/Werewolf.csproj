@@ -34,6 +34,10 @@
     <Reference Include="0Harmony">
       <HintPath>..\..\..\Harmony1091\0Harmony.dll</HintPath>
     </Reference>
+    <Reference Include="0JecsTools">
+      <HintPath>..\..\JecsTools\Assemblies\0JecsTools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="AbilityUser">
       <HintPath>..\..\JecsTools\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
@@ -69,6 +73,7 @@
     <Compile Include="AI\JobGiver_WerewolfHunt.cs" />
     <Compile Include="MentalState_WerewolfFury.cs" />
     <Compile Include="SilverTreated\SilverTreatedUtility.cs" />
+    <Compile Include="WerewolfFloatMenuPatch.cs" />
     <Compile Include="WerewolfUtility.cs" />
     <Compile Include="WorldComponent_MoonCycle.cs" />
     <Compile Include="Moon.cs" />

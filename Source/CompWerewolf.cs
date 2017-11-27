@@ -126,7 +126,6 @@ namespace Werewolf
         public bool IsTransformed => CurrentWerewolfForm != null;
         public bool IsWerewolf { get => WerewolfTrait != null; }
         public bool CanTransformNow => IsWerewolf && !IsTransformed && CooldownTicksLeft <= 0;
-        public Pawn Pawn => AbilityUser;
         public Vector3 Vec3 => Pawn.PositionHeld.ToVector3();
         public Map Map => Pawn.MapHeld;
         public Trait WerewolfTrait => Pawn?.story?.traits?.GetTrait(WWDefOf.ROM_Werewolf);

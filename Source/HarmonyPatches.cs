@@ -31,8 +31,8 @@ namespace Werewolf
                 nameof(SoundHitPawnPrefix)), null);
             harmony.Patch(AccessTools.Method(typeof(Verb_MeleeAttack), "SoundMiss"), new HarmonyMethod(typeof(HarmonyPatches),
                 nameof(SoundMiss_Prefix)), null);
-            harmony.Patch(AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"), null, new HarmonyMethod(typeof(HarmonyPatches),
-                nameof(OrderForSilverTreatment)));
+           // harmony.Patch(AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"), null, new HarmonyMethod(typeof(HarmonyPatches),
+                //nameof(OrderForSilverTreatment)));
             harmony.Patch(AccessTools.Method(typeof(ThingWithComps), "InitializeComps"), null, new HarmonyMethod(typeof(HarmonyPatches),
                 nameof(InitializeWWComps)));
             harmony.Patch(AccessTools.Method(typeof(Pawn_PathFollower), "CostToMoveIntoCell"), null, new HarmonyMethod(typeof(HarmonyPatches),
