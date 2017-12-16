@@ -79,7 +79,7 @@ namespace Werewolf
                         int math = (int)(dinfo.Amount) - (int)(dinfo.Amount * (ww.CurrentWerewolfForm.DmgImmunity)); //10% damage. Decimated damage.
                         dinfo.SetAmount(math);
                         injury.Severity = math;
-                        Log.Message(dinfo.Amount.ToString());
+                        //Log.Message(dinfo.Amount.ToString());
                     }
 
                 }
@@ -109,12 +109,84 @@ namespace Werewolf
         // Verse.Dialog_DebugActionsMenu
         public static void DebugMoonActions(Dialog_DebugActionsMenu __instance)
         {
+            AccessTools.Method(typeof(Dialog_DebugActionsMenu), "DoLabel").Invoke(__instance, new object[] { "Tools - Werewolves" });
+            
+            AccessTools.Method(typeof(Dialog_DebugActionsMenu), "DebugToolMap").Invoke(__instance, new object[] {
+                "Give Lycanthropy (Normal)", new Action(()=>
+                {
+                    Pawn pawn = Find.VisibleMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault<Pawn>();
+                    if (pawn != null)
+                    {
+                        if (!pawn.IsWerewolf())
+                        {
+                            pawn.story.traits.GainTrait(new Trait(WWDefOf.ROM_Werewolf, 0));
+                            //pawn.health.AddHediff(VampDefOf.ROM_Vampirism, null, null);
+                            pawn.Drawer.Notify_DebugAffected();
+                            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, pawn.LabelShort + " is now a werewolf", -1f);
+                        }
+                        else
+                            Messages.Message(pawn.LabelCap + " is already a werewolf.", MessageTypeDefOf.RejectInput);
+                    }
+                })
+            });
+
+            AccessTools.Method(typeof(Dialog_DebugActionsMenu), "DebugToolMap").Invoke(__instance, new object[] {
+                "Give Lycanthropy (Metis Chance)", new Action(()=>
+                {
+                    Pawn pawn = Find.VisibleMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault<Pawn>();
+                    if (pawn != null)
+                    {
+                        if (!pawn.IsWerewolf())
+                        {
+                            pawn.story.traits.GainTrait(new Trait(WWDefOf.ROM_Werewolf, -1));
+                            //pawn.health.AddHediff(VampDefOf.ROM_Vampirism, null, null);
+                            pawn.Drawer.Notify_DebugAffected();
+                            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, pawn.LabelShort + " is now a werewolf", -1f);
+                        }
+                        else
+                            Messages.Message(pawn.LabelCap + " is already a werewolf.", MessageTypeDefOf.RejectInput);
+                    }
+                })
+            });
+
+            AccessTools.Method(typeof(Dialog_DebugActionsMenu), "DebugToolMap").Invoke(__instance, new object[] {
+                "Remove Lycanthropy", new Action(()=>
+                {
+                    Pawn pawn = Find.VisibleMap.thingGrid.ThingsAt(UI.MouseCell()).Where((Thing t) => t is Pawn).Cast<Pawn>().FirstOrDefault<Pawn>();
+                    if (pawn != null)
+                    {
+                        if (pawn.IsWerewolf())
+                        {
+                            if (pawn.CompWW().IsTransformed)
+                            {
+                                pawn.CompWW().TransformBack();
+                            }
+
+                            pawn.story.traits.allTraits.RemoveAll(x => x.def == WWDefOf.ROM_Werewolf); //GainTrait(new Trait(WWDefOf.ROM_Werewolf, -1));
+                            //pawn.health.AddHediff(VampDefOf.ROM_Vampirism, null, null);
+                            pawn.Drawer.Notify_DebugAffected();
+                            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, pawn.LabelShort + " is no longer a werewolf", -1f);
+                        }
+                        else
+                            Messages.Message(pawn.LabelCap + " is not a werewolf.", MessageTypeDefOf.RejectInput);
+                    }
+                })
+            });
+
+            AccessTools.Method(typeof(Dialog_DebugActionsMenu), "DebugAction").Invoke(__instance, new object[] {
+                "Regenerate Moons", new Action(()=>
+                {
+                    Find.World.GetComponent<WorldComponent_MoonCycle>().DebugRegenerateMoons(Find.World);
+                })
+            });
+
             AccessTools.Method(typeof(Dialog_DebugActionsMenu), "DebugAction").Invoke(__instance, new object[] {
                 "Next Full Moon", new Action(()=>
                 {
                     Find.World.GetComponent<WorldComponent_MoonCycle>().DebugTriggerNextFullMoon();
                 })
             });
+
         }
 
         // Verse.TickManager

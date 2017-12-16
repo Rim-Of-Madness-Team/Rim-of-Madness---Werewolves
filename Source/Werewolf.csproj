@@ -56,6 +56,10 @@
       <HintPath>..\..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Vampire">
+      <HintPath>..\..\Rim-of-Madness---Vampires\Assemblies\Vampire.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\JobGiver_ManageWerewolfForm.cs" />

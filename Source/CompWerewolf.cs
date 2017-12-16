@@ -299,32 +299,59 @@ namespace Werewolf
         }
 
         /// Drop all bionic parts when transforming.
-        private void ResolveBionics()
+        private void ResolveBionics(WerewolfForm currentWerewolfForm)
         {
             if (!Pawn.Dead)
             {
+
                 foreach (BodyPartRecord rec in Pawn.health.hediffSet.GetNotMissingParts())
                 {
                     Hediff_AddedPart hediff_AddedPart = (from x in Pawn.health.hediffSet.GetHediffs<Hediff_AddedPart>()
-                                                         where x.Part == rec
+                                                         where x.Part == rec && !x.Part.def.tags.Contains("ConsciousnessSource")
                                                          select x).FirstOrDefault<Hediff_AddedPart>();
                     if (hediff_AddedPart != null)
                     {
-                        WerewolfUtility.SpawnNaturalPartIfClean(Pawn, rec, Pawn.Position, Pawn.Map);
-                        WerewolfUtility.SpawnThingsFromHediffs(Pawn, rec, Pawn.Position, Pawn.Map);
-                        Pawn.health.hediffSet.hediffs.Remove(hediff_AddedPart);
-                        Pawn.health.RestorePart(rec);
-                        if (Pawn.Faction == Faction.OfPlayer)
-                            Messages.Message("ROM_WerewolfDecyberize".Translate(new object[]
+                        if (!this.WerewolfForms.Any(x => x.level >= 5) || PartCanBeWerewolfPart(hediff_AddedPart.Part) || hediff_AddedPart?.def?.addedPartProps?.partEfficiency < 1f)
+                        {
+                            bool showMessage = true;
+                            /// VAMPIRISM: Hide Lose Fangs Message ////////////////////////
+                            try
                             {
+                                if (LoadedModManager.RunningMods.FirstOrDefault(x => x.Name.Contains("Rim of Madness - Vampires")) != null)
+                                {
+                                    AreFangs(hediff_AddedPart);
+                                    showMessage = false;
+                                }
+                            }
+                            catch (System.TypeLoadException)
+                            {
+                                //Log.Message(e.toString());
+                            }
+                            /// ////////////////////////////////////////////////////////////
+                            WerewolfUtility.SpawnNaturalPartIfClean(Pawn, rec, Pawn.Position, Pawn.Map);
+                            WerewolfUtility.SpawnThingsFromHediffs(Pawn, rec, Pawn.Position, Pawn.Map);
+                            Pawn.health.hediffSet.hediffs.Remove(hediff_AddedPart);
+                            Pawn.health.RestorePart(rec);
+                            if (Pawn.Faction == Faction.OfPlayer && showMessage)
+                            {
+                                Messages.Message("ROM_WerewolfDecyberize".Translate(new object[]
+                                {
                                 Pawn.LabelShort,
                                 rec.def.label,
                                 hediff_AddedPart.Label
-                            }), MessageTypeDefOf.NegativeEvent);//MessageTypeDefOf.NegativeEvent);
+                                }), MessageTypeDefOf.NegativeEvent);//MessageTypeDefOf.NegativeEvent);
+
+                                LessonAutoActivator.TeachOpportunity(WWDefOf.ROMWW_ConceptBionics, this.Pawn, OpportunityType.Critical);
+                            }
+                        }
                     }
                 }
+                
             }
         }
+
+        private bool AreFangs(Hediff_AddedPart addedPart) => addedPart is Vampire.Hediff_AddedPart_Fangs;
+
 
         /// Restores all missing parts when transforming
         private void ResolveMissingParts(Pawn p)
@@ -352,17 +379,29 @@ namespace Werewolf
             p.health.AddHediff(formHediff, null, null);
         }
 
+        public bool PartCanBeWerewolfPart(BodyPartRecord part)
+            => PartCanBeWerewolfJaw(part) || PartCanBeWerewolfLeftClaw(part) || PartCanBeWerewolfRightClaw(part);
+
+        public bool PartCanBeWerewolfJaw(BodyPartRecord part)
+            => part.def == BodyPartDefOf.Jaw || part.def.tags.Contains("EatingSource");
+
+        public bool PartCanBeWerewolfLeftClaw(BodyPartRecord part)
+            => part.def == BodyPartDefOf.LeftHand;
+
+        public bool PartCanBeWerewolfRightClaw(BodyPartRecord part)
+            => part.def == BodyPartDefOf.RightHand;
+
         /// Adds the Werewolf jaws and claws to each respective body part.
         private void ResolveTransformedHediffs(Pawn p, WerewolfForm currentWerewolfForm, bool moonTransformation = false)
         {
 
             IEnumerable<BodyPartRecord> recs = p.health.hediffSet.GetNotMissingParts();
             Dictionary<BodyPartRecord, HediffDef> bodyPartRecords = new Dictionary<BodyPartRecord, HediffDef>();
-            if (recs?.FirstOrDefault(x => x.def == BodyPartDefOf.Jaw || x.def.tags.Contains("EatingSource")) is BodyPartRecord jaw)
+            if (recs?.FirstOrDefault(x => PartCanBeWerewolfJaw(x)) is BodyPartRecord jaw)
                 bodyPartRecords.Add(jaw, currentWerewolfForm.def.jawHediff);
-            if (recs.FirstOrDefault(x => (x.def == BodyPartDefOf.LeftHand)) is BodyPartRecord leftHand)
+            if (recs.FirstOrDefault(x => PartCanBeWerewolfLeftClaw(x)) is BodyPartRecord leftHand)
                 bodyPartRecords.Add(leftHand, currentWerewolfForm.def.clawHediff);
-            if (recs.FirstOrDefault(x => (x.def == BodyPartDefOf.RightHand)) is BodyPartRecord rightHand)
+            if (recs.FirstOrDefault(x => PartCanBeWerewolfRightClaw(x)) is BodyPartRecord rightHand)
                 bodyPartRecords.Add(rightHand, currentWerewolfForm.def.clawHediff);
 
             if ((bodyPartRecords?.Count() ?? 0) > 0)
@@ -401,7 +440,7 @@ namespace Werewolf
         private void ResolveTransformEffects(Pawn p, WerewolfForm currentWerewolfForm, bool moonTransformation = false)
         {
             if (moonTransformation) ResolveContainment();
-            ResolveBionics();
+            ResolveBionics(currentWerewolfForm);
             ResolveMissingParts(p);
             ResolveWerewolfStatMods(p, currentWerewolfForm, moonTransformation);
             ResolveTransformedHediffs(p, currentWerewolfForm, moonTransformation);
@@ -441,15 +480,37 @@ namespace Werewolf
                 foreach (Hediff hediff in hediffTemps)
                 {
                     if (hediff.def == CurrentWerewolfForm.def.clawHediff ||
-                        hediff.def == CurrentWerewolfForm.def.jawHediff ||
                         hediff.def == CurrentWerewolfForm.def.formHediff)
                     {
                         Pawn.health.RemoveHediff(hediff);
+                    }
+                    if (hediff.def == CurrentWerewolfForm.def.jawHediff)
+                    {
+                        Pawn.health.RemoveHediff(hediff);
+                        /// VAMPIRES: Readd Fangs if available
+                        try
+                        {
+                            if (LoadedModManager.RunningMods.FirstOrDefault(x => x.Name.Contains("Rim of Madness - Vampires")) != null)
+                                ReAddVampireFangs();
+                        }
+                        catch (System.TypeLoadException)
+                        {
+                            //Log.Message(e.toString());
+                        }
+                        /// 
                     }
                 }
             }
             hediffTemps.Clear();
             hediffTemps = null;
+        }
+
+        private void ReAddVampireFangs()
+        {
+            if (Vampire.VampireUtility.IsVampire(Pawn))
+            {
+                Vampire.VampireGen.AddFangsHediff(Pawn);
+            }
         }
 
         #region Equipment Handlers
@@ -566,7 +627,7 @@ namespace Werewolf
                                 invTracker.innerContainer.InnerListForReading.Remove(c);
                                 c.holdingOwner = null;
                                 equipTracker.AddEquipment(c);
-                                Log.Message(c.ToString());
+                                //Log.Message(c.ToString());
                             }
                         }
 
@@ -578,7 +639,7 @@ namespace Werewolf
                                 {
                                     c.holdingOwner = null;
                                     equipTracker.AddEquipment(c);
-                                    Log.Message(c.ToString());
+                                    //Log.Message(c.ToString());
                                 }
 
                             }
@@ -601,7 +662,7 @@ namespace Werewolf
                                 invTracker.innerContainer.InnerListForReading.Remove(a);
                                 a.holdingOwner = null;
                                 apparelTracker.Wear(a);
-                                Log.Message(a.ToString());
+                                //Log.Message(a.ToString());
                                 UpperBodyItems.Remove(a);
                             }
                         }
@@ -613,7 +674,7 @@ namespace Werewolf
                                 {
                                     a.holdingOwner = null;
                                     apparelTracker.Wear(a);
-                                    Log.Message(a.ToString());
+                                    //Log.Message(a.ToString());
                                 }
 
                             }
@@ -743,7 +804,7 @@ namespace Werewolf
             //    yield return x;
             //}
 
-            if (!IsTransformed && IsBlooded)
+            if (IsWerewolf && !IsTransformed && IsBlooded)
             {
                 if (DebugSettings.godMode)
                 {

@@ -66,7 +66,7 @@ namespace Werewolf
                 {
                     this.effecter.Cleanup();
 
-                    Log.Message("Rage ended");
+                    //Log.Message("Rage ended");
                     severityAdjustment = -999.99f;
                     if (Pawn?.mindState?.mentalStateHandler?.CurState is MentalState_WerewolfFury fury)
                     {

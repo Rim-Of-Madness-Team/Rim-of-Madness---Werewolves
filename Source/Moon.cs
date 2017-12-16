@@ -28,7 +28,7 @@ namespace Werewolf
             hostPlanet = world;
             ticksInCycle = newTicks;
             ticksLeftInCycle = ticksInCycle;
-            Log.Message("New moon: " + name + " initialized. " + ticksInCycle + " ticks per cycle.");
+            //Log.Message("New moon: " + name + " initialized. " + ticksInCycle + " ticks per cycle.");
         }
 
         public void AdvanceOneDay()
@@ -66,7 +66,7 @@ namespace Werewolf
             fullMoon.startTick = Find.TickManager.TicksGame;
             fullMoon.Duration = GenDate.TicksPerDay;
             Find.World.gameConditionManager.RegisterCondition(fullMoon);
-            Log.Message("Full Moon Incident");
+            //Log.Message("Full Moon Incident");
 
         }
 

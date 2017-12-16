@@ -10,6 +10,10 @@ namespace Werewolf
     [DefOf]
     public class WWDefOf
     {
+        //December 2017
+        public static ConceptDef ROMWW_ConceptBionics;
+
+        //Original
         public static JobDef ROM_ApplySilverTreatment;
         public static TraitDef ROM_Werewolf;
         public static WerewolfFormDef ROM_Glabro;

@@ -8,6 +8,18 @@ namespace Werewolf
 {
     public static class WerewolfUtility
     {
+        public static CompWerewolf CompWW(this Pawn pawn)
+        {
+            if (pawn?.GetComp<CompWerewolf>() is CompWerewolf w) return w;
+            return null;
+        }
+
+        public static bool IsWerewolf(this Pawn pawn)
+        {
+            if (pawn.CompWW() is CompWerewolf ww && ww.IsWerewolf) return true;
+            return false;
+        }
+
         // RimWorld.MedicalRecipesUtility
         public static bool IsClean(Pawn pawn, BodyPartRecord part)
         {

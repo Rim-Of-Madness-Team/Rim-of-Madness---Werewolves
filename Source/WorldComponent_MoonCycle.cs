@@ -46,6 +46,13 @@ namespace Werewolf
             }
         }
 
+        public void DebugRegenerateMoons(World world)
+        {
+            moons = null;
+            GenerateMoons(world);
+            Messages.Message("DEBUG :: Moons Regenerated", MessageTypeDefOf.TaskCompletion);
+        }
+
         public void GenerateMoons(World world)
         {
             if (moons == null) moons = new List<Moon>();

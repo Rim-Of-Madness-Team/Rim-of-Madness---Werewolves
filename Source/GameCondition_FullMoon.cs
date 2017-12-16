@@ -41,7 +41,7 @@ namespace Werewolf
                             m.TryGainMemory(WWDefOf.ROMWW_SawFullMoon);
                         }
 
-                        if (pawn?.GetComp<CompWerewolf>() is CompWerewolf w && w.IsWerewolf && (!w.IsBlooded || w.FuryToggled))
+                        if (pawn?.GetComp<CompWerewolf>() is CompWerewolf w && w.IsWerewolf && !w.IsTransformed && (!w.IsBlooded || w.FuryToggled))
                         {
                             w.TransformRandom(true);
                         }
