@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Added body parts -->
+
+  <ROM_GlabroHediff.label>Форма оборотня (Глабро)</ROM_GlabroHediff.label>
+
+  <ROM_GlabroClaw.label>Коготь оборотня (Глабро)</ROM_GlabroClaw.label>
+  <ROM_GlabroClaw.comps.0.tools.0.label>когти</ROM_GlabroClaw.comps.0.tools.0.label>
+
+  <ROM_GlabroJaw.label>Зубы оборотня (Глабро)</ROM_GlabroJaw.label>
+  <ROM_GlabroJaw.comps.0.tools.0.label>зубы</ROM_GlabroJaw.comps.0.tools.0.label>
+
+  <ROM_CrinosHediff.label>Форма оборотня (Кринос)</ROM_CrinosHediff.label>
+
+  <ROM_CrinosClaw.label>Коготь оборотня (Кринос)</ROM_CrinosClaw.label>
+  <ROM_CrinosClaw.comps.0.tools.0.label>когти</ROM_CrinosClaw.comps.0.tools.0.label>
+
+  <ROM_CrinosJaw.label>Зубы оборотня (Кринос)</ROM_CrinosJaw.label>
+  <ROM_CrinosJaw.comps.0.tools.0.label>зубы</ROM_CrinosJaw.comps.0.tools.0.label>
+
+  <ROM_HispoHediff.label>Форма оборотня (Хиспо)</ROM_HispoHediff.label>
+
+  <ROM_HispoClaw.label>Коготь оборотня (Хиспо)</ROM_HispoClaw.label>
+  <ROM_HispoClaw.comps.0.tools.0.label>коготь</ROM_HispoClaw.comps.0.tools.0.label>
+
+  <ROM_HispoJaw.label>Зубы оборотня (Хиспо)</ROM_HispoJaw.label>
+  <ROM_HispoJaw.comps.0.tools.0.label>зубы</ROM_HispoJaw.comps.0.tools.0.label>
+
+  <ROM_LupusHediff.label>Форма оборотня (Люпус)</ROM_LupusHediff.label>
+
+  <ROM_LupusClaw.label>Коготь оборотня (Люпус)</ROM_LupusClaw.label>
+  <ROM_LupusClaw.comps.0.tools.0.label>когти</ROM_LupusClaw.comps.0.tools.0.label>
+
+  <ROM_LupusJaw.label>Зубы оборотня (Люпус)</ROM_LupusJaw.label>
+  <ROM_LupusJaw.comps.0.tools.0.label>зубы</ROM_LupusJaw.comps.0.tools.0.label>
+
+  <ROM_MetisHediff.label>Форма оборотня (Метис)</ROM_MetisHediff.label>
+
+  <ROM_MetisClaw.label>Коготь оборотня </ROM_MetisClaw.label>
+  <ROM_MetisClaw.comps.0.tools.0.label>когти</ROM_MetisClaw.comps.0.tools.0.label>
+
+  <ROM_MetisJaw.label>Зубы оборотня </ROM_MetisJaw.label>
+  <ROM_MetisJaw.comps.0.tools.0.label>зубы</ROM_MetisJaw.comps.0.tools.0.label>
+
+
+</LanguageData>
