@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Added body parts -->
+
+  <ROM_Glabro.label>Glabro</ROM_Glabro.label>
+  <ROM_Glabro.description>O quase-homem ou Homemlobo a forma de Garou. Na forma  Glarbo, o lobisobem pode se passar de humano e ainda sim so usar uma parte dos seus poderes ferais. </ROM_Glabro.description>
+
+  <ROM_Crinos.label>Crinos</ROM_Crinos.label>
+  <ROM_Crinos.description>A forma de guerra. Fundindo o que há de mais mortal de um humano e uma besta em um corpo com a função somente de matar e despedaçar inimigos.\n\nBonus Passivo\nClave: Cada golpe, o Crinos pode dar mais de um golpe no alvo de corpo a corpo.</ROM_Crinos.description>
+
+  <ROM_Hispo.label>Hispo</ROM_Hispo.label>
+  <ROM_Hispo.description>Essa forma é uma forma de lobo que lembra seus pesadelos, relembrando a pré-história quando os lobos eram do tamanho de um pônei. É uma forma feita para caçar - e matar.\n\nBonus Passivo\nGolpe Duplo: Hispos atacam com cada garra em um golpe.</ROM_Hispo.description>
+
+  <ROM_Lupus.label>Lupus</ROM_Lupus.label>
+  <ROM_Lupus.description>Essa forma é a verdadeira forma de lobo, permitindo que caçe e viva em alcateias de lobos, ou usar da velôcidade e sêntidos superior de um lobo.\n\nBonus Passivo\nCaminho da Natureza: O Lupus recebe nenhuma penalidade de movemento entre árvores.</ROM_Lupus.description>
+
+  <ROM_Metis.label>Metis</ROM_Metis.label>
+  <ROM_Metis.description>Resultado de uma linhagem genética corrompida com o cruzamento entre lobisomens, O Metis é criado com uma aparência estranha e chifres, ainda sim e mortal.\n\nMaldição:\nMetis não se transformam em outras formas de lobisomens.</ROM_Metis.description>
+
+
+</LanguageData>

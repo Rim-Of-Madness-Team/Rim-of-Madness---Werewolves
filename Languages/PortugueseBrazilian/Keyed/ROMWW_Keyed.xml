@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ROM_WerewolfEscaped>{0} has leaped forth from its containment in the {1}.</ROM_WerewolfEscaped>
+  <ROM_WerewolfLimbRegen>{0} regenerou seu {1}.</ROM_WerewolfLimbRegen>
+  <ROM_WerewolfDecyberize>{0} regenerou seu {1} e perdeu {2} no processo.</ROM_WerewolfDecyberize>
+  <ROM_NeedsRest>{0} precisa de tempo para recarregar.</ROM_NeedsRest>
+  <ROM_WerewolfRevert>{0} voltou para sua forma original.</ROM_WerewolfRevert>
+  <ROM_CannotApplySilverTreatment>Não dá para aplicar a prata</ROM_CannotApplySilverTreatment>
+  <ROM_ApplySilverTreatment>Apply silver treatment to {0}. ({1} silver)</ROM_ApplySilverTreatment>
+  <ROM_NeedsSilver> precisa de {0} unidades de prata</ROM_NeedsSilver>
+  <ROM_SilverAmmo> (munição de prata)</ROM_SilverAmmo>
+  <ROM_FullMoonFury>Fúria Lunar</ROM_FullMoonFury>
+  <ROM_FullMoonFuryDesc>Quando ativado, o lobisomen irá ebtrar em uma raiva imparável enquanto a a lua estiver no céu. Durante essas fúrias, Lobisomens irão se transformar aléatoriamente em novas formas de lobisomem e avançar de nível nas que ele/a ja tem.\n\nCUIDADO: Ninguém está a salvo de um lobisomem selvagem, nem mesmo outros lobisomens! Tenha certeza que deixe os lobisomens longe dos seus colonistas.</ROM_FullMoonFuryDesc>
+  <ROM_FormHealth_Tooltip>Escala de vida(Quantidade de Vida): +{0}%</ROM_FormHealth_Tooltip>
+  <ROM_FormSize_Tooltip>Tamanho do corpo: +{0}%</ROM_FormSize_Tooltip>
+  <ROM_FormDmg_Tooltip>Imunidade ao Dano (não prateada): +{0}%</ROM_FormDmg_Tooltip>
+  <ROM_FormLevel>Forma {0}: Nível {1}</ROM_FormLevel>
+  <ROM_FormNextLevel>Nível atual {0} Próximo nível:</ROM_FormNextLevel>
+  <ROM_FormHealth>Vida: +{0}% {1} +{2}%</ROM_FormHealth>
+  <ROM_FormSize>Tamanho: +{0}% {1} +{2}%</ROM_FormSize>
+  <ROM_FormImmunity>Imunidade +{0}% {1} +{2}%</ROM_FormImmunity>
+  <ROM_FormNote>Detalhe: Imunidade ao dano somente funciona com armas não tratadas com prata.</ROM_FormNote>
+  <ROM_RageLeft>Raiva Restante</ROM_RageLeft>
+  <ROM_WerewolfTransformation>{0} se transformou em um lobisomen de forma {1}!</ROM_WerewolfTransformation>
+  <ROM_MoonCycle_FullMoonPasses>A lua cheia de {0} passou.</ROM_MoonCycle_FullMoonPasses>
+  <ROM_MoonCycle_FullMoonDesc>A lua do planeta, {0}, chegou na sua forma mais visível e clara. Os colonista irão receber um bonus pequeno de felicidade. Unblooded Werewolves may transform at this time.</ROM_MoonCycle_FullMoonDesc>
+  <ROM_MoonCycle_FullMoonArgless>full moon</ROM_MoonCycle_FullMoonArgless>
+  <ROM_MoonCycle_FullMoon>Lua Cheia ({0})</ROM_MoonCycle_FullMoon>
+  <ROM_MoonCycle_UntilNextFullMoon>{0} dias restantes até a próxima lua cheia</ROM_MoonCycle_UntilNextFullMoon>
+  <ROM_MoonCycle_FullMoonImminentArgless>Lua cheia se apróximando</ROM_MoonCycle_FullMoonImminentArgless>
+  <ROM_MoonCycle_FullMoonImminent>{0} (Lua cheia se apróximando)</ROM_MoonCycle_FullMoonImminent>
+  <ROM_MoonCycle_Moon>Lua</ROM_MoonCycle_Moon>
+  <ROM_MoonCycle_Moons>Luas de {0}</ROM_MoonCycle_Moons>
+  <ROM_MoonCycle_CurrentPhaseDesc>Cada lua no planeta da sua colonia tem um ciclo de {0} dias. No fim de cada ciclo, uma bonita lua cheia ficará visível para a sua colônia.\n\nQualque lobisomem com a fúria ativa irá se transformar nesse periódo.</ROM_MoonCycle_CurrentPhaseDesc>
+  <ROM_MoonCycle_CurrentPhase>{0} ({1} dias até çua cheia)</ROM_MoonCycle_CurrentPhase>
+
+</LanguageData>

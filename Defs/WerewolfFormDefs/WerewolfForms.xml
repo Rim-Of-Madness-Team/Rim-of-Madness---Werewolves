@@ -70,8 +70,8 @@
             <ImmunityGainSpeed>2.0</ImmunityGainSpeed>
             <CarryingCapacity>50</CarryingCapacity>
             <MeatAmount>10</MeatAmount>
-            <MeleeHitChance>0.4</MeleeHitChance>
-            <MeleeDodgeChance>0.4</MeleeDodgeChance>
+            <MeleeHitChance>40</MeleeHitChance>
+            <MeleeDodgeChance>40</MeleeDodgeChance>
           </statOffsets>
         </li>
       </stages>
@@ -188,8 +188,8 @@
             <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
             <CarryingCapacity>120</CarryingCapacity>
             <MeatAmount>20</MeatAmount>
-            <MeleeHitChance>0.8</MeleeHitChance>
-            <MeleeDodgeChance>0.4</MeleeDodgeChance>
+            <MeleeHitChance>80</MeleeHitChance>
+            <MeleeDodgeChance>10</MeleeDodgeChance>
           </statOffsets>
         </li>
       </stages>
@@ -304,8 +304,8 @@
             <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
             <CarryingCapacity>20</CarryingCapacity>
             <MeatAmount>10</MeatAmount>
-            <MeleeHitChance>0.4</MeleeHitChance>
-            <MeleeDodgeChance>0.8</MeleeDodgeChance>
+            <MeleeHitChance>40</MeleeHitChance>
+            <MeleeDodgeChance>60</MeleeDodgeChance>
           </statOffsets>
         </li>
       </stages>
@@ -421,8 +421,8 @@
             <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
             <CarryingCapacity>10</CarryingCapacity>
             <MeatAmount>10</MeatAmount>
-            <MeleeHitChance>0.4</MeleeHitChance>
-            <MeleeDodgeChance>1.0</MeleeDodgeChance>
+            <MeleeHitChance>40</MeleeHitChance>
+            <MeleeDodgeChance>60</MeleeDodgeChance>
           </statOffsets>
         </li>
       </stages>
@@ -534,8 +534,8 @@
             <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
             <CarryingCapacity>100</CarryingCapacity>
             <MeatAmount>15</MeatAmount>
-            <MeleeHitChance>0.5</MeleeHitChance>
-            <MeleeDodgeChance>0.4</MeleeDodgeChance>
+            <MeleeHitChance>50</MeleeHitChance>
+            <MeleeDodgeChance>40</MeleeDodgeChance>
           </statOffsets>
         </li>
       </stages>
