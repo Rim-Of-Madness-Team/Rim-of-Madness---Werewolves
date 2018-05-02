@@ -57,9 +57,21 @@ namespace Werewolf
                 .Where(mi => mi.GetParameters().Count() >= 4 &&
                 mi.GetParameters().ElementAt(1).ParameterType == typeof(Hediff_Injury)).First()),
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(WerewolfDmgFixFinalizeAndAddInjury)), null);
+            harmony.Patch(AccessTools.Method(typeof(Scenario), "Notify_PawnGenerated"), null,
+                new HarmonyMethod(typeof(HarmonyPatches), nameof(AddRecentWerewolves)));
 
         }
 
+        // RimWorld.Scenario
+        public static void AddRecentWerewolves(Scenario __instance, Pawn pawn, PawnGenerationContext context)
+        {
+            if (pawn.IsWerewolf())
+            {
+                var recentWerewolves = Find.World.GetComponent<WorldComponent_MoonCycle>().recentWerewolves;
+                recentWerewolves?.Add(pawn, 1);
+            }
+        }
+        
         public static bool ShouldModifyDamage(Pawn instigator)
         {
             if (!instigator?.TryGetComp<CompWerewolf>()?.IsTransformed ?? false)

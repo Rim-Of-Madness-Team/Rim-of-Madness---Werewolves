@@ -13,9 +13,34 @@
   </PawnKindDef>
 
     <PawnKindDef ParentName="WerewolfBase">
+      <defName>ROM_WerewolfStraggler</defName>
+      <label>straggler</label>
+      <combatPower>50</combatPower>
+      <maxGenerationAge>25</maxGenerationAge>
+      <gearHealthRange>
+        <min>0.5</min>
+        <max>1.8</max>
+      </gearHealthRange>
+      <apparelMoney>
+        <min>180</min>
+        <max>350</max>
+      </apparelMoney>
+      <apparelTags>
+        <li>Tribal</li>
+      </apparelTags>
+  		<weaponMoney>
+  			<min>60</min>
+  			<max>400</max>
+  		</weaponMoney>
+  		<weaponTags>
+  			<li>NeolithicMeleeBasic</li>
+  		</weaponTags>
+    </PawnKindDef>
+	
+    <PawnKindDef ParentName="WerewolfBase">
       <defName>ROM_WerewolfNewBlood</defName>
       <label>newblood</label>
-      <combatPower>50</combatPower>
+      <combatPower>200</combatPower>
       <maxGenerationAge>25</maxGenerationAge>
       <gearHealthRange>
         <min>0.5</min>
@@ -40,7 +65,7 @@
   <PawnKindDef ParentName="WerewolfBase">
     <defName>ROM_WolfHandler</defName>
     <label>companion</label>
-    <combatPower>290</combatPower>
+    <combatPower>600</combatPower>
     <invNutrition>2.5</invNutrition>
     <gearHealthRange>
       <min>0.5</min>
@@ -65,7 +90,7 @@
   <PawnKindDef ParentName="WerewolfBase">
     <defName>ROM_Werewolf</defName>
     <label>claw</label>
-    <combatPower>500</combatPower>
+    <combatPower>700</combatPower>
     <invNutrition>2.5</invNutrition>
     <gearHealthRange>
       <min>0.5</min>
@@ -90,7 +115,7 @@
   <PawnKindDef ParentName="WerewolfBase">
     <defName>ROM_WerewolfFang</defName>
     <label>fang</label>
-    <combatPower>750</combatPower>
+    <combatPower>850</combatPower>
     <gearHealthRange>
       <min>0.5</min>
       <max>1.8</max>

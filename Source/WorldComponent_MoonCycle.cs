@@ -73,6 +73,9 @@ namespace Werewolf
             }
         }
 
+        public Dictionary<Pawn, int> recentWerewolves = new Dictionary<Pawn, int>();
+        
+        
         public override void WorldComponentTick()
         {
             base.WorldComponentTick();
@@ -88,6 +91,24 @@ namespace Werewolf
                 gcMoonCycle = new GameCondition_MoonCycle();
                 gcMoonCycle.Permanent = true;
                 Find.World.gameConditionManager.RegisterCondition(gcMoonCycle);
+            }
+            
+           if (recentWerewolves.Any())
+                recentWerewolves.RemoveAll(x => x.Key.Dead || x.Key.DestroyedOrNull());
+            if (recentWerewolves.Any())
+            {
+                var recentVampiresKeys = new List<Pawn>(recentWerewolves.Keys);
+                foreach (var key in recentVampiresKeys)
+                {
+                    recentWerewolves[key] += 1;
+                    if (recentWerewolves[key] > 100)
+                    {
+                        recentWerewolves.Remove(key);
+                        if (!key.Spawned || key.Faction == Faction.OfPlayerSilentFail) continue;
+                        Find.LetterStack.ReceiveLetter("ROM_WerewolfEncounterLabel".Translate(),
+                                "ROM_WerewolfEncounterDesc".Translate(key.LabelShort), LetterDefOf.ThreatSmall, key, null);
+                    }
+                }
             }
         }
         

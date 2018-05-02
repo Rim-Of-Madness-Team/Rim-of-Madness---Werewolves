@@ -41,14 +41,23 @@ namespace Werewolf
                             m.TryGainMemory(WWDefOf.ROMWW_SawFullMoon);
                         }
 
-                        if (pawn?.GetComp<CompWerewolf>() is CompWerewolf w && w.IsWerewolf && !w.IsTransformed && (!w.IsBlooded || w.FuryToggled))
+                        if (pawn?.GetComp<CompWerewolf>() is CompWerewolf w && ShouldTransform(pawn, w))
                         {
-                            w.TransformRandom(true);
+                            if (pawn.Faction == Faction.OfPlayerSilentFail)
+                                w.TransformRandom(true);
+                            else if (Rand.Value <= 0.02) //2% chance of messing up your colony
+                                w.TransformRandom(true);
+                            else
+                                Messages.Message("ROM_WerewolfTransformationFailure".Translate(pawn), MessageTypeDefOf.CautionInput);
                         }
                     }
                 }
             }
         }
+
+        private bool ShouldTransform(Pawn pawn, CompWerewolf w) => w.IsWerewolf && !w.IsTransformed &&
+                                                        (!w.IsBlooded || w.FuryToggled) &&
+                                                        !pawn.PositionHeld.Fogged(pawn.MapHeld);
 
         public override void End()
         {

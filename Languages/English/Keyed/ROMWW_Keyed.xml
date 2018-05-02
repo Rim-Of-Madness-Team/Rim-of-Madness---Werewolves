@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+<ROM_WerewolfEncounterLabel>Werewolf Incoming</ROM_WerewolfEncounterLabel>
+<ROM_WerewolfEncounterDesc>{0} is a werewolf. Silver weapons or special tactics may be required if they become hostile.</ROM_WerewolfEncounterDesc>
+
+
+<!-- 4/29/18 -->
+<ROM_WerewolfTransformationFailure>{0} failed to transform. (Reason: outside home. 2% success rate)</ROM_WerewolfTransformationFailure>
+
+<!-- Prior -->
 <ROM_WerewolfEscaped>{0} has leaped forth from its containment in the {1}.</ROM_WerewolfEscaped>
 <ROM_WerewolfLimbRegen>{0} has regenerated their {1}.</ROM_WerewolfLimbRegen>
 <ROM_WerewolfDecyberize>{0} has regenerated their {1} and lost their {2} in the process.</ROM_WerewolfDecyberize>

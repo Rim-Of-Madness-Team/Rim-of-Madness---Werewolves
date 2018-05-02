@@ -47,7 +47,7 @@ namespace Werewolf
 
             if (pawn.GetComp<CompWerewolf>() is CompWerewolf w && w.IsWerewolf)
             {
-                if (!w.IsTransformed) w.TransformInto(w.HighestLevelForm, false);
+                if (!w.IsTransformed && w.IsBlooded) w.TransformInto(w.HighestLevelForm, false);
             }
 
             if (verb.verbProps.MeleeRange)

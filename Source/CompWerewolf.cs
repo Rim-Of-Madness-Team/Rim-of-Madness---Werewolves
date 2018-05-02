@@ -160,6 +160,23 @@ namespace Werewolf
             isReverting = false;
         }
 
+        public override float CombatPoints()
+        {
+            //Log.Message("Combat points called");
+            if (forbiddenWolfhood) return 0;
+            if (WerewolfForms.NullOrEmpty()) return 400;
+            var combatPoints = WerewolfForms.Max(x => x.level) * 400;
+            //Log.Message("combatPoints: " + combatPoints);
+            return combatPoints;
+        }
+
+        private bool forbiddenWolfhood = false;
+        public override void DisableAbilityUser()
+        {
+            Pawn.story.traits.allTraits.Remove(WerewolfTrait);
+            forbiddenWolfhood = true;
+        }
+
         /// Gives a random new transformation from full moon furies.
         public void TransformRandom(bool moonTransformation)
         {
@@ -705,7 +722,7 @@ namespace Werewolf
         /// Give AI Werewolves levels in different forms.
         public void ResolveAIFactionSpawns()
         {
-            if (!factionResolved && Pawn?.Faction?.def?.defName == "ROM_WerewolfClan")
+            if (!factionResolved && Pawn?.Faction?.def?.defName == "ROM_WerewolfClan" && Pawn?.kindDef?.defName != "ROM_WerewolfStraggler" && !forbiddenWolfhood)
             {
                 factionResolved = true;
 

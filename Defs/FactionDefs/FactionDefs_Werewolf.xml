@@ -90,9 +90,10 @@
 		<!-- Base defense -->
 		<kindDef>FactionBase</kindDef>
         <options>
-          <ROM_WerewolfNewBlood>15</ROM_WerewolfNewBlood>
-          <ROM_WolfHandler>100</ROM_WolfHandler>
-          <ROM_Werewolf>500</ROM_Werewolf>
+          <ROM_WerewolfStraggler>15</ROM_WerewolfStraggler>
+          <ROM_WerewolfNewBlood>25</ROM_WerewolfNewBlood>
+          <ROM_WolfHandler>35</ROM_WolfHandler>
+          <ROM_Werewolf>50</ROM_Werewolf>
           <ROM_WerewolfFang>100</ROM_WerewolfFang>
           <ROM_WerewolfAlpha>1</ROM_WerewolfAlpha>
         </options>
