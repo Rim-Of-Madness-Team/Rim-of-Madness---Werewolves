@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mental breaks: extreme -->
+
+  <ROM_WerewolfFury.label>Ярость оборотня</ROM_WerewolfFury.label>
+  <ROM_WerewolfFury.beginLetter>{0} стал(а) безумным оборотнем!</ROM_WerewolfFury.beginLetter>
+  <ROM_WerewolfFury.beginLetterLabel>Ярость оборотня</ROM_WerewolfFury.beginLetterLabel>
+  <ROM_WerewolfFury.recoveryMessage>Ярость {0} подошла к концу.</ROM_WerewolfFury.recoveryMessage>
+  <ROM_WerewolfFury.baseInspectLine>Психическое состояние: Берсерк</ROM_WerewolfFury.baseInspectLine>
+
+
+</LanguageData>

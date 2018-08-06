@@ -6,7 +6,7 @@
 	<label>wolf clan</label>
     <description>A mysterious collective of individuals from different walks of life. Why they come together is a mystery. However, nearby townsfolk claim that when the moon shows its face, strange howls entwined with screams and whimpers echo from their encampments.</description>
     <pawnsPlural>wolf clan</pawnsPlural>
-    <baseSelectionWeight>0.001</baseSelectionWeight>
+    <settlementGenerationWeight>0.001</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <maxCountAtGameStart>1</maxCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
@@ -30,7 +30,7 @@
     </startingGoodwill>
     <mustStartOneEnemy>false</mustStartOneEnemy>
 		<factionNameMaker>ROM_NamerFactionWerewolf</factionNameMaker>
-    <baseNameMaker>NamerFactionBaseTribal</baseNameMaker>
+    <settlementNameMaker>NamerFactionBaseTribal</settlementNameMaker>
     <pawnNameMaker>NamerPersonTribal</pawnNameMaker>
     <techLevel>Neolithic</techLevel>
     <backstoryCategory>Tribal</backstoryCategory>
@@ -76,7 +76,7 @@
       </li>
       <li>
 		<!-- Normal, standard mix -->
-	    <kindDef>Normal</kindDef>
+	    <kindDef>Combat</kindDef>
         <commonality>100</commonality>
         <options>
           <ROM_WerewolfNewBlood>15</ROM_WerewolfNewBlood>
@@ -88,7 +88,7 @@
       </li>
       <li>
 		<!-- Base defense -->
-		<kindDef>FactionBase</kindDef>
+		<kindDef>Settlement</kindDef>
         <options>
           <ROM_WerewolfStraggler>15</ROM_WerewolfStraggler>
           <ROM_WerewolfNewBlood>25</ROM_WerewolfNewBlood>
@@ -99,7 +99,7 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <homeIconPath>World/WorldObjects/DefaultFactionBase</homeIconPath>
+    <homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
   </FactionDef>
 
 </Defs>

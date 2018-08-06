@@ -13,7 +13,7 @@ namespace Werewolf
         protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest)
         {
             bool allowManualCastWeapons = !pawn.IsColonist;
-            Verb verb = pawn.TryGetAttackVerb(allowManualCastWeapons);
+            Verb verb = pawn.TryGetAttackVerb(null);
             if (verb == null)
             {
                 dest = IntVec3.Invalid;
@@ -39,7 +39,7 @@ namespace Werewolf
                 return null;
             }
             bool allowManualCastWeapons = !pawn.IsColonist;
-            Verb verb = pawn.TryGetAttackVerb(allowManualCastWeapons);
+            Verb verb = pawn.TryGetAttackVerb(null);
             if (verb == null)
             {
                 return null;
@@ -50,7 +50,7 @@ namespace Werewolf
                 if (!w.IsTransformed && w.IsBlooded) w.TransformInto(w.HighestLevelForm, false);
             }
 
-            if (verb.verbProps.MeleeRange)
+            if (verb.verbProps.IsMeleeAttack)
             {
                 return this.MeleeAttackJob(enemyTarget);
             }
@@ -60,7 +60,7 @@ namespace Werewolf
             bool flag4 = (pawn.Position - enemyTarget.Position).LengthHorizontalSquared < 25;
             if ((flag && flag2 && flag3) || (flag4 && flag3))
             {
-                return new Job(JobDefOf.WaitCombat, JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange, true);
+                return new Job(JobDefOf.Wait_Combat, JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange, true);
             }
             IntVec3 intVec;
             if (!this.TryFindShootingPosition(pawn, out intVec))
@@ -69,7 +69,7 @@ namespace Werewolf
             }
             if (intVec == pawn.Position)
             {
-                return new Job(JobDefOf.WaitCombat, JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange, true);
+                return new Job(JobDefOf.Wait_Combat, JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange, true);
             }
             Job newJob = new Job(JobDefOf.Goto, intVec)
             {

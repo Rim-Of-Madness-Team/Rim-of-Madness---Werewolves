@@ -18,7 +18,7 @@
   <Werewolf.WerewolfFormDef>
     <defName>ROM_Glabro</defName>
     <label>Glabro</label>
-    <description>The near-man or 'wolfman' form of the Garou. In the Glabro form, a werewolf can somewhat pass for human while still drawing on a portion of their feral power. </description>
+    <description>The near-man or 'wolfman' form of the Garou. In the Glabro form, a werewolf can somewhat pass for human while still drawing on a portion of their feral power.</description>
     <graphicData>
       <texPath>Things/Pawn/Animal/Werewolf/Glabro/XenGlabro</texPath>
       <drawSize>1.7</drawSize>
@@ -95,8 +95,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -127,8 +127,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -213,8 +213,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>false</isSolid>
+       
+      <solid>false</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -245,8 +245,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -329,8 +329,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -361,8 +361,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -374,7 +374,7 @@
       <label>Lupus</label>
       <description>This form is the true “wolf” form, allowing werewolves to hunt and live among wolf packs, or to call on the speed and superior senses of the wolf.\n\nPassive Bonus\nPath of Nature: Lupus receive no movement penalties for movement through trees.</description>
       <graphicData>
-        <texPath>Things/Pawn/Animal/WolfTimber/WolfTimber</texPath>
+        <texPath>Things/Pawn/Animal/Wolf_Timber/Wolf_Timber</texPath>
         <drawSize>2.5</drawSize>
         <graphicClass>Graphic_Multi</graphicClass>
       </graphicData>
@@ -446,8 +446,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -478,8 +478,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -557,7 +557,7 @@
         </tools>
 		<verbs>
           <li>
-            <verbClass>Verb_MeleeAttack</verbClass>
+            <verbClass>Verb_MeleeAttackDamage</verbClass>
             <defaultCooldownTime>1.65</defaultCooldownTime>
             <meleeDamageBaseAmount>30</meleeDamageBaseAmount>
             <meleeDamageDef>Scratch</meleeDamageDef>
@@ -567,8 +567,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>
@@ -599,8 +599,8 @@
     </comps>
     <addedPartProps>
       <isGoodWeapon>true</isGoodWeapon>
-      <isBionic>false</isBionic>
-      <isSolid>true</isSolid>
+       
+      <solid>true</solid>
       <partEfficiency>1.0</partEfficiency>
     </addedPartProps>
   </HediffDef>

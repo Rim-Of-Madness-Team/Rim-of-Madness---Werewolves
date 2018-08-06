@@ -45,7 +45,7 @@ namespace Werewolf
         {
             if (ticksLeftInCycle < 0)
             {
-                if (Find.VisibleMap is Map m)
+                if (Find.CurrentMap is Map m)
                 {
                     int time = GenLocalDate.HourInteger(m);
                     if (time <= 3 || time >= 21)

@@ -30,7 +30,7 @@ namespace Werewolf
             {
                 this.CurActivateSound.PlayOneShotOnCamera();
             }
-            SoundDefOf.TickTiny.PlayOneShotOnCamera();
+            SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
             //Targeter targeter = Find.Targeter;
             //if (base.verb.CasterIsPawn && targeter.targetingVerb != null && targeter.targetingVerb.verbProps == this.verb.verbProps)
             //{
@@ -49,9 +49,9 @@ namespace Werewolf
             this.action(null);
         }
 
-        public override GizmoResult GizmoOnGUI(Vector2 topLeft)
+        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
         {
-            Rect rect = new Rect(topLeft.x, topLeft.y, this.Width, 75f);
+            Rect rect = new Rect(topLeft.x, topLeft.y, maxWidth, 75f);
             bool isMouseOver = false;
             if (Mouse.IsOver(rect))
             {
@@ -62,8 +62,8 @@ namespace Werewolf
             if (badTex == null) badTex = BaseContent.BadTex;
 
             GUI.DrawTexture(rect, Command.BGTex);
-            MouseoverSounds.DoRegion(rect, SoundDefOf.MouseoverCommand);
-            GUI.color = this.IconDrawColor;
+            MouseoverSounds.DoRegion(rect, SoundDefOf.Mouseover_Command);
+            GUI.color = this.defaultIconColor;
             Widgets.DrawTextureFitted(new Rect(rect), badTex, this.iconDrawScale * 0.85f, this.iconProportions, this.iconTexCoords);
             GUI.color = Color.white;
             bool isUsed = false;

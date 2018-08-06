@@ -22,7 +22,7 @@ namespace Werewolf
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if (pawn.TryGetAttackVerb(false) == null)
+            if (pawn.TryGetAttackVerb(null) == null)
             {
                 return null;
             }

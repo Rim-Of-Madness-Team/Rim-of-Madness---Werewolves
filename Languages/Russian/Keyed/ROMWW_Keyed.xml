@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ROM_WerewolfEncounterLabel>Оборотни приближаются</ROM_WerewolfEncounterLabel>
+  <ROM_WerewolfEncounterDesc>{0} - оборотень. Может потребоваться серебряное оружие или специальные тактики, если они станут враждебными.</ROM_WerewolfEncounterDesc>
+
+
+  <!-- 4/29/18 -->
+  <ROM_WerewolfTransformationFailure>{0} не удалось трансформироваться. (Причина: вне дома. Шанс успеха 2%)</ROM_WerewolfTransformationFailure>
+
+  <!-- Prior -->
+  <ROM_WerewolfEscaped>{0} перескочил(а) из своего ограничения в {1}.</ROM_WerewolfEscaped>
+  <ROM_WerewolfLimbRegen>{0} восстановил их {1}.</ROM_WerewolfLimbRegen>
+  <ROM_WerewolfDecyberize>{0} восстановил их {1} и потерял их {2} в процессе.</ROM_WerewolfDecyberize>
+  <ROM_NeedsRest>{0} требуется время для отдыха и пополнения сил.</ROM_NeedsRest>
+  <ROM_WerewolfRevert>{0} вернулся(ась) в исходную форму.</ROM_WerewolfRevert>
+  <ROM_CannotApplySilverTreatment>Нельзя применить обработку серебром</ROM_CannotApplySilverTreatment>
+  <ROM_ApplySilverTreatment>Применить обработку серебром</ROM_ApplySilverTreatment>
+  <ROM_NeedsSilver> требуется {0} серебра</ROM_NeedsSilver>
+  <ROM_SilverAmmo> (серебряные боеприпасы)</ROM_SilverAmmo>
+  <ROM_FullMoonFury>Яростная луна</ROM_FullMoonFury>
+  <ROM_FullMoonFuryDesc>Когда он перевоплотиться, оборотень войдет в яростное буйство во время полной луны. Во время ярости вервольфы могут случайно превращаться в новые формы и улучшить существующие формы оборотня.\n\nПРЕДУПРЕЖДЕНИЕ: Никто не может быть в безопасности от дикого оборотня, даже другие оборотни! Обязательно держите оборотней подальше от других колонистов во время полной луны.</ROM_FullMoonFuryDesc>
+  <ROM_FormHealth_Tooltip>Шкала здоровья: +{0}%</ROM_FormHealth_Tooltip>
+  <ROM_FormSize_Tooltip>Размер тела: +{0}%</ROM_FormSize_Tooltip>
+  <ROM_FormDmg_Tooltip>Урон иммунитету (не серебро): +{0}%</ROM_FormDmg_Tooltip>
+  <ROM_FormLevel>{0} Форма: Уровень {1}</ROM_FormLevel>
+  <ROM_FormNextLevel>Текущий уровень {0} Следующий уровень:</ROM_FormNextLevel>
+  <ROM_FormHealth>Здоровье: +{0}% {1} +{2}%</ROM_FormHealth>
+  <ROM_FormSize>Размер: +{0}% {1} +{2}%</ROM_FormSize>
+  <ROM_FormImmunity>Иммунитет +{0}% {1} +{2}%</ROM_FormImmunity>
+  <ROM_FormNote>Примечание. Невосприимчивость к повреждениям, действует только на оружие не обработанное серебром.</ROM_FormNote>
+  <ROM_RageLeft>Ярость отходит</ROM_RageLeft>
+  <ROM_WerewolfTransformation>{0} превратился в {1} оборотня!</ROM_WerewolfTransformation>
+  <ROM_MoonCycle_FullMoonPasses>Проходит полная луна {0}.</ROM_MoonCycle_FullMoonPasses>
+  <ROM_MoonCycle_FullMoonDesc>Луна планеты {0} достигла наиболее отчетливо видимой формы. Колонисты получат небольшое повышение настроения. В настоящее время не чистокровные оборотни могут трансформироваться</ROM_MoonCycle_FullMoonDesc>
+  <ROM_MoonCycle_FullMoonArgless>Полная луна</ROM_MoonCycle_FullMoonArgless>
+  <ROM_MoonCycle_FullMoon>Полная луна ({0})</ROM_MoonCycle_FullMoon>
+  <ROM_MoonCycle_UntilNextFullMoon>{0} дней до следующего полнолуния</ROM_MoonCycle_UntilNextFullMoon>
+  <ROM_MoonCycle_FullMoonImminentArgless>Полная луна приближается</ROM_MoonCycle_FullMoonImminentArgless>
+  <ROM_MoonCycle_FullMoonImminent>{0} (Приближение полной луны)</ROM_MoonCycle_FullMoonImminent>
+  <ROM_MoonCycle_Moon>Луна</ROM_MoonCycle_Moon>
+  <ROM_MoonCycle_Moons>Луна из {0}</ROM_MoonCycle_Moons>
+  <ROM_MoonCycle_CurrentPhaseDesc>Каждая луна на вашей колонии, {0}, имеет лунный цикл. В конце цикла в вашей колонии будет видна красивая полная луна.\n\nВ это время будут действовать оборотни с активной трансформацией.</ROM_MoonCycle_CurrentPhaseDesc>
+  <ROM_MoonCycle_CurrentPhase>{0} ({1} дней до полной)</ROM_MoonCycle_CurrentPhase>
+
+</LanguageData>
