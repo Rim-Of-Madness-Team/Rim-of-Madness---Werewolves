@@ -33,7 +33,7 @@
     <settlementNameMaker>NamerFactionBaseTribal</settlementNameMaker>
     <pawnNameMaker>NamerPersonTribal</pawnNameMaker>
     <techLevel>Neolithic</techLevel>
-    <backstoryCategory>Tribal</backstoryCategory>
+    <backstoryCategories><li>Tribal</li></backstoryCategories>
     <leaderTitle>alpha</leaderTitle>
     <hairTags>
       <li>Tribal</li>

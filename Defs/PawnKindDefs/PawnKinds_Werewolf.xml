@@ -4,7 +4,7 @@
   <PawnKindDef Name="WerewolfBase" Abstract="True">
     <race>Human</race>
 	<defaultFactionType>ROM_WerewolfClan</defaultFactionType>
-    <backstoryCategory>Tribal</backstoryCategory> 
+    <backstoryCategories><li>Tribal</li></backstoryCategories> 
 	<chemicalAddictionChance>0.10</chemicalAddictionChance>
     <baseRecruitDifficulty>0.88</baseRecruitDifficulty>
 	<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
