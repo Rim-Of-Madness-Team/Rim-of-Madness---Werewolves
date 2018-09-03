@@ -2,15 +2,15 @@
 <LanguageData>
 
   <ROM_Werewolf.degreeDatas.0.label>Оборотень (?)</ROM_Werewolf.degreeDatas.0.label>
-  <ROM_Werewolf.degreeDatas.0.description>NAME может быть образцом, который смешивает форму между человеком и волком. Когда особая луна поднимается, у него(её) может быть первая ужасная трансформация или что-то еще может случиться...</ROM_Werewolf.degreeDatas.0.description>
+  <ROM_Werewolf.degreeDatas.0.description>[PAWN_nameDef] может быть образцом, который смешивает форму между человеком и волком. Когда особая луна поднимается, у него(её) может быть первая ужасная трансформация или что-то еще может случиться...</ROM_Werewolf.degreeDatas.0.description>
   <ROM_Werewolf.degreeDatas.1.label>Оборотень (без оружия)</ROM_Werewolf.degreeDatas.1.label>
-  <ROM_Werewolf.degreeDatas.1.description>NAME бессознательно превращается в то, что смешивает форму между человеком и волком. Когда особая луна поднимается, у него(её) будет первое ужасное трансформация.</ROM_Werewolf.degreeDatas.1.description>
+  <ROM_Werewolf.degreeDatas.1.description>[PAWN_nameDef] бессознательно превращается в то, что смешивает форму между человеком и волком. Когда особая луна поднимается, у него(её) будет первое ужасное трансформация.</ROM_Werewolf.degreeDatas.1.description>
   <ROM_Werewolf.degreeDatas.2.label>Оборотень</ROM_Werewolf.degreeDatas.2.label>
-  <ROM_Werewolf.degreeDatas.2.description>NAME - оборотень, который смешивает в себе форму волка.</ROM_Werewolf.degreeDatas.2.description>
+  <ROM_Werewolf.degreeDatas.2.description>[PAWN_nameDef] - оборотень, который смешивает в себе форму волка.</ROM_Werewolf.degreeDatas.2.description>
   <ROM_Werewolf.degreeDatas.3.label>Оборотень (присягнувший)</ROM_Werewolf.degreeDatas.3.label>
-  <ROM_Werewolf.degreeDatas.3.description>Присягнув клятвой крови своему клану благом и верностью, NAME - это оборотень, что смешивает себя с волком и не может быть завербован.</ROM_Werewolf.degreeDatas.3.description>
+  <ROM_Werewolf.degreeDatas.3.description>Присягнув клятвой крови своему клану благом и верностью, [PAWN_nameDef] - это оборотень, что смешивает себя с волком и не может быть завербован.</ROM_Werewolf.degreeDatas.3.description>
   <ROM_Werewolf.degreeDatas.4.label>Оборотень (Метис)</ROM_Werewolf.degreeDatas.4.label>
-  <ROM_Werewolf.degreeDatas.4.description>NAME - это генетическая аберрация, известная как метис. Где-то в его(её) генетической линии оборотень, который навсегда испортил свою линию оборотня. Этот оборотень может трансформироваться в форму Метиса.</ROM_Werewolf.degreeDatas.4.description>
+  <ROM_Werewolf.degreeDatas.4.description>[PAWN_nameDef] - это генетическая аберрация, известная как метис. Где-то в его(её) генетической линии оборотень, который навсегда испортил свою линию оборотня. Этот оборотень может трансформироваться в форму Метиса.</ROM_Werewolf.degreeDatas.4.description>
 
 
 </LanguageData>

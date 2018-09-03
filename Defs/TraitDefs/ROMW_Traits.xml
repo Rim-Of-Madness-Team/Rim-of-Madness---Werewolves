@@ -7,29 +7,29 @@
     <degreeDatas>
       <li>
         <label>Werewolf (?)</label>
-        <description>NAME could be a shapeshifter that blends forms between man and wolf. When a special moon rises, HE may have HIS first horrific transformation, or something else may happen...</description>
+        <description>[PAWN_nameDef] could be a shapeshifter that blends forms between man and wolf. When a special moon rises, [PAWN_pronoun] may have [PAWN_possessive] first horrific transformation, or something else may happen...</description>
         <degree>-1</degree>
       </li>
       <li>
         <label>Werewolf (Unblooded)</label>
-        <description>NAME is unknowingly a shapeshifter that blends forms between man and wolf. When a special moon rises, HE will have HIS first horrific transformation.</description>
+        <description>[PAWN_nameDef] is unknowingly a shapeshifter that blends forms between man and wolf. When a special moon rises, [PAWN_pronoun] will have [PAWN_possessive] first horrific transformation.</description>
         <degree>0</degree>
       </li>
       <li>
         <label>Werewolf</label>
-        <description>NAME is a shapeshifter that blends its form with that of a wolf.</description>
+        <description>[PAWN_nameDef] is a shapeshifter that blends its form with that of a wolf.</description>
 		    <degree>1</degree>
         <commonality>0.00001</commonality>
       </li>
       <li>
         <label>Werewolf (Sworn)</label>
-        <description>Having sworn a blood oath to their clan in good faith, NAME is a shapeshifter that blends HIS form with that of a wolf, and cannot be recruited.</description>
+        <description>Having sworn a blood oath to their clan in good faith, [PAWN_nameDef] is a shapeshifter that blends [PAWN_possessive] form with that of a wolf, and cannot be recruited.</description>
 		    <degree>2</degree>
         <commonality>0.00001</commonality>
       </li>
       <li>
         <label>Werewolf (Metis)</label>
-        <description>NAME is a genetic abberation known as the Metis. Somewhere in HIS genetic line, a werewolf mated with a werewolf and forever corrupted their werewolf line. This Werewolf can only transform into the Metis form.</description>
+        <description>[PAWN_nameDef] is a genetic abberation known as the Metis. Somewhere in [PAWN_possessive] genetic line, a werewolf mated with a werewolf and forever corrupted their werewolf line. This Werewolf can only transform into the Metis form.</description>
         <degree>3</degree>
       </li>
     </degreeDatas>

@@ -2,9 +2,9 @@
 <LanguageData>
 
   <ROM_Werewolf.degreeDatas.0.label>늑대인간 (?)</ROM_Werewolf.degreeDatas.0.label>
-  <ROM_Werewolf.degreeDatas.0.description>NAME는 인간과 늑대 사이의 어떠한 모습으로 변하려고했었습니다. 어느날 특별한 달이 뜬다면, HE 는 HIS가 겪은 그때처럼 무엇인가 끔찍한 변이를 이르키거나, or 무슨일이 일어날지도 모릅니다...</ROM_Werewolf.degreeDatas.0.description>
+  <ROM_Werewolf.degreeDatas.0.description>NAME는 인간과 늑대 사이의 어떠한 모습으로 변하려고했었습니다. 어느날 특별한 달이 뜬다면, [PAWN_pronoun] 는 HIS가 겪은 그때처럼 무엇인가 끔찍한 변이를 이르키거나, or 무슨일이 일어날지도 모릅니다...</ROM_Werewolf.degreeDatas.0.description>
   <ROM_Werewolf.degreeDatas.1.label>늑대인간 (피가 부족한)</ROM_Werewolf.degreeDatas.1.label>
-  <ROM_Werewolf.degreeDatas.1.description>NAME는 인간과 늑대 사이의 무엇인지 모를듯한 모습으로 변하려고했었습니다. 어느날 특별한 달이 뜬다면, HE 는 HIS가 겪은 그때처럼 무엇인가 끔찍한 변이를 이르키거나, or 무슨일이 일어날지도 모릅니다...</ROM_Werewolf.degreeDatas.1.description>
+  <ROM_Werewolf.degreeDatas.1.description>NAME는 인간과 늑대 사이의 무엇인지 모를듯한 모습으로 변하려고했었습니다. 어느날 특별한 달이 뜬다면, [PAWN_pronoun] 는 HIS가 겪은 그때처럼 무엇인가 끔찍한 변이를 이르키거나, or 무슨일이 일어날지도 모릅니다...</ROM_Werewolf.degreeDatas.1.description>
   <ROM_Werewolf.degreeDatas.2.label>늑대인간</ROM_Werewolf.degreeDatas.2.label>
   <ROM_Werewolf.degreeDatas.2.description>NAME는 늑대의 모습으로 변해버렸습니다.</ROM_Werewolf.degreeDatas.2.description>
   <ROM_Werewolf.degreeDatas.3.label>늑대인간 (맹세한)</ROM_Werewolf.degreeDatas.3.label>
