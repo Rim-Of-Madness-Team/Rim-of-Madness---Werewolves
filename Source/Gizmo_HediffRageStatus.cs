@@ -20,7 +20,7 @@ namespace Werewolf
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
         {
-            Rect overRect = new Rect(topLeft.x, topLeft.y, maxWidth, 75f);
+            Rect overRect = new Rect(topLeft.x, topLeft.y, 75f, 75f);
             Find.WindowStack.ImmediateWindow(984688, overRect, WindowLayer.GameUI, delegate
             {
                 Rect rect = overRect.AtZero().ContractedBy(6f);

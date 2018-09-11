@@ -51,7 +51,7 @@ namespace Werewolf
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
         {
-            Rect rect = new Rect(topLeft.x, topLeft.y, maxWidth, 75f);
+            Rect rect = new Rect(topLeft.x, topLeft.y, 75f, 75f);
             bool isMouseOver = false;
             if (Mouse.IsOver(rect))
             {

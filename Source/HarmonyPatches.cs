@@ -17,7 +17,7 @@ namespace Werewolf
         static HarmonyPatches()
         {
             HarmonyInstance harmony = HarmonyInstance.Create("rimworld.jecrell.werewolves");
-            HarmonyInstance.DEBUG = true;
+            //HarmonyInstance.DEBUG = true;
             harmony.Patch(AccessTools.Property(typeof(Pawn), nameof(Pawn.BodySize)).GetGetMethod(), null,
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
@@ -26,16 +26,7 @@ namespace Werewolf
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(WerewolfHealthScale)), null);
-            
-            //Log.Message("1");
-            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal",
-                new[]
-                {
-                    typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4),
-                    typeof(Rot4), typeof(RotDrawMode),
-                    typeof(bool), typeof(bool)
-                }), new HarmonyMethod(typeof(HarmonyPatches),
-                nameof(RenderWerewolf)), null);
+
             //Log.Message("2");
 
             harmony.Patch(AccessTools.Method(typeof(Building_Door), nameof(Building_Door.PawnCanOpen)), null,
@@ -54,9 +45,11 @@ namespace Werewolf
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(InitializeWWComps)));
-            harmony.Patch(AccessTools.Method(typeof(Pawn_PathFollower), "CostToMoveIntoCell"), null, new HarmonyMethod(
-                typeof(HarmonyPatches),
-                nameof(PathOfNature)), null);
+            harmony.Patch(
+                AccessTools.Method(typeof(Pawn_PathFollower), "CostToMoveIntoCell",
+                    new[] {typeof(Pawn), typeof(IntVec3)}), null, new HarmonyMethod(
+                    typeof(HarmonyPatches),
+                    nameof(PathOfNature)), null);
             harmony.Patch(AccessTools.Method(typeof(LordToil_AssaultColony), "UpdateAllDuties"), null,
                 new HarmonyMethod(typeof(HarmonyPatches),
                     nameof(UpdateAllDuties_PostFix)), null);
@@ -89,6 +82,82 @@ namespace Werewolf
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(WerewolfDmgFixFinalizeAndAddInjury)), null);
             harmony.Patch(AccessTools.Method(typeof(Scenario), nameof(Scenario.Notify_PawnGenerated)), null,
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(AddRecentWerewolves)));
+
+
+            harmony.Patch(AccessTools.Method(typeof(PawnGraphicSet), "ResolveAllGraphics"), new HarmonyMethod(
+                typeof(HarmonyPatches),
+                nameof(RenderWerewolf)), null);
+
+            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new[] {typeof(Vector3)}),
+                new HarmonyMethod(typeof(HarmonyPatches), nameof(RenderPawnAt)), null);
+        }
+
+
+        private static RotDrawMode CurRotDrawMode(Pawn pawn)
+        {
+            if (pawn.Dead && pawn.Corpse != null)
+            {
+                return pawn.Corpse.CurRotDrawMode;
+            }
+            return RotDrawMode.Fresh;
+        }
+        
+        public static bool RenderPawnAt(PawnRenderer __instance, Vector3 drawLoc)
+        {
+            
+            Pawn p = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if (p?.GetComp<CompWerewolf>() is CompWerewolf compWerewolf && compWerewolf.IsTransformed)
+            {
+                var loc = new Vector3(drawLoc.x, drawLoc.y, drawLoc.z);
+                Quaternion quaternion = Quaternion.AngleAxis(0f, Vector3.up);
+                Mesh mesh = compWerewolf.CurrentWerewolfForm.bodyGraphicData.GraphicColoredFor(p).MeshAt(p.Rotation);
+                List<Material> list = __instance.graphics.MatsBodyBaseAt(p.Rotation, CurRotDrawMode(p));
+                for (int i = 0; i < list.Count; i++)
+                {
+                    Material damagedMat = __instance.graphics.flasher.GetDamagedMat(list[i]);
+                    GenDraw.DrawMeshNowOrLater(mesh, drawLoc, quaternion, damagedMat, false);
+                    loc.y += 0.00390625f;
+                }
+                if (CurRotDrawMode(p) == RotDrawMode.Fresh)
+                {
+                    loc.y += 0.01953125f;
+                    Traverse.Create(__instance).Field("woundOverlays").GetValue<PawnWoundDrawer>().RenderOverBody(drawLoc, mesh, quaternion, false);
+                }
+                return false;
+            }
+            return true;
+        }
+
+        public static Color WerewolfColor(Pawn p, WerewolfForm w)
+        {
+            var hairColor = new Color(p.story.hairColor.r, p.story.hairColor.g, p.story.hairColor.b);
+            if (w.def != WWDefOf.ROM_Glabro)
+            {
+                return hairColor;
+            }
+            return Color.white;
+        }
+        
+        public static bool RenderWerewolf(PawnGraphicSet __instance)
+        {
+            Pawn p = __instance.pawn;
+            if (p?.GetComp<CompWerewolf>() is CompWerewolf compWerewolf && compWerewolf.IsTransformed)
+            {
+                __instance.ClearCache();
+                if (compWerewolf.CurrentWerewolfForm.bodyGraphicData == null ||
+                    __instance.nakedGraphic == null)
+                {
+                    compWerewolf.CurrentWerewolfForm.bodyGraphicData = compWerewolf.CurrentWerewolfForm.def.graphicData;
+                    __instance.nakedGraphic = GraphicDatabase.Get<Graphic_Multi>(
+                        path: compWerewolf.CurrentWerewolfForm.bodyGraphicData.texPath, shader: ShaderDatabase.Cutout,
+                        drawSize: compWerewolf.CurrentWerewolfForm.bodyGraphicData.drawSize,
+                        color: WerewolfColor(p, compWerewolf.CurrentWerewolfForm));
+                    __instance.headGraphic = null;
+                    __instance.hairGraphic = null;
+                }
+                return false;
+            }
+            return true;
         }
 
         // RimWorld.Scenario
@@ -267,8 +336,7 @@ namespace Werewolf
 
 
         // RimWorld.PawnUtility
-        public static void UnrecruitableSworn(ref float __result, Pawn pawn, Faction recruiterFaction,
-            bool withPopIntent)
+        public static void UnrecruitableSworn(ref float __result, Pawn pawn, Faction recruiterFaction)
         {
             if (pawn?.story?.traits?.allTraits?.FirstOrDefault(x => x.def == WWDefOf.ROM_Werewolf && x.Degree == 2) !=
                 null)
@@ -471,68 +539,6 @@ namespace Werewolf
         public static void WerewolfCantOpen(Pawn p, ref bool __result)
         {
             __result = __result && (p?.mindState?.mentalStateHandler?.CurState?.def != WWDefOf.ROM_WerewolfFury);
-        }
-
-
-        public static bool RenderWerewolf(PawnRenderer __instance, Vector3 rootLoc, float angle, bool renderBody,
-            Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, bool portrait, bool headStump)
-        {
-            Pawn p = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (p?.GetComp<CompWerewolf>() is CompWerewolf compWerewolf && compWerewolf.IsTransformed)
-            {
-                if (compWerewolf.CurrentWerewolfForm.bodyGraphicData == null ||
-                    __instance.graphics.nakedGraphic == null)
-                {
-                    compWerewolf.CurrentWerewolfForm.bodyGraphicData = compWerewolf.CurrentWerewolfForm.def.graphicData;
-                    __instance.graphics.nakedGraphic = compWerewolf.CurrentWerewolfForm.bodyGraphicData.Graphic;
-                }
-                Mesh mesh = null;
-                if (renderBody)
-                {
-                    Vector3 loc = rootLoc;
-                    loc.y += 0.0046875f;
-                    if (bodyDrawType == RotDrawMode.Dessicated && !p.RaceProps.Humanlike &&
-                        __instance.graphics.dessicatedGraphic != null && !portrait)
-                    {
-                        __instance.graphics.dessicatedGraphic.Draw(loc, bodyFacing, p);
-                    }
-                    else
-                    {
-                        mesh = __instance.graphics.nakedGraphic.MeshAt(bodyFacing);
-                        List<Material> list = __instance.graphics.MatsBodyBaseAt(bodyFacing, bodyDrawType);
-                        for (int i = 0; i < list.Count; i++)
-                        {
-                            Material damagedMat = __instance.graphics.flasher.GetDamagedMat(list[i]);
-                            Vector3 scaleVector = new Vector3(loc.x, loc.y, loc.z);
-                            if (portrait)
-                            {
-                                scaleVector.x *=
-                                    1f + (1f - (portrait
-                                              ? compWerewolf.CurrentWerewolfForm.def.CustomPortraitDrawSize
-                                              : compWerewolf.CurrentWerewolfForm.bodyGraphicData.drawSize)
-                                          .x);
-                                scaleVector.z *=
-                                    1f + (1f - (portrait
-                                              ? compWerewolf.CurrentWerewolfForm.def.CustomPortraitDrawSize
-                                              : compWerewolf.CurrentWerewolfForm.bodyGraphicData.drawSize)
-                                          .y);
-                            }
-                            else scaleVector = new Vector3(0, 0, 0);
-                            GenDraw.DrawMeshNowOrLater(mesh, loc + scaleVector, angle.ToQuat(), damagedMat, portrait);
-                            loc.y += 0.0046875f;
-                        }
-                        if (bodyDrawType == RotDrawMode.Fresh)
-                        {
-                            Vector3 drawLoc = rootLoc;
-                            drawLoc.y += 0.01875f;
-                            Traverse.Create(__instance).Field("woundOverlays").GetValue<PawnWoundDrawer>()
-                                .RenderOverBody(drawLoc, mesh, angle.ToQuat(), portrait);
-                        }
-                    }
-                }
-                return false;
-            }
-            return true;
         }
 
         // Verse.Pawn
