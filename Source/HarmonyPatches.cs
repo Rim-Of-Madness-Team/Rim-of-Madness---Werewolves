@@ -84,27 +84,98 @@ namespace Werewolf
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(AddRecentWerewolves)));
 
 
-            harmony.Patch(AccessTools.Method(typeof(PawnGraphicSet), "ResolveAllGraphics"), new HarmonyMethod(
-                typeof(HarmonyPatches),
-                nameof(RenderWerewolf)), null);
+            harmony.Patch(
+                AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal",
+                    new[]
+                    {
+                        typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode),
+                        typeof(bool), typeof(bool)
+                    }),
+                new HarmonyMethod(typeof(HarmonyPatches), nameof(RenderPawnInternal)), null);
 
-            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new[] {typeof(Vector3)}),
-                new HarmonyMethod(typeof(HarmonyPatches), nameof(RenderPawnAt)), null);
+
+//            harmony.Patch(AccessTools.Method(typeof(PawnGraphicSet), "ResolveAllGraphics"), new HarmonyMethod(
+//                typeof(HarmonyPatches),
+//                nameof(RenderWerewolf)), null);
+//
+//            harmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt", new[] {typeof(Vector3)}),
+//                new HarmonyMethod(typeof(HarmonyPatches), nameof(RenderPawnAt)), null);
         }
 
-
+        // PawnRenderer.RenderPawnInternal
+        private static bool RenderPawnInternal(PawnRenderer __instance, Vector3 rootLoc, float angle, bool renderBody,
+            Rot4 bodyFacing, Rot4 headFacing,
+            RotDrawMode bodyDrawType, bool portrait, bool headStump)
+        {
+			Pawn value = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+			CompWerewolf compWerewolf;
+			bool flag = (compWerewolf = ((value != null) ? value.GetComp<CompWerewolf>() : null)) != null && compWerewolf.IsTransformed;
+			bool result;
+			if (flag)
+			{
+				if (compWerewolf.CurrentWerewolfForm.bodyGraphicData == null || __instance.graphics.nakedGraphic == null)
+				{
+					compWerewolf.CurrentWerewolfForm.bodyGraphicData = compWerewolf.CurrentWerewolfForm.def.graphicData;
+					__instance.graphics.nakedGraphic = compWerewolf.CurrentWerewolfForm.bodyGraphicData.Graphic;
+				}
+				if (renderBody)
+				{
+					Vector3 vector = rootLoc;
+					vector.y += 0.0046875f;
+					bool flag3 = bodyDrawType == RotDrawMode.Rotting && !value.RaceProps.Humanlike && __instance.graphics.dessicatedGraphic != null && !portrait;
+					if (flag3)
+					{
+						__instance.graphics.dessicatedGraphic.Draw(vector, bodyFacing, value, 0f);
+					}
+					else
+					{
+						Mesh mesh = __instance.graphics.nakedGraphic.MeshAt(bodyFacing);
+						List<Material> list = __instance.graphics.MatsBodyBaseAt(bodyFacing, bodyDrawType);
+						for (int i = 0; i < list.Count; i++)
+						{
+							Material damagedMat = __instance.graphics.flasher.GetDamagedMat(list[i]);
+							Vector3 vector2 = new Vector3(vector.x, vector.y, vector.z);
+							if (portrait)
+							{
+								vector2.x *= 1f + (1f - (portrait ? compWerewolf.CurrentWerewolfForm.def.CustomPortraitDrawSize : compWerewolf.CurrentWerewolfForm.bodyGraphicData.drawSize).x);
+								vector2.z *= 1f + (1f - (portrait ? compWerewolf.CurrentWerewolfForm.def.CustomPortraitDrawSize : compWerewolf.CurrentWerewolfForm.bodyGraphicData.drawSize).y);
+							}
+							else
+							{
+							    vector2 = Vector3.zero;
+							}
+							GenDraw.DrawMeshNowOrLater(mesh, vector + vector2, Quaternion.identity, damagedMat, portrait);
+							vector.y += 0.0046875f;
+						}
+						bool flag4 = bodyDrawType == 0;
+						if (flag4)
+						{
+							Vector3 vector3 = rootLoc;
+							vector3.y += 0.01875f;
+							Traverse.Create(__instance).Field("woundOverlays").GetValue<PawnWoundDrawer>().RenderOverBody(vector3, mesh, Quaternion.identity, portrait);
+						}
+					}
+				}
+				result = false;
+			}
+			else
+			{
+				result = true;
+			}
+			return result;
+		}
         private static RotDrawMode CurRotDrawMode(Pawn pawn)
         {
             if (pawn.Dead && pawn.Corpse != null)
             {
                 return pawn.Corpse.CurRotDrawMode;
             }
+
             return RotDrawMode.Fresh;
         }
-        
+
         public static bool RenderPawnAt(PawnRenderer __instance, Vector3 drawLoc)
         {
-            
             Pawn p = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
             if (p?.GetComp<CompWerewolf>() is CompWerewolf compWerewolf && compWerewolf.IsTransformed)
             {
@@ -118,13 +189,17 @@ namespace Werewolf
                     GenDraw.DrawMeshNowOrLater(mesh, drawLoc, quaternion, damagedMat, false);
                     loc.y += 0.00390625f;
                 }
+
                 if (CurRotDrawMode(p) == RotDrawMode.Fresh)
                 {
                     loc.y += 0.01953125f;
-                    Traverse.Create(__instance).Field("woundOverlays").GetValue<PawnWoundDrawer>().RenderOverBody(drawLoc, mesh, quaternion, false);
+                    Traverse.Create(__instance).Field("woundOverlays").GetValue<PawnWoundDrawer>()
+                        .RenderOverBody(drawLoc, mesh, quaternion, false);
                 }
+
                 return false;
             }
+
             return true;
         }
 
@@ -135,9 +210,10 @@ namespace Werewolf
             {
                 return hairColor;
             }
+
             return Color.white;
         }
-        
+
         public static bool RenderWerewolf(PawnGraphicSet __instance)
         {
             Pawn p = __instance.pawn;
@@ -155,8 +231,10 @@ namespace Werewolf
                     __instance.headGraphic = null;
                     __instance.hairGraphic = null;
                 }
+
                 return false;
             }
+
             return true;
         }
 
@@ -207,6 +285,7 @@ namespace Werewolf
                 __result = null;
                 return false;
             }
+
             return true;
         }
 
@@ -381,16 +460,19 @@ namespace Werewolf
                 {
                     num = pawn.TicksPerMoveDiagonal;
                 }
+
                 //num += pawn.Map.pathGrid.CalculatedCostAt(c, false, pawn.Position);
                 Building edifice = c.GetEdifice(pawn.Map);
                 if (edifice != null)
                 {
                     num += (int) edifice.PathWalkCostFor(pawn);
                 }
+
                 if (num > 450)
                 {
                     num = 450;
                 }
+
                 if (pawn.jobs.curJob != null)
                 {
                     switch (pawn.jobs.curJob.locomotionUrgency)
@@ -401,6 +483,7 @@ namespace Werewolf
                             {
                                 num = 60;
                             }
+
                             break;
                         case LocomotionUrgency.Walk:
                             num *= 2;
@@ -408,6 +491,7 @@ namespace Werewolf
                             {
                                 num = 50;
                             }
+
                             break;
                         case LocomotionUrgency.Jog:
                             num *= 1;
@@ -417,6 +501,7 @@ namespace Werewolf
                             break;
                     }
                 }
+
                 __result = Mathf.Max(num, 1);
             }
         }

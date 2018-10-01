@@ -4,8 +4,8 @@
   <author>Jecrell</author>
   <targetVersion>0.19.0</targetVersion>
   <url>https://discord.gg/AaVFA7V</url>
-  <description>
-  V1.19.0.0
+  <description>1.19.0.2 (10-02-2018)
+
   Adds Werewolves to RimWorld.
 
   Quick Werewolf Guide
@@ -14,9 +14,23 @@
   3) When a Werewolf has transformed at least one time, it is called a blooded werewolf, and blooded Werewolves can learn more forms with Full Moon Fury enabled (next to the Draft button) during future full moons.
 
   Werewolf Forms
-  -> Glabro - Near Man
-  -> Crinos - Battle Form Werewolf
-  -> Hispo  - Near Wolf
-  -> Lupus  - Wolf Form
-  -> ?????  - Secret</description>
+  -&gt; Glabro - Near Man
+  -&gt; Crinos - Battle Form Werewolf
+  -&gt; Hispo  - Near Wolf
+  -&gt; Lupus  - Wolf Form
+  -&gt; ?????  - Secret
+
+Thank you to my Patrons for supporting me in my efforts. Without you, none of this would be possible.
+
+These are the most excellent rim dwellers who support me: 
+Brachiaraidos, Cory Bonifay, CrankyPeanut, E_T, Finwej, Jan Koutsky, Jonathan, K. Bolden, Kiya Nicoll, Matt Harris, Paul Fenwick, Toc Anastar, Grendalloffen, Martin K. Bonde, Harvey Mclellan, Shane M. aka ShotgunFace, Bentley Alsup, Eric Idema, MasterScootie, GoSu, Josh McCabe, spook, Clifford Campbell, J, Michael Paugh, John Kanady, Luis Figueroa, Midgeman, Nate Haug, Richard Paul, SilentWeirdo, Audrin Navarro, Calhoun Cattell, Михаил Юрченко, Nemuri Hime, Calum, Keith Thoma, Dick Jones, Patrick, Tim Stillson, Nathan Getman, Sharp Spook, Emily Shaw, Populous25, Steven James, Zalson, Mark, Marcus Sireanu, Drachken, Nicholas Bateman, Baron Xot, Justin Andres, Luis Salvatierra, Christopher, TinyFloatingTurtle, George Chong Chuang Ming, John Boehr, Oliver White, roxxploxx, Robin Hager, That Guy, Allic, Karol Rybak, Austin Harbert, Yewty, Evan Hwang, Ryan Brock, Jonathan Holzinger, MC, Alexander, Alex Mederer, Kevin Reagan, Toss Antilles, Chelsea Archambeau, Aron Glasser, Dan Winn, Fredric Sundberg, Sarah Banks, ted stevens
+
+========================
+Changelog
+========================
+1.19.0.2 (10-02-2018)
+========================
+Fixes issue where graphics were not displaying properly for Werewolf transformations.
+
+</description>
 </ModMetaData>
