@@ -35,15 +35,15 @@
       <HintPath>..\..\JecsTools\Assemblies\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="0JecsTools">
-      <HintPath>..\..\JecsTools\Assemblies\0JecsTools.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\932008009\Assemblies\0JecsTools.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>..\..\JecsTools\Assemblies\AbilityUser.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\932008009\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,11 +53,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Vampire">
-      <HintPath>..\..\Rim-of-Madness---Vampires\Assemblies\Vampire.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\1187010034\Assemblies\Vampire.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
