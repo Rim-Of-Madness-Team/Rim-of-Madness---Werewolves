@@ -10,3 +10,8 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madn
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Werewolves\Source\obj\Debug\Werewolf.csprojAssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Werewolves\Source\obj\Debug\Werewolf.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Werewolves\Source\obj\Debug\Werewolf.csproj.CopyComplete
+C:\Users\dalto\Documents\GitHub\Rim-of-Madness---Werewolves\Assemblies\Werewolf.dll
+C:\Users\dalto\Documents\GitHub\Rim-of-Madness---Werewolves\Source\obj\Debug\Werewolf.csprojAssemblyReference.cache
+C:\Users\dalto\Documents\GitHub\Rim-of-Madness---Werewolves\Source\obj\Debug\Werewolf.csproj.CoreCompileInputs.cache
+C:\Users\dalto\Documents\GitHub\Rim-of-Madness---Werewolves\Source\obj\Debug\Werewolf.csproj.CopyComplete
+C:\Users\dalto\Documents\GitHub\Rim-of-Madness---Werewolves\Source\obj\Debug\Werewolf.dll
