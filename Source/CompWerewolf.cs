@@ -841,8 +841,8 @@ namespace Werewolf
                 PawnKindDef wolfKind = (Pawn.MapHeld.Biome == BiomeDefOf.IceSheet ||
                                         Pawn.MapHeld.Biome == BiomeDefOf.SeaIce ||
                                         Pawn.MapHeld.Biome == BiomeDefOf.Tundra)
-                    ? PawnKindDef.Named("WolfArctic")
-                    : PawnKindDef.Named("WolfTimber");
+                    ? PawnKindDef.Named("Wolf_Arctic")
+                    : PawnKindDef.Named("Wolf_Timber");
                 Pawn pawn = PawnGenerator.GeneratePawn(wolfKind, Pawn.Faction);
                 GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(Pawn.Position, Pawn.Map, 4, null), Pawn.Map);
                 Lord lord = Pawn.GetLord();
