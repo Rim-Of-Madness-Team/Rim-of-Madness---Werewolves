@@ -463,6 +463,8 @@ namespace Werewolf
                 bodyPartRecords.Add(jaw, currentWerewolfForm.def.jawHediff);
             if (recs.FirstOrDefault(PartCanBeWerewolfClaw) is BodyPartRecord leftHand)
                 bodyPartRecords.Add(leftHand, currentWerewolfForm.def.clawHediff);
+            if (recs.FirstOrDefault(PartCanBeWerewolfClaw) is BodyPartRecord rightHand)
+                bodyPartRecords.Add(rightHand, currentWerewolfForm.def.clawHediff);
 
             if ((bodyPartRecords?.Count() ?? 0) > 0)
             {
