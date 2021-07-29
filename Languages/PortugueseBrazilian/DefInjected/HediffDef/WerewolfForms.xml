@@ -1,47 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <!-- Added body parts -->
-
   <ROM_GlabroHediff.label>Forma de Lobisomen (Glabro)</ROM_GlabroHediff.label>
-
   <ROM_GlabroClaw.label>garra de lobisomen (glabro)</ROM_GlabroClaw.label>
   <ROM_GlabroClaw.comps.0.tools.0.label>garras</ROM_GlabroClaw.comps.0.tools.0.label>
-
   <ROM_GlabroJaw.label>dente de lobisomen (Glabro)</ROM_GlabroJaw.label>
   <ROM_GlabroJaw.comps.0.tools.0.label>dentes</ROM_GlabroJaw.comps.0.tools.0.label>
-
   <ROM_CrinosHediff.label>Forma de Lobisomen (Crinos)</ROM_CrinosHediff.label>
-
   <ROM_CrinosClaw.label>garra de lobisomen (Crinos)</ROM_CrinosClaw.label>
   <ROM_CrinosClaw.comps.0.tools.0.label>garras</ROM_CrinosClaw.comps.0.tools.0.label>
-
   <ROM_CrinosJaw.label>dente de lobisomen (Crinos)</ROM_CrinosJaw.label>
   <ROM_CrinosJaw.comps.0.tools.0.label>dentes</ROM_CrinosJaw.comps.0.tools.0.label>
-
   <ROM_HispoHediff.label>Forma de Lobisomen (Hispo)</ROM_HispoHediff.label>
-
   <ROM_HispoClaw.label>garra de lobisomen (Hispo)</ROM_HispoClaw.label>
   <ROM_HispoClaw.comps.0.tools.0.label>garras</ROM_HispoClaw.comps.0.tools.0.label>
-
   <ROM_HispoJaw.label>dente de lobisomen (Hispo)</ROM_HispoJaw.label>
   <ROM_HispoJaw.comps.0.tools.0.label>dentes</ROM_HispoJaw.comps.0.tools.0.label>
-
   <ROM_LupusHediff.label>Forma de Lobisomen (Lupus)</ROM_LupusHediff.label>
-
   <ROM_LupusClaw.label>garra de lobisomen (Lupus)</ROM_LupusClaw.label>
   <ROM_LupusClaw.comps.0.tools.0.label>garras</ROM_LupusClaw.comps.0.tools.0.label>
-
   <ROM_LupusJaw.label>dente de lobisomen (Lupus)</ROM_LupusJaw.label>
   <ROM_LupusJaw.comps.0.tools.0.label>dentes</ROM_LupusJaw.comps.0.tools.0.label>
-
   <ROM_MetisHediff.label>Forma de Lobisomen (Metis)</ROM_MetisHediff.label>
-
   <ROM_MetisClaw.label>garra de lobisomen (Metis)</ROM_MetisClaw.label>
   <ROM_MetisClaw.comps.0.tools.0.label>garras</ROM_MetisClaw.comps.0.tools.0.label>
-
   <ROM_MetisJaw.label>dente de lobisomen (Metis)</ROM_MetisJaw.label>
   <ROM_MetisJaw.comps.0.tools.0.label>dentes</ROM_MetisJaw.comps.0.tools.0.label>
-
-
 </LanguageData>

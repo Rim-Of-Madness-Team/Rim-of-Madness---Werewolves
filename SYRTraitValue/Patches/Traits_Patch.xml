@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName = "ROM_Werewolf"]</xpath>
+    <value>
+      <li Class="SyrTraitValue.TraitValueExtension">
+        <traitValues>
+          <li>-1, -20</li>
+          <li>0, -10</li>
+          <li>1, 10</li>
+          <li>2, 20</li>
+          <li>3, 30</li>
+        </traitValues>
+      </li>
+    </value>
+  </Operation>
+</Patch>

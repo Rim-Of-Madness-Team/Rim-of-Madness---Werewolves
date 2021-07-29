@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <!-- Added body parts -->
-
   <ROM_GlabroHediff.label>늑대인간 형태 (글래브로)</ROM_GlabroHediff.label>
   <ROM_GlabroClaw.label>늑대인간의 발톱 (글래브로)</ROM_GlabroClaw.label>
   <ROM_GlabroJaw.label>늑대인간의 이빨 (글래브로)</ROM_GlabroJaw.label>
@@ -18,6 +16,4 @@
   <ROM_MetisHediff.label>늑대인간 형태 (메티스)</ROM_MetisHediff.label>
   <ROM_MetisClaw.label>늑대인간의 발톱 (메티스)</ROM_MetisClaw.label>
   <ROM_MetisJaw.label>늑대인간의 이빨 (메티스)</ROM_MetisJaw.label>
-
-
 </LanguageData>

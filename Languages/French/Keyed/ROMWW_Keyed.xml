@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ROM_WerewolfEscaped>{0} s'est échappé de son confinement dans le {1}.</ROM_WerewolfEscaped>
   <ROM_WerewolfLimbRegen>{0} a régénéré leur {1}.</ROM_WerewolfLimbRegen>
   <ROM_WerewolfDecyberize>{0} a régénéré leur {1} et perdu leur {2} dans le processus.</ROM_WerewolfDecyberize>
@@ -32,5 +31,4 @@
   <ROM_MoonCycle_Moons>Lune de {0}</ROM_MoonCycle_Moons>
   <ROM_MoonCycle_CurrentPhaseDesc>Chaque lune de la planète {0} de votre colonie, possède un cycle lunaire. A la fin d'un cycle, une magnifique pleine lune sera visible par votre colonie.\n\nN'importe quel Loup-Garou avec éveille de la lune activé se transformeront à ce moment précis.</ROM_MoonCycle_CurrentPhaseDesc>
   <ROM_MoonCycle_CurrentPhase>{0} ({1} jours avant pleine lune)</ROM_MoonCycle_CurrentPhase>
-
 </LanguageData>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--===================== Concepts taught through the learning readout, when opportunities arise ===================-->
+  <ConceptDef>
+    <defName>ROMWW_ConceptBionics</defName>
+    <label>Werewolf: Bionics</label>
+    <priority>50</priority>
+    <needsOpportunity>True</needsOpportunity>
+    <helpText>Fledgling werewolves cannot properly control their transformations and shed their implants and added parts when transforming. However, after reaching level 5 in any werewolf form, they will master more self control and no longer push off efficient bionics during regeneration except for those that replace their most vital werewolf parts, namely their jaws and claws.</helpText>
+  </ConceptDef>
+</Defs>

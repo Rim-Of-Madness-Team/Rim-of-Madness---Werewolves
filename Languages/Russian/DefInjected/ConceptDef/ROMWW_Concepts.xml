@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <!-- Concepts taught through the learning readout, when opportunities arise -->
-
   <ROMWW_ConceptBionics.label>Оборотень: Бионика</ROMWW_ConceptBionics.label>
   <ROMWW_ConceptBionics.helpText>Неопытные оборотни не могут должным образом контролировать свои трансформации и теряют импланты / добавленные части при трансформации. Однако, достигнув 5-го уровня в любой форме оборотня, они овладеют большим самоконтролем и больше не будут отвергать эффективную бионику во время регенерации, за исключением тех, которые заменяют наиболее важные части их оборотня, а именно их челюсти и когти.</ROMWW_ConceptBionics.helpText>
-
-
 </LanguageData>

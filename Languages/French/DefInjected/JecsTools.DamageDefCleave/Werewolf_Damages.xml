@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ROM_CrinosSlash.label>tranché</ROM_CrinosSlash.label>
   <ROM_CrinosSlash.deathMessage>{0} à été écorché à mort.</ROM_CrinosSlash.deathMessage>
-
-
 </LanguageData>

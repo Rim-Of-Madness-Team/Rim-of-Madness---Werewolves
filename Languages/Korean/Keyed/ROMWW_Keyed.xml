@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ROM_WerewolfEscaped>{0}는 {1}의 포위에서 도망쳤습니다.</ROM_WerewolfEscaped>
   <ROM_WerewolfLimbRegen>{0}는 그들의 {1}를 재생시켰습니다..</ROM_WerewolfLimbRegen>
   <ROM_WerewolfDecyberize>{0}는 {1}를 재생시키고 그 과정에서 {2}를 잃어버렸습니다.</ROM_WerewolfDecyberize>
@@ -32,5 +31,4 @@
   <ROM_MoonCycle_Moons>{0}의 달</ROM_MoonCycle_Moons>
   <ROM_MoonCycle_CurrentPhaseDesc>당신의 행성의 각 달마다, {0}는 순환 과정을 가집니다. 순환 과정의 끝에는, 아름다운 보름달이 당신의 콜로니를 빛출것입니다.\n\n이 시기에는 모든 늑대인간들이 변이하며 활동을 개시할 것입니다.</ROM_MoonCycle_CurrentPhaseDesc>
   <ROM_MoonCycle_CurrentPhase>{0} ({1}일이 채워지기 전까지 남았습니다.)</ROM_MoonCycle_CurrentPhase>
-
 </LanguageData>

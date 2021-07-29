@@ -1,23 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ROM_WerewolfStraggler.label>отставший</ROM_WerewolfStraggler.label>
   <ROM_WerewolfStraggler.labelPlural>отставшие</ROM_WerewolfStraggler.labelPlural>
-
   <ROM_WerewolfNewBlood.label>Новая кровь</ROM_WerewolfNewBlood.label>
   <ROM_WerewolfNewBlood.labelPlural>новая кровь</ROM_WerewolfNewBlood.labelPlural>
-
   <ROM_WolfHandler.label>Компаньон</ROM_WolfHandler.label>
   <ROM_WolfHandler.labelPlural>компаньоны</ROM_WolfHandler.labelPlural>
-
   <ROM_Werewolf.label>Коготь</ROM_Werewolf.label>
   <ROM_Werewolf.labelPlural>когти</ROM_Werewolf.labelPlural>
-
   <ROM_WerewolfFang.label>Клык</ROM_WerewolfFang.label>
   <ROM_WerewolfFang.labelPlural>Клыки</ROM_WerewolfFang.labelPlural>
-
   <ROM_WerewolfAlpha.label>Глава</ROM_WerewolfAlpha.label>
   <ROM_WerewolfAlpha.labelPlural>Главы</ROM_WerewolfAlpha.labelPlural>
-
-
 </LanguageData>

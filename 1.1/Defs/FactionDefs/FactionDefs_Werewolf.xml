@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef>
+    <defName>ROM_WerewolfClan</defName>
+    <label>wolf clan</label>
+    <description>A mysterious collective of individuals from different walks of life. Why they come together is a mystery. However, nearby townsfolk claim that when the moon shows its face, strange howls entwined with screams and whimpers echo from their encampments.</description>
+    <pawnsPlural>wolf clan</pawnsPlural>
+    <settlementGenerationWeight>0.001</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(800, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(1000, 0.3)</li>
+        <li>(2500, 0.8)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <factionIconPath>World/WorldObjects/Expanding/WolfPack</factionIconPath>
+    <colorSpectrum>
+      <li>(0.7, 1, 0.7)</li>
+      <li>(1, 1, 0.7)</li>
+      <li>(1, 1, 0.1)</li>
+    </colorSpectrum>
+    <startingGoodwill>
+      <min>-5</min>
+      <max>15</max>
+    </startingGoodwill>
+    <mustStartOneEnemy>false</mustStartOneEnemy>
+    <factionNameMaker>ROM_NamerFactionWerewolf</factionNameMaker>
+    <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+    <pawnNameMaker>NamerPersonTribal</pawnNameMaker>
+    <techLevel>Neolithic</techLevel>
+    <backstoryCategories>
+      <li>Tribal</li>
+    </backstoryCategories>
+    <leaderTitle>alpha</leaderTitle>
+    <hairTags>
+      <li>Tribal</li>
+    </hairTags>
+    <naturalColonyGoodwill>
+      <min>-5</min>
+      <max>15</max>
+    </naturalColonyGoodwill>
+    <allowedArrivalTemperatureRange>
+      <min>-40</min>
+      <max>45</max>
+    </allowedArrivalTemperatureRange>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Neolithic_ShamanMerchant</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_Neolithic_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Neolithic_Standard</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Tribal_Trader>1</Tribal_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>1</Muffalo>
+          <Dromedary>1</Dromedary>
+        </carriers>
+        <guards>
+          <ROM_WolfHandler>60</ROM_WolfHandler>
+          <Tribal_Archer>100</Tribal_Archer>
+          <Tribal_Warrior>1</Tribal_Warrior>
+        </guards>
+      </li>
+      <li>
+        <!-- Normal, standard mix -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <ROM_WerewolfNewBlood>15</ROM_WerewolfNewBlood>
+          <ROM_WolfHandler>60</ROM_WolfHandler>
+          <ROM_Werewolf>100</ROM_Werewolf>
+          <ROM_WerewolfFang>60</ROM_WerewolfFang>
+          <ROM_WerewolfAlpha>5</ROM_WerewolfAlpha>
+        </options>
+      </li>
+      <li>
+        <!-- Normal, standard mix -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <ROM_WerewolfNewBlood>15</ROM_WerewolfNewBlood>
+          <ROM_WolfHandler>20</ROM_WolfHandler>
+          <ROM_Werewolf>50</ROM_Werewolf>
+          <ROM_WerewolfFang>20</ROM_WerewolfFang>
+          <ROM_WerewolfAlpha>5</ROM_WerewolfAlpha>
+          <Tribal_Archer>80</Tribal_Archer>
+          <Tribal_Warrior>10</Tribal_Warrior>
+        </options>
+      </li>
+      <li>
+        <!-- Base defense -->
+        <kindDef>Settlement</kindDef>
+        <options>
+          <ROM_WerewolfStraggler>15</ROM_WerewolfStraggler>
+          <ROM_WerewolfNewBlood>25</ROM_WerewolfNewBlood>
+          <ROM_WolfHandler>35</ROM_WolfHandler>
+          <ROM_Werewolf>50</ROM_Werewolf>
+          <ROM_WerewolfFang>100</ROM_WerewolfFang>
+          <ROM_WerewolfAlpha>1</ROM_WerewolfAlpha>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+  </FactionDef>
+</Defs>

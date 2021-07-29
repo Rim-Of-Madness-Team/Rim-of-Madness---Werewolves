@@ -1,40 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ROM_WerewolfNewBlood.label>novo-sangue</ROM_WerewolfNewBlood.label>
   <ROM_WerewolfNewBlood.labelPlural>novo-sangue</ROM_WerewolfNewBlood.labelPlural>
   <ROM_WerewolfNewBlood.labelMale>novo-sangue masculinos</ROM_WerewolfNewBlood.labelMale>
   <ROM_WerewolfNewBlood.labelMalePlural>novos-sangues masculinos</ROM_WerewolfNewBlood.labelMalePlural>
   <ROM_WerewolfNewBlood.labelFemale>novo-sangue feminino</ROM_WerewolfNewBlood.labelFemale>
   <ROM_WerewolfNewBlood.labelFemalePlural>novos-sangues femininos</ROM_WerewolfNewBlood.labelFemalePlural>
-
   <ROM_WolfHandler.label>companheiro</ROM_WolfHandler.label>
   <ROM_WolfHandler.labelPlural>companheiros</ROM_WolfHandler.labelPlural>
   <ROM_WolfHandler.labelMale>companheiro</ROM_WolfHandler.labelMale>
   <ROM_WolfHandler.labelMalePlural>companheiros</ROM_WolfHandler.labelMalePlural>
   <ROM_WolfHandler.labelFemale>companheira</ROM_WolfHandler.labelFemale>
   <ROM_WolfHandler.labelFemalePlural>companheiras</ROM_WolfHandler.labelFemalePlural>
-
   <ROM_Werewolf.label>garra</ROM_Werewolf.label>
   <ROM_Werewolf.labelPlural>garras</ROM_Werewolf.labelPlural>
   <ROM_Werewolf.labelMale>garra masculino</ROM_Werewolf.labelMale>
   <ROM_Werewolf.labelMalePlural>garras masculinos</ROM_Werewolf.labelMalePlural>
   <ROM_Werewolf.labelFemale>garra feminina</ROM_Werewolf.labelFemale>
   <ROM_Werewolf.labelFemalePlural>garras femininas</ROM_Werewolf.labelFemalePlural>
-
   <ROM_WerewolfFang.label> o dente</ROM_WerewolfFang.label>
   <ROM_WerewolfFang.labelPlural>os dentes</ROM_WerewolfFang.labelPlural>
   <ROM_WerewolfFang.labelMale>o dente masculino</ROM_WerewolfFang.labelMale>
   <ROM_WerewolfFang.labelMalePlural>os dentes masculinos</ROM_WerewolfFang.labelMalePlural>
   <ROM_WerewolfFang.labelFemale>a dente feminino</ROM_WerewolfFang.labelFemale>
   <ROM_WerewolfFang.labelFemalePlural>as dentes femininas</ROM_WerewolfFang.labelFemalePlural>
-
   <ROM_WerewolfAlpha.label>cabeça</ROM_WerewolfAlpha.label>
   <ROM_WerewolfAlpha.labelPlural>cabeças</ROM_WerewolfAlpha.labelPlural>
   <ROM_WerewolfAlpha.labelMale>cabeça masculino</ROM_WerewolfAlpha.labelMale>
   <ROM_WerewolfAlpha.labelMalePlural>cabeças masculinos</ROM_WerewolfAlpha.labelMalePlural>
   <ROM_WerewolfAlpha.labelFemale>cabeça feminina</ROM_WerewolfAlpha.labelFemale>
   <ROM_WerewolfAlpha.labelFemalePlural>cabeças femininas</ROM_WerewolfAlpha.labelFemalePlural>
-
-
 </LanguageData>

@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ROM_WerewolfClan.label>Clan de Loup</ROM_WerewolfClan.label>
   <ROM_WerewolfClan.description>Une mystérieuse collectivité d'individu d'origines différentes. La raison pour laquelle ils sont réunis est inconnue. Entre autres, les villageois environnants racontent qu'une fois la pleine lune arrivée, d'étranges hurlements et gémissements proviennent de leur clan.</ROM_WerewolfClan.description>
   <ROM_WerewolfClan.pawnsPlural>Clan de Loup</ROM_WerewolfClan.pawnsPlural>
   <ROM_WerewolfClan.leaderTitle>Alpha</ROM_WerewolfClan.leaderTitle>
-
-
 </LanguageData>

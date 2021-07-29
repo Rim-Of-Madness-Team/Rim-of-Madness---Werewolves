@@ -1,22 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <!-- Added body parts -->
-
   <ROM_Glabro.label>글라브로</ROM_Glabro.label>
   <ROM_Glabro.description>가로우의 늑인 모습을 취하고 있거나 인간처럼 보이는 정체불명의 존재입니다. 글라브로 형태에서는, 늑대인간은 인간의 형상을 유지한채로 늑대의 야성과 폭력을 행사할 수 있습니다.</ROM_Glabro.description>
-
   <ROM_Crinos.label>크리노스</ROM_Crinos.label>
   <ROM_Crinos.description>전투 형태입니다. 오로지 살육만을 전제로 그들의 이성은 이미 본능에 먹혀버림으로써 피와 죽음만이 그들에게 평온을 선사할 수 있습니다.\n\n패시브 보너스\n클리브 : 근접 공격의 사정거리에 있는 적들을 분쇄하며 추가 데미지를 선사합니다.</ROM_Crinos.description>
-
   <ROM_Hispo.label>히스포</ROM_Hispo.label>
   <ROM_Hispo.description>이 형태는 사냥을 위한 형태로써 어두캄캄한 밤에 거대한 모습으로 변하는 것입니다. 까마득한 예전에 다이어울프라는 말만한 고대의 공포였던 존재의 모습과 닮았습니다.\n\n패시브 보너스\n2중 타격: 히스포 상태에서는 한번의 타격에 2번의 데미지를 가합니다.</ROM_Hispo.description>
-
   <ROM_Lupus.label>루푸스</ROM_Lupus.label>
   <ROM_Lupus.description>이 형태는 진실로 늑대에 가까운 형태입니다. 그래서 진짜 늑대와 같은 후각과 감각을 선사하며 늑대인간에게 최고의 신체능력을 선사합니다.\n\n패시브 보너스\n자연의 인도: 루푸스는 숲을 이동하는데 제약이 없으며 이동속도 보너스를 받습니다.</ROM_Lupus.description>
-
   <ROM_Metis.label>메티스(혼혈)</ROM_Metis.label>
   <ROM_Metis.description>사람과 늑대인간의 피가 섞이는 결과로, 메티스는 일반 늑대인간과는 다른 존재가 되었습니다..\n\n저주:\n메티스는 다른 늑대인간과 같은 형태의 변신을 할 수 없습니다.</ROM_Metis.description>
-
-
 </LanguageData>

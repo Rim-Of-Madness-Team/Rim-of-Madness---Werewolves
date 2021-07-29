@@ -1,7 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  <ROM_NamerFactionWerewolf.rulePack.rulesStrings.0>name->The [adj] [noun]</ROM_NamerFactionWerewolf.rulePack.rulesStrings.0>
-
-
+  <ROM_NamerFactionWerewolf.rulePack.rulesStrings.0>name-&gt;The [adj] [noun]</ROM_NamerFactionWerewolf.rulePack.rulesStrings.0>
 </LanguageData>

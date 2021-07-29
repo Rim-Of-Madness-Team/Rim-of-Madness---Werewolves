@@ -1,16 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
-  <identifier>RoM-Werewolves</identifier>
-  <version>1.20.0.0</version>
-  <dependencies>
-    <li>JecsTools</li>
-  </dependencies>
+  <identifier>RimofMadnessWerewolves</identifier>
+  <version>1.0.7.0</version>
+  <dependencies />
   <incompatibleWith />
   <loadBefore />
-  <loadAfter>
-    <li>HugsLib</li>
-    <li>JecsTools</li>
-  </loadAfter>
-  <manifestUri>https://raw.githubusercontent.com/Rim-Of-Madness-Team/Rim-of-Madness---Werewolves/master/About/Manifest.xml</manifestUri>
-  <downloadUri>https://github.com/Rim-Of-Madness-Team/Rim-of-Madness---Werewolves/releases</downloadUri>
+  <loadAfter />
+  <manifestUri>https://raw.githubusercontent.com/emipa606/RimofMadnessWerewolves/master/About/Manifest.xml</manifestUri>
+  <downloadUri>https://github.com/emipa606/RimofMadnessWerewolves/releases</downloadUri>
 </Manifest>

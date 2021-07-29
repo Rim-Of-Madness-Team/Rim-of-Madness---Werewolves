@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Added body parts -->
+  <HediffDef Name="ROMWW_TransformedBody" Abstract="True">
+    <hediffClass>Werewolf.HediffWithComps_WerewolfExtraInfo</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+  </HediffDef>
+  <HediffDef Name="ROMWW_TransformedBodyPartBase" Abstract="True">
+    <hediffClass>JecsTools.Hediff_TransformedPart</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <isBad>false</isBad>
+  </HediffDef>
+  <Werewolf.WerewolfFormDef>
+    <defName>ROM_Glabro</defName>
+    <label>Glabro</label>
+    <description>The near-man or 'wolfman' form of the Garou. In the Glabro form, a werewolf can somewhat pass for human while still drawing on a portion of their feral power.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Animal/Werewolf/Glabro/XenGlabro</texPath>
+      <drawSize>1.7</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <formHediff>ROM_GlabroHediff</formHediff>
+    <clawHediff>ROM_GlabroClaw</clawHediff>
+    <jawHediff>ROM_GlabroJaw</jawHediff>
+    <iconTexPath>UI/Button/FormGlabro</iconTexPath>
+    <rageUsageFactor>1.0</rageUsageFactor>
+    <sizeFactor>1.25</sizeFactor>
+    <healthFactor>1.5</healthFactor>
+    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+    <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
+    <transformSound>ROM_Werewolf_GlabroHowl</transformSound>
+  </Werewolf.WerewolfFormDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
+    <defName>ROM_GlabroHediff</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Werewolf Form (Glabro)</label>
+    <description>Werewolf Form (Glabro)</description>
+    <comps>
+      <li Class="Werewolf.HediffCompProperties_Rage">
+        <baseRageSeconds>60</baseRageSeconds>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.3</painFactor>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.30</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <MoveSpeed>0.20</MoveSpeed>
+          <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+          <ToxicSensitivity>-0.8</ToxicSensitivity>
+          <PsychicSensitivity>0.20</PsychicSensitivity>
+          <GlobalLearningFactor>2.0</GlobalLearningFactor>
+          <ComfyTemperatureMin>-100.0</ComfyTemperatureMin>
+          <ComfyTemperatureMax>100.0</ComfyTemperatureMax>
+          <ImmunityGainSpeed>2.0</ImmunityGainSpeed>
+          <CarryingCapacity>50</CarryingCapacity>
+          <MeatAmount>10</MeatAmount>
+          <MeleeHitChance>40</MeleeHitChance>
+          <MeleeDodgeChance>40</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_GlabroClaw</defName>
+    <label>werewolf claw (glabro)</label>
+    <description>werewolf claw (glabro)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>claws</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>30</power>
+            <cooldownTime>1.6</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_GlabroJaw</defName>
+    <label>werewolf teeth (Glabro)</label>
+    <description>werewolf teeth (Glabro)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>teeth</label>
+            <capacities>
+              <li>Bite</li>
+            </capacities>
+            <power>15</power>
+            <cooldownTime>2.1</cooldownTime>
+            <surpriseAttack>
+              <extraMeleeDamages>
+                <li>
+                  <def>Stun</def>
+                  <amount>20</amount>
+                </li>
+              </extraMeleeDamages>
+            </surpriseAttack>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <Werewolf.WerewolfFormDef>
+    <defName>ROM_Crinos</defName>
+    <label>Crinos</label>
+    <description>The war-form. Fusing the deadliest aspects of human and beast into one body whose sole purpose is to kill and shred all enemies into pieces.\n\nPassive Bonus\nCleave: With each strike, Crinos can strike extra targets in melee range.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Animal/Werewolf/Crinos/spoonshortageCrinos</texPath>
+      <drawSize>2.7</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <formHediff>ROM_CrinosHediff</formHediff>
+    <clawHediff>ROM_CrinosClaw</clawHediff>
+    <jawHediff>ROM_CrinosJaw</jawHediff>
+    <iconTexPath>UI/Button/FormCrinos</iconTexPath>
+    <rageUsageFactor>2.0</rageUsageFactor>
+    <sizeFactor>1.75</sizeFactor>
+    <healthFactor>2.5</healthFactor>
+    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+    <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
+    <transformSound>ROM_Werewolf_CrinosHowl</transformSound>
+    <attackSound>ROM_Werewolf_CrinosAttack</attackSound>
+  </Werewolf.WerewolfFormDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
+    <defName>ROM_CrinosHediff</defName>
+    <label>Werewolf Form (Crinos)</label>
+    <description>Werewolf Form (Crinos)</description>
+    <comps>
+      <li Class="Werewolf.HediffCompProperties_Rage">
+        <baseRageSeconds>30</baseRageSeconds>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.1</painFactor>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.40</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <MoveSpeed>0.40</MoveSpeed>
+          <MentalBreakThreshold>-0.2</MentalBreakThreshold>
+          <ToxicSensitivity>-0.95</ToxicSensitivity>
+          <PsychicSensitivity>0.50</PsychicSensitivity>
+          <GlobalLearningFactor>0.5</GlobalLearningFactor>
+          <ComfyTemperatureMin>-120.0</ComfyTemperatureMin>
+          <ComfyTemperatureMax>120.0</ComfyTemperatureMax>
+          <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
+          <CarryingCapacity>120</CarryingCapacity>
+          <MeatAmount>20</MeatAmount>
+          <MeleeHitChance>80</MeleeHitChance>
+          <MeleeDodgeChance>10</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_CrinosClaw</defName>
+    <label>werewolf claw (Crinos)</label>
+    <description>werewolf claw (Crinos)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>claws</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>50</power>
+            <cooldownTime>2.0</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>false</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_CrinosJaw</defName>
+    <label>werewolf teeth (Crinos)</label>
+    <description>werewolf teeth (Crinos)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>teeth</label>
+            <capacities>
+              <li>Bite</li>
+            </capacities>
+            <power>40</power>
+            <cooldownTime>2.1</cooldownTime>
+            <surpriseAttack>
+              <extraMeleeDamages>
+                <li>
+                  <def>Stun</def>
+                  <amount>20</amount>
+                </li>
+              </extraMeleeDamages>
+            </surpriseAttack>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <Werewolf.WerewolfFormDef>
+    <defName>ROM_Hispo</defName>
+    <label>Hispo</label>
+    <description>This form is the massive wolf of nightmares, a throwback to prehistoric days when the dire wolves were the size of ponies. It’s a form designed to hunt – and to kill.\n\nPassive Bonus\nDual Strike: Hispos strike twice for each claw attack.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Animal/Werewolf/Hispo/XenHispo</texPath>
+      <drawSize>2.7</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <rageUsageFactor>1.25</rageUsageFactor>
+    <sizeFactor>1.25</sizeFactor>
+    <healthFactor>1.25</healthFactor>
+    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+    <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
+    <formHediff>ROM_HispoHediff</formHediff>
+    <clawHediff>ROM_HispoClaw</clawHediff>
+    <jawHediff>ROM_HispoJaw</jawHediff>
+    <iconTexPath>UI/Button/FormHispo</iconTexPath>
+    <transformSound>ROM_Werewolf_HispoHowl</transformSound>
+    <attackSound>ROM_Werewolf_HispoAttack</attackSound>
+  </Werewolf.WerewolfFormDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
+    <defName>ROM_HispoHediff</defName>
+    <label>Werewolf Form (Hispo)</label>
+    <description>Werewolf Form (Hispo)</description>
+    <comps>
+      <li Class="Werewolf.HediffCompProperties_Rage">
+        <baseRageSeconds>60</baseRageSeconds>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.1</painFactor>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.50</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <MoveSpeed>0.50</MoveSpeed>
+          <MentalBreakThreshold>-0.3</MentalBreakThreshold>
+          <ToxicSensitivity>-0.8</ToxicSensitivity>
+          <PsychicSensitivity>0.70</PsychicSensitivity>
+          <GlobalLearningFactor>0.7</GlobalLearningFactor>
+          <ComfyTemperatureMin>-100.0</ComfyTemperatureMin>
+          <ComfyTemperatureMax>100.0</ComfyTemperatureMax>
+          <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
+          <CarryingCapacity>20</CarryingCapacity>
+          <MeatAmount>10</MeatAmount>
+          <MeleeHitChance>40</MeleeHitChance>
+          <MeleeDodgeChance>60</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_HispoClaw</defName>
+    <label>werewolf claw (Hispo)</label>
+    <description>werewolf claw (Hispo)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>claw</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>30</power>
+            <cooldownTime>1.6</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_HispoJaw</defName>
+    <label>werewolf teeth (Hispo)</label>
+    <description>werewolf teeth (Hispo)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>teeth</label>
+            <capacities>
+              <li>Bite</li>
+            </capacities>
+            <power>25</power>
+            <cooldownTime>2.4</cooldownTime>
+            <surpriseAttack>
+              <extraMeleeDamages>
+                <li>
+                  <def>Stun</def>
+                  <amount>20</amount>
+                </li>
+              </extraMeleeDamages>
+            </surpriseAttack>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <Werewolf.WerewolfFormDef>
+    <defName>ROM_Lupus</defName>
+    <label>Lupus</label>
+    <description>This form is the true “wolf” form, allowing werewolves to hunt and live among wolf packs, or to call on the speed and superior senses of the wolf.\n\nPassive Bonus\nPath of Nature: Lupus receive no movement penalties for movement through trees.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Animal/Wolf_Timber/Wolf_Timber</texPath>
+      <drawSize>2.5</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <rageUsageFactor>1.25</rageUsageFactor>
+    <sizeFactor>1.25</sizeFactor>
+    <healthFactor>1.25</healthFactor>
+    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+    <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
+    <formHediff>ROM_LupusHediff</formHediff>
+    <clawHediff>ROM_LupusClaw</clawHediff>
+    <jawHediff>ROM_LupusJaw</jawHediff>
+    <iconTexPath>UI/Button/FormLupus</iconTexPath>
+    <transformSound>ROM_Werewolf_LupusHowl</transformSound>
+  </Werewolf.WerewolfFormDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
+    <defName>ROM_LupusHediff</defName>
+    <label>Werewolf Form (Lupus)</label>
+    <description>Werewolf Form (Lupus)</description>
+    <comps>
+      <li Class="Werewolf.HediffCompProperties_Rage">
+        <baseRageSeconds>60</baseRageSeconds>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.1</painFactor>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.30</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <MoveSpeed>0.30</MoveSpeed>
+          <MentalBreakThreshold>-0.4</MentalBreakThreshold>
+          <ToxicSensitivity>-0.75</ToxicSensitivity>
+          <PsychicSensitivity>0.80</PsychicSensitivity>
+          <GlobalLearningFactor>1.5</GlobalLearningFactor>
+          <ComfyTemperatureMin>-100.0</ComfyTemperatureMin>
+          <ComfyTemperatureMax>100.0</ComfyTemperatureMax>
+          <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
+          <CarryingCapacity>10</CarryingCapacity>
+          <MeatAmount>10</MeatAmount>
+          <MeleeHitChance>40</MeleeHitChance>
+          <MeleeDodgeChance>60</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_LupusClaw</defName>
+    <label>werewolf claw (Lupus)</label>
+    <description>werewolf claw (Lupus)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>claws</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>25</power>
+            <cooldownTime>2.2</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_LupusJaw</defName>
+    <label>werewolf teeth (Lupus)</label>
+    <description>werewolf teeth (Lupus)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>teeth</label>
+            <capacities>
+              <li>Bite</li>
+            </capacities>
+            <power>25</power>
+            <cooldownTime>1.3</cooldownTime>
+            <surpriseAttack>
+              <extraMeleeDamages>
+                <li>
+                  <def>Stun</def>
+                  <amount>20</amount>
+                </li>
+              </extraMeleeDamages>
+            </surpriseAttack>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <Werewolf.WerewolfFormDef>
+    <defName>ROM_Metis</defName>
+    <label>Metis</label>
+    <description>Resulting from a genetic line tainted with werewolf inbreeding, the Metis is created with an innate flaw or strange appearance that ostracizes it from a normal wolfpack.\n\nCurse:\nMetis werewolves cannot transform into other Werewolf forms.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Animal/Werewolf/Metis/spoonshortageEditByJecrellMetis</texPath>
+      <drawSize>2.7</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <formHediff>ROM_MetisHediff</formHediff>
+    <clawHediff>ROM_MetisClaw</clawHediff>
+    <jawHediff>ROM_MetisJaw</jawHediff>
+    <iconTexPath>UI/Button/FormMetis</iconTexPath>
+    <rageUsageFactor>1.0</rageUsageFactor>
+    <sizeFactor>1.25</sizeFactor>
+    <healthFactor>1.5</healthFactor>
+    <rageFactorPerLevel>0.5</rageFactorPerLevel>
+    <rageFactorPerLevelMax>60.0</rageFactorPerLevelMax>
+    <transformSound>ROM_Werewolf_MetisHowl</transformSound>
+    <attackSound>ROM_Werewolf_MetisAttack</attackSound>
+  </Werewolf.WerewolfFormDef>
+  <HediffDef ParentName="ROMWW_TransformedBody">
+    <defName>ROM_MetisHediff</defName>
+    <label>Werewolf Form (Metis)</label>
+    <description>Werewolf Form (Metis)</description>
+    <comps>
+      <li Class="Werewolf.HediffCompProperties_Rage">
+        <baseRageSeconds>60</baseRageSeconds>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.3</painFactor>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.35</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <MoveSpeed>0.22</MoveSpeed>
+          <ToxicSensitivity>-0.8</ToxicSensitivity>
+          <PsychicSensitivity>0.30</PsychicSensitivity>
+          <ComfyTemperatureMin>-100.0</ComfyTemperatureMin>
+          <ComfyTemperatureMax>100.0</ComfyTemperatureMax>
+          <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+          <CarryingCapacity>100</CarryingCapacity>
+          <MeatAmount>15</MeatAmount>
+          <MeleeHitChance>50</MeleeHitChance>
+          <MeleeDodgeChance>40</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_MetisClaw</defName>
+    <label>werewolf claw (Metis)</label>
+    <description>werewolf claw (Metis)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>claws</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>30</power>
+            <cooldownTime>1.65</cooldownTime>
+          </li>
+        </tools>
+        <verbs>
+          <li>
+            <verbClass>Verb_MeleeAttackDamage</verbClass>
+            <defaultCooldownTime>1.65</defaultCooldownTime>
+            <meleeDamageBaseAmount>30</meleeDamageBaseAmount>
+            <meleeDamageDef>Scratch</meleeDamageDef>
+          </li>
+        </verbs>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  <HediffDef ParentName="ROMWW_TransformedBodyPartBase">
+    <defName>ROM_MetisJaw</defName>
+    <label>werewolf teeth (Metis)</label>
+    <description>werewolf teeth (Metis)</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>teeth</label>
+            <capacities>
+              <li>Bite</li>
+            </capacities>
+            <power>20</power>
+            <cooldownTime>2.0</cooldownTime>
+            <surpriseAttack>
+              <extraMeleeDamages>
+                <li>
+                  <def>Stun</def>
+                  <amount>20</amount>
+                </li>
+              </extraMeleeDamages>
+            </surpriseAttack>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+</Defs>

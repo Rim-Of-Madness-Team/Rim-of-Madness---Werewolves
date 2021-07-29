@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <!-- Added body parts -->
-
   <ROM_GlabroHediff.label>Forme de Lycanthrope (Glabro)</ROM_GlabroHediff.label>
   <ROM_GlabroClaw.label>griffe de loup-garou (glabro)</ROM_GlabroClaw.label>
   <ROM_GlabroJaw.label>morsure de loup-garou (Glabro)</ROM_GlabroJaw.label>
@@ -18,6 +16,4 @@
   <ROM_MetisHediff.label>Forme de Lycanthrope (Metis)</ROM_MetisHediff.label>
   <ROM_MetisClaw.label>griffe de loup-garou (Metis)</ROM_MetisClaw.label>
   <ROM_MetisJaw.label>morsure de loup-garou (Metis)</ROM_MetisJaw.label>
-
-
 </LanguageData>

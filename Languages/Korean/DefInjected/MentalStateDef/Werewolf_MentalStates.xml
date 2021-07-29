@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <!-- Mental breaks: extreme -->
-
   <ROM_WerewolfFury.label>늑대인간의 광폭화</ROM_WerewolfFury.label>
   <ROM_WerewolfFury.beginLetter>{0}가 광폭한 늑대인간이 되었습니다.!</ROM_WerewolfFury.beginLetter>
   <ROM_WerewolfFury.beginLetterLabel>늑대인간의 광폭화</ROM_WerewolfFury.beginLetterLabel>
   <ROM_WerewolfFury.recoveryMessage>{0}'의 광폭화가 끝났습니다.</ROM_WerewolfFury.recoveryMessage>
   <ROM_WerewolfFury.baseInspectLine>정신 상태: 광폭화</ROM_WerewolfFury.baseInspectLine>
-
-
 </LanguageData>

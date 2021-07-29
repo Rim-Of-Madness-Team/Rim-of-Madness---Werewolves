@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ROM_WerewolfEncounterLabel>Оборотни приближаются</ROM_WerewolfEncounterLabel>
   <ROM_WerewolfEncounterDesc>{0} - оборотень. Может потребоваться серебряное оружие или специальные тактики, если они станут враждебными.</ROM_WerewolfEncounterDesc>
-
-
   <!-- 4/29/18 -->
   <ROM_WerewolfTransformationFailure>{0} не удалось трансформироваться. (Причина: вне дома. Шанс успеха 2%)</ROM_WerewolfTransformationFailure>
-
   <!-- Prior -->
   <ROM_WerewolfEscaped>{0} перескочил(а) из своего ограничения в {1}.</ROM_WerewolfEscaped>
   <ROM_WerewolfLimbRegen>{0} восстановил их {1}.</ROM_WerewolfLimbRegen>
@@ -42,5 +38,4 @@
   <ROM_MoonCycle_Moons>Луна из {0}</ROM_MoonCycle_Moons>
   <ROM_MoonCycle_CurrentPhaseDesc>Каждая луна на вашей колонии, {0}, имеет лунный цикл. В конце цикла в вашей колонии будет видна красивая полная луна.\n\nВ это время будут действовать оборотни с активной трансформацией.</ROM_MoonCycle_CurrentPhaseDesc>
   <ROM_MoonCycle_CurrentPhase>{0} ({1} дней до полной)</ROM_MoonCycle_CurrentPhase>
-
 </LanguageData>

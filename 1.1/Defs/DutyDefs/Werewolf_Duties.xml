@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DutyDef>
+    <defName>ROM_WerewolfAssault</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="Werewolf.JobGiver_AttackAndTransform">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+        <li Class="JobGiver_AIGotoNearestHostile" />
+        <li Class="JecsTools.JobGiver_AIFirelessTrashColonyClose" />
+        <li Class="JecsTools.JobGiver_AIFirelessTrashColonyDistant" />
+        <li Class="JobGiver_AISapper">
+          <canMineNonMineables>false</canMineNonMineables>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+</Defs>

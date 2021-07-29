@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <!-- Mental breaks: extreme -->
-
   <ROM_WerewolfFury.label>Fureur de Loup-Garou</ROM_WerewolfFury.label>
   <ROM_WerewolfFury.beginLetter>{0} est devenu un Loup-Garou enragé!</ROM_WerewolfFury.beginLetter>
   <ROM_WerewolfFury.beginLetterLabel>Loup-Garou enragé</ROM_WerewolfFury.beginLetterLabel>
   <ROM_WerewolfFury.recoveryMessage>La furreur de {0} est terminée.</ROM_WerewolfFury.recoveryMessage>
   <ROM_WerewolfFury.baseInspectLine>Etat psycologique: Brutalité</ROM_WerewolfFury.baseInspectLine>
-
-
 </LanguageData>
