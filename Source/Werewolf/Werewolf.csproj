@@ -7,7 +7,11 @@
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DebugType>None</DebugType>
     <LangVersion>latest</LangVersion>
+    <Configurations>Debug;Release;RW1.3</Configurations>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="HarmonyPatches_RenderPawnInternal_ClearCache.cs" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
       <Version>*</Version>
@@ -21,15 +25,14 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0JecsTools">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2195729899\1.3\Assemblies\0JecsTools.dll</HintPath>
+      <HintPath>..\..\..\JecsTools\1.3\Assemblies\0JecsTools.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2195729899\1.3\Assemblies\AbilityUser.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\JecsTools\1.3\Assemblies\AbilityUser.dll</HintPath>
     </Reference>
     <Reference Include="Vampire">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2242846132\1.2\Assemblies\Vampire.dll</HintPath>
+      <HintPath>..\..\..\Rim-of-Madness---Vampires\1.3\Assemblies\Vampire.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>

@@ -1,0 +1,39 @@
+[h1]Gameplay mod for RimWorld. Adds Werewolves to your game.[/h1]
+
+Watch Barky&apos;s impressions video to see some of the mod in action.
+https://www.youtube.com/watch?v=ZH54IP3N47c
+
+[h1]Languages:[/h1]
+English, Français (by Coyote2710), 한국어 (by [url=http://steamcommunity.com/profiles/76561198050557061]totobrother[/url])
+
+[h1]Features:[/h1]
+[list]
+[*] 4 unlockable playable werewolf forms (and a hidden fifth type)
+[*] Adds moons to RimWorld with a custom moon cycle system.
+[*] Adds a neutral AI faction of Werewolves to interact with, or engage hostilities with to your peril.
+[*] Adds &quot;silver treatment&quot; system for colonies with machining tables to use against Werewolf damage immunity.
+[/list]
+
+[h1]Startup Guide:[/h1]
+[list]
+[*] For a playable werewolf, you will need a colonist with the Werewolf (Unblooded) trait. 
+[*] When the first full moon rises, they will go into a Werewolf fury. After they calm down, the werewolf will be able to make controlled transformations in the future for that form.
+[*] To unlock and level up forms, toggle the full moon fury icon to enable further random transformations during full moons.
+[/list]
+
+[h1]Updates incorporated from Werewolves Continued by Mlie[/h1]
+[list]
+[*] Fixed compatiblity with Humanoid Alien Framework, thanks erdelf!
+[*] The issue with loading saves with an active moon-cycle should now be fixed, thanks lbmaian!
+[*] Added support for [SYR] Trait Value
+[/list]
+
+[h1]Notes[/h1]
+Artwork for this mod was contributed by SpoonShortage and Xen.
+Mod commissioned for Sarah Banks.
+
+[h1]Questions / Comments / Bug Reports[/h1]
+Head to our Discord server -&gt; https://discord.gg/AaVFA7V
+
+[h1]Known Conflicts[/h1]
+Unknown.

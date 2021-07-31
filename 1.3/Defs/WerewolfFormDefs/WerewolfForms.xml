@@ -134,7 +134,7 @@
     <description>The war-form. Fusing the deadliest aspects of human and beast into one body whose sole purpose is to kill and shred all enemies into pieces.\n\nPassive Bonus\nCleave: With each strike, Crinos can strike extra targets in melee range.</description>
     <graphicData>
       <texPath>Things/Pawn/Animal/Werewolf/Crinos/spoonshortageCrinos</texPath>
-      <drawSize>2.7</drawSize>
+      <drawSize>2.3</drawSize>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
     <formHediff>ROM_CrinosHediff</formHediff>
@@ -250,7 +250,7 @@
     <description>This form is the massive wolf of nightmares, a throwback to prehistoric days when the dire wolves were the size of ponies. It’s a form designed to hunt – and to kill.\n\nPassive Bonus\nDual Strike: Hispos strike twice for each claw attack.</description>
     <graphicData>
       <texPath>Things/Pawn/Animal/Werewolf/Hispo/XenHispo</texPath>
-      <drawSize>2.7</drawSize>
+      <drawSize>2.3</drawSize>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
     <rageUsageFactor>1.25</rageUsageFactor>
@@ -366,7 +366,7 @@
     <description>This form is the true “wolf” form, allowing werewolves to hunt and live among wolf packs, or to call on the speed and superior senses of the wolf.\n\nPassive Bonus\nPath of Nature: Lupus receive no movement penalties for movement through trees.</description>
     <graphicData>
       <texPath>Things/Pawn/Animal/Wolf_Timber/Wolf_Timber</texPath>
-      <drawSize>2.5</drawSize>
+      <drawSize>2.15</drawSize>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
     <rageUsageFactor>1.25</rageUsageFactor>
@@ -481,7 +481,7 @@
     <description>Resulting from a genetic line tainted with werewolf inbreeding, the Metis is created with an innate flaw or strange appearance that ostracizes it from a normal wolfpack.\n\nCurse:\nMetis werewolves cannot transform into other Werewolf forms.</description>
     <graphicData>
       <texPath>Things/Pawn/Animal/Werewolf/Metis/spoonshortageEditByJecrellMetis</texPath>
-      <drawSize>2.7</drawSize>
+      <drawSize>2.15</drawSize>
       <graphicClass>Graphic_Multi</graphicClass>
     </graphicData>
     <formHediff>ROM_MetisHediff</formHediff>

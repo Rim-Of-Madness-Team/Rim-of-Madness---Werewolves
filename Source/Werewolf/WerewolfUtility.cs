@@ -1,10 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Verse;
 
 namespace Werewolf
 {
     public static class WerewolfUtility
     {
+        public static int transformedWerewolfCount = 0;
+
         public static CompWerewolf CompWW(this Pawn pawn)
         {
             return pawn?.GetComp<CompWerewolf>() is { } w ? w : null;
@@ -61,6 +64,22 @@ namespace Werewolf
             {
                 SpawnThingsFromHediffs(pawn, bodyPartRecord, pos, map);
             }
+        }
+
+        internal static void UpdateTransformedWerewolvesCount()
+        {
+            var maps = Find.Maps.ToList();
+            int wwTransformedCount = 0;
+            foreach (var _ in from Map m in maps
+                              from Pawn pawn in m.mapPawns.AllPawnsSpawned
+                              where pawn.IsWerewolf()
+                              where pawn.GetComp<CompWerewolf>().IsTransformed
+                              select new { })
+            {
+                wwTransformedCount += 1;
+            }
+            transformedWerewolfCount = wwTransformedCount;
+            //Log.Message(transformedWerewolfCount.ToString() + " transformations active.");
         }
     }
 }

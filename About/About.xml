@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Rim of Madness - Werewolves</name>
   <packageId>RimofMadness.Werewolves</packageId>
@@ -28,10 +28,11 @@
     <li>jecrell.jecstools</li>
     <li>syrchalis.traitvalue</li>
   </loadAfter>
-  <description>
+  <description>1.0.7.0 (07-31-2021)
+
 [h1]Gameplay mod for RimWorld. Adds Werewolves to your game.[/h1]
 
-Watch Barky&apos;s impressions video to see some of the mod in action.
+Watch Barky&amp;apos;s impressions video to see some of the mod in action.
 https://www.youtube.com/watch?v=ZH54IP3N47c
 
 [h1]Languages:[/h1]
@@ -42,7 +43,7 @@ English, Français (by Coyote2710), 한국어 (by [url=http://steamcommunity.com
 [*] 4 unlockable playable werewolf forms (and a hidden fifth type)
 [*] Adds moons to RimWorld with a custom moon cycle system.
 [*] Adds a neutral AI faction of Werewolves to interact with, or engage hostilities with to your peril.
-[*] Adds &quot;silver treatment&quot; system for colonies with machining tables to use against Werewolf damage immunity.
+[*] Adds &amp;quot;silver treatment&amp;quot; system for colonies with machining tables to use against Werewolf damage immunity.
 [/list]
 
 [h1]Startup Guide:[/h1]
@@ -52,18 +53,59 @@ English, Français (by Coyote2710), 한국어 (by [url=http://steamcommunity.com
 [*] To unlock and level up forms, toggle the full moon fury icon to enable further random transformations during full moons.
 [/list]
 
-
-[h1]Special thanks to all those that support me on Patreon:[/h1]
-Ruhurin Meras, Blaze Reynolds, ShotgunFace, Fredric Sundberg, Dan Winn, Toss Antilles, Sarah Banks, Undead Jackel, Michin, Chelsea, Caine Detueur, Yewty Oxman, Jerod Clayton, Arty Kubin, Ashleigh Miller, infinity421, TheDayDude, Jacob Duga, Ryan Brock, Evan Hwang, Moshat, Christopher, Don Butterblume, John Boehr, George Chong Chuang Ming, Oliver White, Helpful Bot, vincent de keijzer, roxxploxx, Legless, Christopher Abel, Karol Rybak, Mathias Broxvall, Mark, Tim Stillson, Lachlan Easton, Nemuri Hime, Sera, Christian Hermansen, NiNe Bottles of Rum, Populous25, Steven James, Marcus Siraenu, Michael Lauder, meatface.
+[h1]Updates incorporated from Werewolves Continued by Mlie[/h1]
+[list]
+[*] Fixed compatiblity with Humanoid Alien Framework, thanks erdelf!
+[*] The issue with loading saves with an active moon-cycle should now be fixed, thanks lbmaian!
+[*] Added support for [SYR] Trait Value
+[/list]
 
 [h1]Notes[/h1]
 Artwork for this mod was contributed by SpoonShortage and Xen.
 Mod commissioned for Sarah Banks.
 
 [h1]Questions / Comments / Bug Reports[/h1]
-Head to our Discord server -&gt; https://discord.gg/AaVFA7V
+Head to our Discord server -&amp;gt; https://discord.gg/AaVFA7V
 
 [h1]Known Conflicts[/h1]
 Unknown.
+
+Thank you to my Patrons for supporting me in my efforts. Without you, none of this would be possible.
+
+These are the most excellent rim dwellers who support me: 
+Michael Cailler, Jigsawjohn , Daniel Schott, Penelope Charli Whitman, Jerome Gonschorek, Genaeve , RainerWingel , Lea Stannard, David Silberstein, 수현 남, Matt Harris, Kiya Nicoll, Paul Fenwick, Matthew Isom, Elodie , Михаил Юрченко, Charlie Garnham, Populous25 , Landon Cash, Marcus Sireanu, Maaxar , logan sheppard-organ, TinyATuin, Don Homer, Sharp Spook, roxxploxx , Dan Jones, Kaz, Justin Andres, Alex Mederer, Justin , iknowdude00, E_T , Alexander , Ken Birdwell, Michael Cailler, Jigsawjohn , Daniel Schott, Penelope Charli Whitman, Jerome Gonschorek, Genaeve , RainerWingel , Lea Stannard, David Silberstein, 수현 남, Matt Harris, Kiya Nicoll, Paul Fenwick, Matthew Isom, Elodie , Михаил Юрченко, Charlie Garnham, Populous25 , Landon Cash, Marcus Sireanu, Maaxar , logan sheppard-organ, TinyATuin, Don Homer, Sharp Spook, roxxploxx , Dan Jones, Kaz, Justin Andres, Alex Mederer, Justin , iknowdude00, E_T , Alexander , Ken Birdwell
+
+========================
+Changelog
+========================
+1.0.7.0 (07-31-2021)
+========================
+Updated Werewolves for RimWorld 1.3
+
+# Changelog for RimofMadnessWerewolves
+
+1.0.7.0 - Updated for 1.3
+
+
+1.0.6.0 - Added support for [SYR] Trait Value
+
+
+1.0.5.0 - Fixed pathing issues when trying to silver-treat weapons
+
+
+1.0.4.0 - Refactored source-code, added Mooncycle-fix by lbmaian
+
+
+1.0.3.0 - Added friendly factiongroup as guests
+
+
+1.0.2.0 - Added 1.1 support
+
+
+1.0.1.0 - Fixed compatibility with Humanoid Alien Framework
+
+
+1.0.0.0 - First publish
+
 </description>
 </ModMetaData>

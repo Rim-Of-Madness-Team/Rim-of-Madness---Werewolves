@@ -182,6 +182,7 @@ namespace Werewolf
         public void TransformInto(WerewolfForm form, bool moonTransformation = false)
         {
             CurrentWerewolfForm = form;
+            WerewolfUtility.UpdateTransformedWerewolvesCount();
             if (Pawn is { } p)
             {
                 if (p.Faction == Faction.OfPlayer)
@@ -206,6 +207,7 @@ namespace Werewolf
                 p.Drawer.renderer.graphics.ResolveAllGraphics();
                 Messages.Message("ROM_WerewolfRevert".Translate(Pawn),
                     MessageTypeDefOf.SilentInput); //MessageTypeDefOf.SilentInput);
+
             }
 
             isReverting = false;

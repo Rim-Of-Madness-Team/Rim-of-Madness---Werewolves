@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -123,6 +125,11 @@ namespace Werewolf
                 AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal"),
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(RenderPawnInternal)));
             //Log.Message("20");
+
+            //harmony.Patch(
+            //    AccessTools.Method(typeof(PawnRenderer), "RenderPawnAt"), null, null,
+            //    new HarmonyMethod(typeof(PawnRenderer_RenderPawnAt_Patch), "Transpiler"));
+
         }
 
         [HarmonyBefore("rimworld.erdelf.alien_race.main")]
@@ -151,6 +158,7 @@ namespace Werewolf
             PortraitsCache.SetDirty(pawn);
             return false;
         }
+
 
         // PawnRenderer.RenderPawnInternal
         private static bool RenderPawnInternal(PawnRenderer __instance, Vector3 rootLoc, bool renderBody,
@@ -221,6 +229,7 @@ namespace Werewolf
 
             return result;
         }
+
 
         private static RotDrawMode CurRotDrawMode(Pawn pawn)
         {
