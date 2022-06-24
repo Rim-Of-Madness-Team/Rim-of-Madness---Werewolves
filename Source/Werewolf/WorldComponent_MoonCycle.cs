@@ -14,6 +14,7 @@ namespace Werewolf
         public Dictionary<Pawn, int> recentWerewolves = new Dictionary<Pawn, int>();
         public int ticksPerMoonCycle = -1;
         public int ticksUntilFullMoon = -1;
+        public bool traitsGivenToHiddenWerewolves = false;
 
         public WorldComponent_MoonCycle(World world) : base(world)
         {
@@ -161,6 +162,7 @@ namespace Werewolf
         {
             base.ExposeData();
             Scribe_Values.Look(ref ticksUntilFullMoon, "ticksUntilFullMoon", -1);
+            Scribe_Values.Look(ref traitsGivenToHiddenWerewolves, "traitsGivenToHiddenWerewolves", false);
             Scribe_References.Look(ref gcMoonCycle, "gcMoonCycle");
             if (Scribe.mode == LoadSaveMode.ResolvingCrossRefs && gcMoonCycle == null)
             {

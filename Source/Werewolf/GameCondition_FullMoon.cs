@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
+using System.Linq;
+using System;
 
 namespace Werewolf
 {
@@ -52,6 +54,9 @@ namespace Werewolf
                     m.TryGainMemory(WWDefOf.ROMWW_SawFullMoon);
                 }
 
+                //For hidden werewolf scenarios
+                DecideHiddenWerewolf();
+
                 if (pawn?.GetComp<CompWerewolf>() is not { } w || !ShouldTransform(pawn, w))
                 {
                     continue;
@@ -85,6 +90,32 @@ namespace Werewolf
             Messages.Message("ROM_MoonCycle_FullMoonPasses".Translate(Moon.Name),
                 MessageTypeDefOf.NeutralEvent); //MessageSound.Standard);
             gameConditionManager.ActiveConditions.Remove(this);
+        }
+
+        private void DecideHiddenWerewolf()
+        {
+            if (Find.World.GetComponent<WorldComponent_MoonCycle>().traitsGivenToHiddenWerewolves == false)
+            {
+                Find.World.GetComponent<WorldComponent_MoonCycle>().traitsGivenToHiddenWerewolves = true;
+                if (Find.Scenario.AllParts.FirstOrDefault(x => x is ScenPart_StartingWerewolves) is ScenPart_StartingWerewolves scenPart)
+                {
+                    if (scenPart.HiddenWerewolfMode())
+                    {
+                        int currentWerewolves = 0;
+                        foreach (Pawn current in scenPart.GetStartingPawns())
+                        {
+                            if (current?.Spawned == true &&
+                                current?.Dead == false &&
+                                currentWerewolves < scenPart.GetMaxWerewolves())
+                            {
+                                currentWerewolves++;
+                                WerewolfUtility.AddWerewolfTrait(current, scenPart.GetAllowMetisBool(), false);
+                            }
+                        }
+                    }
+                }
+
+            }
         }
 
         public override void ExposeData()

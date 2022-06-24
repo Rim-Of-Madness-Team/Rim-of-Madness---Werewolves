@@ -1,3 +1,7 @@
+1.1.0.0 (06-23-2022)
+========================
+Added a scenario and scenario part for werewolf playthroughs to make them more immediately viable.
+
 1.0.7.0 (07-31-2021)
 ========================
 Updated Werewolves for RimWorld 1.3

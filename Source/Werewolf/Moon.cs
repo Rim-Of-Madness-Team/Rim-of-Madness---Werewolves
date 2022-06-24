@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
 using Verse;
+using System.Linq;
 
 namespace Werewolf
 {
@@ -28,7 +29,7 @@ namespace Werewolf
         }
 
         public int UniqueID => uniqueID;
-        public int DaysUntilFull => (int) ticksLeftInCycle.TicksToDays();
+        public int DaysUntilFull => (int)ticksLeftInCycle.TicksToDays();
         public string Name => name;
 
         public void ExposeData()

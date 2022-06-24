@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <!-- 6/23/22 -->
+  <ROM_HideWerewolfTrait>Hide Werewolf Trait</ROM_HideWerewolfTrait>
+  <ROM_AllowMetis>Allow Metis Form</ROM_AllowMetis>
+  <ROM_MaxWerewolves># of Werewolves</ROM_MaxWerewolves>
+  <ROM_StartingWerewolvesSummary>{0} starting player character(s) will start with the werewolf trait. The trait will be {1}. First werewolf form will be {2}. Metis chance is {3}.</ROM_StartingWerewolvesSummary>
+  <ROM_WHidden>hidden</ROM_WHidden>
+  <ROM_WVisible>visible</ROM_WVisible>
+  <ROM_WRandom>random</ROM_WRandom>
+  <ROM_WEnabled>enabled</ROM_WEnabled>
+  <ROM_WDisabled>disabled</ROM_WDisabled>
+  
+  <!-- Prior -->
   <ROM_WerewolfEncounterLabel>Werewolf Incoming</ROM_WerewolfEncounterLabel>
   <ROM_WerewolfEncounterDesc>{0} is a werewolf. Silver weapons or special tactics may be required if they become hostile.</ROM_WerewolfEncounterDesc>
   <!-- 4/29/18 -->

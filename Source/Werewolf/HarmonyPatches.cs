@@ -398,22 +398,9 @@ namespace Werewolf
                 {
                     var pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where(t => t is Pawn)
                         .Cast<Pawn>().FirstOrDefault();
-                    if (pawn == null)
-                    {
-                        return;
-                    }
 
-                    if (!pawn.IsWerewolf())
-                    {
-                        pawn.story.traits.GainTrait(new Trait(WWDefOf.ROM_Werewolf));
-                        //pawn.health.AddHediff(VampDefOf.ROM_Vampirism, null, null);
-                        pawn.Drawer.Notify_DebugAffected();
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, pawn.LabelShort + " is now a werewolf");
-                    }
-                    else
-                    {
-                        Messages.Message(pawn.LabelCap + " is already a werewolf.", MessageTypeDefOf.RejectInput);
-                    }
+                    WerewolfUtility.AddWerewolfTrait(pawn, false, true);
+
                 }),
                 false
             });
@@ -424,22 +411,8 @@ namespace Werewolf
                 {
                     var pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where(t => t is Pawn)
                         .Cast<Pawn>().FirstOrDefault();
-                    if (pawn == null)
-                    {
-                        return;
-                    }
 
-                    if (!pawn.IsWerewolf())
-                    {
-                        pawn.story.traits.GainTrait(new Trait(WWDefOf.ROM_Werewolf, -1));
-                        //pawn.health.AddHediff(VampDefOf.ROM_Vampirism, null, null);
-                        pawn.Drawer.Notify_DebugAffected();
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, pawn.LabelShort + " is now a werewolf");
-                    }
-                    else
-                    {
-                        Messages.Message(pawn.LabelCap + " is already a werewolf.", MessageTypeDefOf.RejectInput);
-                    }
+                    WerewolfUtility.AddWerewolfTrait(pawn, true, true);
                 }),
                 false
             });
@@ -450,28 +423,7 @@ namespace Werewolf
                 {
                     var pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where(t => t is Pawn)
                         .Cast<Pawn>().FirstOrDefault();
-                    if (pawn == null)
-                    {
-                        return;
-                    }
-
-                    if (pawn.IsWerewolf())
-                    {
-                        if (pawn.CompWW().IsTransformed)
-                        {
-                            pawn.CompWW().TransformBack();
-                        }
-
-                        pawn.story.traits.allTraits.RemoveAll(x =>
-                            x.def == WWDefOf.ROM_Werewolf); //GainTrait(new Trait(WWDefOf.ROM_Werewolf, -1));
-                        //pawn.health.AddHediff(VampDefOf.ROM_Vampirism, null, null);
-                        pawn.Drawer.Notify_DebugAffected();
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, pawn.LabelShort + " is no longer a werewolf");
-                    }
-                    else
-                    {
-                        Messages.Message(pawn.LabelCap + " is not a werewolf.", MessageTypeDefOf.RejectInput);
-                    }
+                    WerewolfUtility.RemoveWerewolfTrait(pawn, true);
                 }),
                 false
             });
