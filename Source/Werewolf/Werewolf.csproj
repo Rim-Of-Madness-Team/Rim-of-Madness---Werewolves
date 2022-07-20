@@ -30,6 +30,7 @@
     </Reference>
     <Reference Include="AbilityUser">
       <HintPath>..\..\..\JecsTools\1.3\Assemblies\AbilityUser.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="Vampire">
       <HintPath>..\..\..\Rim-of-Madness---Vampires\1.3\Assemblies\Vampire.dll</HintPath>

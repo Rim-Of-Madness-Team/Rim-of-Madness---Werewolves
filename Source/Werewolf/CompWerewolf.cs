@@ -664,7 +664,7 @@ namespace Werewolf
 
         private void ReAddVampireFangs()
         {
-            if (Pawn.IsVampire())
+            if (Pawn.IsVampire(false))
             {
                 VampireGen.AddFangsHediff(Pawn);
             }

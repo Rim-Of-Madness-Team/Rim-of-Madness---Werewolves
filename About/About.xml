@@ -28,7 +28,7 @@
     <li>jecrell.jecstools</li>
     <li>syrchalis.traitvalue</li>
   </loadAfter>
-  <description>1.1.0.0 (06-23-2022)
+  <description>1.1.0.1 (07-19-2022)
 
 [h1]Gameplay mod for RimWorld. Adds Werewolves to your game.[/h1]
 
@@ -78,6 +78,10 @@ Michael Fisher, Storm D Bain, Luke Salinas, WonkyWoo WeebHoo, Daniel Schott, Rai
 ========================
 Changelog
 ========================
+1.1.0.1 (07-19-2022)
+========================
+Fixed issue where werewolves did not return to human form after transformation when coupled with the Vampires mod
+
 1.1.0.0 (06-23-2022)
 ========================
 Added a scenario and scenario part for werewolf playthroughs to make them more immediately viable.
