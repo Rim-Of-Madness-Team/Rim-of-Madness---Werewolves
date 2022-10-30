@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using System;
+using RimWorld;
 using RimWorld.Planet;
 using Verse;
 using System.Linq;
@@ -79,12 +80,17 @@ namespace Werewolf
         public void FullMoonIncident()
         {
             ticksLeftInCycle = ticksInCycle;
-            var fullMoon = new GameCondition_FullMoon(this)
-            {
-                startTick = Find.TickManager.TicksGame,
-                Duration = GenDate.TicksPerDay
-            };
-            Find.World.gameConditionManager.RegisterCondition(fullMoon);
+
+            var def = GameConditionDef.Named("ROM_FullMoon");
+            GameCondition_FullMoon gameCondition = (GameCondition_FullMoon)Activator.CreateInstance(def.conditionClass);
+            gameCondition.Moon = this;
+            gameCondition.startTick = Find.TickManager.TicksGame;
+            gameCondition.def = def;
+            gameCondition.Duration = GenDate.TicksPerDay;
+            gameCondition.uniqueID = Find.UniqueIDsManager.GetNextGameConditionID();
+            gameCondition.PostMake();
+            
+            Find.World.gameConditionManager.RegisterCondition(gameCondition);
             //Log.Message("Full Moon Incident");
         }
     }

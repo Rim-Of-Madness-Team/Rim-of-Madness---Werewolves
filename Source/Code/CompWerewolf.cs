@@ -277,7 +277,7 @@ namespace Werewolf
                 {
                     var rec = health.GetInjuredParts().ElementAt(i);
                     var injuriesToHeal =
-                        health.GetHediffs<Hediff_Injury>().ToList().FindAll(x => x.Part == rec);
+                        WerewolfUtility.GetAllInjuries(Pawn).ToList().FindAll(x => x.Part == rec);
                     if (injuriesToHeal.NullOrEmpty())
                     {
                         continue;
@@ -427,7 +427,9 @@ namespace Werewolf
 
             foreach (var rec in Pawn.health.hediffSet.GetNotMissingParts())
             {
-                var hediff_AddedPart = (from x in Pawn.health.hediffSet.GetHediffs<Hediff_AddedPart>()
+                var addedPartsList = new List<Hediff_AddedPart>();
+                Pawn.health.hediffSet.GetHediffs<Hediff_AddedPart>(ref addedPartsList);
+                var hediff_AddedPart = (from x in addedPartsList
                     where x.Part == rec && !x.Part.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource)
                     select x).FirstOrDefault();
                 if (hediff_AddedPart == null)
@@ -1065,7 +1067,7 @@ namespace Werewolf
                 };
             }
             else if (IsTransformed &&
-                     Pawn?.health?.hediffSet?.GetHediffs<Hediff>()
+                     Pawn?.health?.hediffSet?.hediffs
                          .FirstOrDefault(x => x.TryGetComp<HediffComp_Rage>() != null) is { } rageHediff &&
                      rageHediff.TryGetComp<HediffComp_Rage>() is { } rageComp)
             {

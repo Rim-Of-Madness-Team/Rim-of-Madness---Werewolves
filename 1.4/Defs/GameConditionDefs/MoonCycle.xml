@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GameConditionDef>
+    <defName>ROM_MoonCycle</defName>
+    <conditionClass>Werewolf.GameCondition_MoonCycle</conditionClass>
+    <label>moon cycle</label>
+    <description>Moon cycle affecting werewolves.</description>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+
+  <GameConditionDef>
+    <defName>ROM_FullMoon</defName>
+    <conditionClass>Werewolf.GameCondition_FullMoon</conditionClass>
+    <label>full moon</label>
+    <description>A full moon is lighting up the sky.</description>
+    <endMessage>The full moon is ending.</endMessage>
+  </GameConditionDef>
+
+</Defs>

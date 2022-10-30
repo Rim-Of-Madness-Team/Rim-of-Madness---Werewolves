@@ -83,6 +83,7 @@ namespace Werewolf
                 select x).Any();
         }
 
+        
 
         // RimWorld.WerewolfUtility
         public static bool IsCleanAndDroppable(Pawn pawn, BodyPartRecord part)
@@ -139,6 +140,23 @@ namespace Werewolf
             //Log.Message(transformedWerewolfCount.ToString() + " transformations active.");
         }
 
+        public static IEnumerable<Hediff_Injury> GetAllInjuries(Pawn pawn)
+        {
+            int num;
+            if (pawn?.health?.hediffSet != null)
+            {
+                for (var i = 0; i < pawn.health.hediffSet.hediffs.Count; i = num)
+                {
+                    if (pawn.health.hediffSet.hediffs[i] is Hediff_Injury { } hediffInjury)
+                    {
+                        yield return hediffInjury;
+                    }
+
+                    num = i + 1;
+                }
+            }
+        }
+        
         public static void Shuffle<T>(this IList<T> list)
         {
             Random rng = new Random();

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ScenPartDef>
+    <defName>ROMW_StartingWerewolves</defName>
+    <label>first transformation type</label>
+    <scenPartClass>Werewolf.ScenPart_StartingWerewolves</scenPartClass>
+    <category>PlayerPawnModifier</category>
+    <selectionWeight>0.5</selectionWeight>
+    <summaryPriority>457</summaryPriority>
+  </ScenPartDef>
+
+  <ScenarioDef>
+    <defName>ROMW_ScenWolfAmongUs</defName>
+    <label>Werewolves - Wolf Among Us</label>
+    <description>One of your colonists are on the verge of becoming a werewolf. Once the full moon appears, their identity will be revealed.</description>
+    <scenario>
+      <summary>Standard RimWorld experience with five colonists. One is a werewolf, but who?</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>PlayerColony</factionDef>
+      </playerFaction>
+      <parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>5</pawnCount>
+        </li>
+
+        <!-- Werewolf settings-->
+        <li Class="Werewolf.ScenPart_StartingWerewolves">
+          <def>ROMW_StartingWerewolves</def>
+          <hiddenWerewolf>true</hiddenWerewolf>
+          <allowMetis>true</allowMetis>
+          <maxWerewolves>1</maxWerewolves>
+        </li>
+
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>DropPods</method>
+          <visible>false</visible>
+        </li>
+
+  <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>800</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>44</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_BoltActionRifle</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_Revolver</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Knife</thingDef>
+          <stuff>Plasteel</stuff>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>1</count>
+          <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+        </li>
+
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>450</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>      
+
+        <!-- Scatter some things anywhere -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>ShipChunk</thingDef>
+          <count>3</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>720</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>7</count>
+        </li>
+
+
+		<!-- Game start dialog -->
+		<li Class="ScenPart_GameStartDialog">
+			<def>GameStartDialog</def>
+			<text>The ship experienced a cryosleep malfunction. The AI informed the crew that, per report from the probability engine, this malfunction had a 93.8% chance of being due to a shapeshifting creature among the crew. For the safety of the ship, the AI decided the crew were no longer viable and were to be evacuated forcefully to a nearby rimworld. You and the rest of the crew were denied any decision in the matter. Shot into space without a second thought, you now brace for impact as your landing pod begins to break into the atmosphere.</text>
+			<closeSound>GameStartSting</closeSound>
+		</li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>

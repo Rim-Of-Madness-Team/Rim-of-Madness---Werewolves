@@ -23,7 +23,11 @@ namespace Werewolf
             moon = newMoon;
         }
 
-        public Moon Moon => moon;
+        public Moon Moon
+        {
+            get { return moon; }
+            set { moon = value; }
+        }
 
         public WorldComponent_MoonCycle WCMoonCycle =>
             wcMoonCycle ?? (wcMoonCycle = Find.World?.GetComponent<WorldComponent_MoonCycle>());

@@ -1,4 +1,0 @@
-1.19.0.2 (10-02-2018)
-========================
-Fixes issue where graphics were not displaying properly for Werewolf transformations.
-

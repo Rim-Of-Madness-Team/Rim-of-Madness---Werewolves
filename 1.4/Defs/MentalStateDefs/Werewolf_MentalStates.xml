@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MentalStateDef Abstract="True" Name="ROMWW_BaseMentalState">
+    <minTicksBeforeRecovery>10000</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.3</recoveryMtbDays>
+  </MentalStateDef>
+  <!-- Mental breaks: extreme -->
+  <MentalBreakDef>
+    <defName>ROM_WerewolfFury</defName>
+    <mentalState>ROM_WerewolfFury</mentalState>
+    <baseCommonality>0.00001</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <MentalStateDef ParentName="ROMWW_BaseMentalState">
+    <defName>ROM_WerewolfFury</defName>
+    <stateClass>Werewolf.MentalState_WerewolfFury</stateClass>
+    <label>werewolf fury</label>
+    <category>Aggro</category>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <nameColor>(0.9,0.2,0.5)</nameColor>
+    <beginLetterLabel>werewolf fury</beginLetterLabel>
+    <beginLetter>{0} has become a maddened werewolf!</beginLetter>
+    <beginLetterDef>ThreatBig</beginLetterDef>
+    <minTicksBeforeRecovery>10000</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.3</recoveryMtbDays>
+    <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
+    <recoveryMessage>{0}'s fury has come to an end.</recoveryMessage>
+    <baseInspectLine>Mental state: Berserk</baseInspectLine>
+    <stateEffecter>Berserk</stateEffecter>
+    <tale>MentalStateBerserk</tale>
+    <recoverFromSleep>true</recoverFromSleep>
+  </MentalStateDef>
+</Defs>

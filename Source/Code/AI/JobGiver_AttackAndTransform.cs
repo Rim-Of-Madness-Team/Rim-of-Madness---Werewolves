@@ -6,24 +6,25 @@ namespace Werewolf
 {
     public class JobGiver_AttackAndTransform : JobGiver_AIFightEnemy
     {
-        protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest)
+        protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null)
         {
-            _ = !pawn.IsColonist;
-            var verb = pawn.TryGetAttackVerb(null);
-            if (verb != null)
+            Thing enemyTarget = pawn.mindState.enemyTarget;
+            Verb verb = verbToUse ?? pawn.TryGetAttackVerb(enemyTarget, !pawn.IsColonist, false);
+            if (verb == null)
             {
-                return CastPositionFinder.TryFindCastPosition(new CastPositionRequest
-                {
-                    caster = pawn,
-                    target = pawn.mindState.enemyTarget,
-                    verb = verb,
-                    maxRangeFromTarget = verb.verbProps.range,
-                    wantCoverFromTarget = verb.verbProps.range > 5f
-                }, out dest);
+                dest = IntVec3.Invalid;
+                return false;
             }
-
-            dest = IntVec3.Invalid;
-            return false;
+            return CastPositionFinder.TryFindCastPosition(new CastPositionRequest
+            {
+                caster = pawn,
+                target = enemyTarget,
+                verb = verb,
+                maxRangeFromTarget = 9999f,
+                locus = (IntVec3)pawn.mindState.duty.focus,
+                maxRangeFromLocus = pawn.mindState.duty.radius,
+                wantCoverFromTarget = (verb.verbProps.range > 7f)
+            }, out dest);
         }
 
 
