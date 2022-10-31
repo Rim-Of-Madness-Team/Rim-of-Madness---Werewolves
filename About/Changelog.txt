@@ -1,3 +1,7 @@
+1.2.0.0 (10-30-2022)
+========================
+Updated for RimWorld 1.4. Added Werewolf genes for Biotech DLC owners as well
+
 1.1.0.1 (07-19-2022)
 ========================
 Fixed issue where werewolves did not return to human form after transformation when coupled with the Vampires mod

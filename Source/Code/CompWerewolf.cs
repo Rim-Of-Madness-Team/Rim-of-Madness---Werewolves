@@ -168,6 +168,7 @@ namespace Werewolf
         public Vector3 Vec3 => Pawn.PositionHeld.ToVector3();
         public Map Map => Pawn.MapHeld;
         public Trait WerewolfTrait => Pawn?.story?.traits?.GetTrait(WWDefOf.ROM_Werewolf);
+        public Gene WerewolfGene => ModsConfig.BiotechActive ? Pawn?.genes?.GetGene(WWDefOf.ROMW_WerewolfGene) : null;
         public WerewolfForm HighestLevelForm => WerewolfForms.MaxBy(x => x.level);
 
         #endregion Properties
@@ -202,6 +203,7 @@ namespace Werewolf
 
                 //Log.Message("Restore");
                 //Log.Message($"{Pawn.NameShortColored} RestoreEquipment");
+                
                 RestoreEquipment();
                 //Log.Message($"{Pawn.NameShortColored} ResolveAllGraphics");
                 p.Drawer.renderer.graphics.ResolveAllGraphics();
@@ -235,6 +237,8 @@ namespace Werewolf
 
         public override void DisableAbilityUser()
         {
+            if (WerewolfGene is { } gene)
+                Pawn.genes.RemoveGene(gene);
             Pawn.story.traits.allTraits.Remove(WerewolfTrait);
             forbiddenWolfhood = true;
         }
@@ -334,11 +338,29 @@ namespace Werewolf
                     {
                         newWerewolfTrait = new Trait(WWDefOf.ROM_Werewolf, (int) State.Werewolf);
                         formToTake = WerewolfForms.RandomElement();
+                        
+                        if (ModsConfig.BiotechActive)
+                        {
+                            Gene wolfGene = Pawn.genes.GetGene(WWDefOf.ROMW_WerewolfGene) ?? GeneMaker.MakeGene(WWDefOf.ROMW_WerewolfGene, Pawn);
+                            newWerewolfTrait.sourceGene = wolfGene;
+                        }
                     }
                     else
                     {
                         newWerewolfTrait = new Trait(WWDefOf.ROM_Werewolf, (int) State.Metis);
                         formToTake = WerewolfForms!.FirstOrDefault(x => x.def == WWDefOf.ROM_Metis);
+
+                        if (ModsConfig.BiotechActive)
+                        {
+                            Gene wolfGene = Pawn.genes.GetGene(WWDefOf.ROMW_WerewolfGene);
+                            if (wolfGene != null)
+                            {
+                                Pawn.genes.RemoveGene(wolfGene);
+                            }
+                            Gene metisGene = Pawn.genes.GetGene(WWDefOf.ROM_WerewolfMetisSterile) ?? GeneMaker.MakeGene(WWDefOf.ROM_WerewolfMetisSterile, Pawn);
+                            Pawn.genes.Endogenes.Add(metisGene);
+                            newWerewolfTrait.sourceGene = metisGene;
+                        }
                     }
 
                     Pawn.story.traits.GainTrait(newWerewolfTrait);
@@ -538,9 +560,9 @@ namespace Werewolf
                 bodyPartRecords.Add(jaw, werewolfForm.def.jawHediff);
             }
 
-            if (partRecords.FirstOrDefault(PartCanBeWerewolfClaw) is { } leftHand)
+            foreach (var partRecord in partRecords.Where(PartCanBeWerewolfClaw))
             {
-                bodyPartRecords.Add(leftHand, werewolfForm.def.clawHediff);
+                bodyPartRecords.Add(partRecord, werewolfForm.def.clawHediff);
             }
 
             if ((bodyPartRecords?.Count ?? 0) > 0)
@@ -688,6 +710,9 @@ namespace Werewolf
             temp.AddRange(equipment);
             foreach (var c in temp)
             {
+                if (!Pawn.equipment.Contains(c))
+                    continue;
+                
                 if (!Pawn.equipment.TryDropEquipment(c, out var d, Pawn.PositionHeld, false) || d == null)
                 {
                     continue;
@@ -721,6 +746,7 @@ namespace Werewolf
                     continue;
                 }
 
+                if (!Pawn.apparel.Contains(c)) continue;
                 if (!Pawn.apparel.TryDrop(c, out var d, Pawn.PositionHeld, false) || d == null)
                 {
                     continue;
@@ -760,7 +786,8 @@ namespace Werewolf
                     var temp = new List<Apparel>(apps);
                     foreach (var app in temp)
                     {
-                        Pawn.apparel.TryDrop(app, out _, Pawn.PositionHeld);
+                        if (Pawn.apparel.Contains(app))
+                            Pawn.apparel.TryDrop(app, out _, Pawn.PositionHeld);
                     }
                 }
 
@@ -773,7 +800,8 @@ namespace Werewolf
                     var temp = new List<ThingWithComps>(weps);
                     foreach (var wep in temp)
                     {
-                        Pawn.equipment.TryDropEquipment(wep, out _, Pawn.PositionHeld);
+                        if (Pawn.equipment.Contains(wep))
+                            Pawn.equipment.TryDropEquipment(wep, out _, Pawn.PositionHeld);
                     }
                 }
             }
@@ -797,12 +825,13 @@ namespace Werewolf
                 {
                     foreach (var c in storedItems)
                     {
-                        if (!invTracker.innerContainer.InnerListForReading.Contains(c) || equipTracker.Contains(c))
+                        if (!invTracker.Contains(c)) continue;
+                        if (equipTracker.Contains(c))
                         {
                             continue;
                         }
 
-                        invTracker.innerContainer.InnerListForReading.Remove(c);
+                        invTracker.RemoveCount(c.def,1,false);
                         c.holdingOwner = null;
                         equipTracker.AddEquipment(c);
                     }
@@ -837,13 +866,12 @@ namespace Werewolf
             var tempItems = new HashSet<Apparel>(UpperBodyItems);
             foreach (var a in tempItems)
             {
-                if (!invTracker.innerContainer.InnerListForReading.Contains(a) || apparelTracker.Contains(a))
+                if (!invTracker.Contains(a) || !invTracker.innerContainer.InnerListForReading.Contains(a) || apparelTracker.Contains(a))
                 {
                     continue;
                 }
-
-                invTracker.innerContainer.InnerListForReading.Remove(a);
-                a.holdingOwner = null;
+                
+                invTracker.RemoveCount(a.def, 1, false);
                 apparelTracker.Wear(a);
                 UpperBodyItems.Remove(a);
             }

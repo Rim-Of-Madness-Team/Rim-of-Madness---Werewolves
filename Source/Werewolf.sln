@@ -7,21 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Werewolf", "Werewolf.csproj
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-		RW1.3|Any CPU = RW1.3|Any CPU
 		RW1.4|Any CPU = RW1.4|Any CPU
+		RW1.4Unstable|Any CPU = RW1.4Unstable|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3A4FB893-1148-4E16-B548-867647DF1724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A4FB893-1148-4E16-B548-867647DF1724}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A4FB893-1148-4E16-B548-867647DF1724}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A4FB893-1148-4E16-B548-867647DF1724}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A4FB893-1148-4E16-B548-867647DF1724}.RW1.3|Any CPU.ActiveCfg = RW1.3|Any CPU
-		{3A4FB893-1148-4E16-B548-867647DF1724}.RW1.3|Any CPU.Build.0 = RW1.3|Any CPU
 		{3A4FB893-1148-4E16-B548-867647DF1724}.RW1.4|Any CPU.ActiveCfg = RW1.4|Any CPU
 		{3A4FB893-1148-4E16-B548-867647DF1724}.RW1.4|Any CPU.Build.0 = RW1.4|Any CPU
 		{3A4FB893-1148-4E16-B548-867647DF1724}.RW1.4|Any CPU.Deploy.0 = RW1.4|Any CPU
+		{3A4FB893-1148-4E16-B548-867647DF1724}.RW1.4Unstable|Any CPU.ActiveCfg = RW1.4|Any CPU
+		{3A4FB893-1148-4E16-B548-867647DF1724}.RW1.4Unstable|Any CPU.Build.0 = RW1.4|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

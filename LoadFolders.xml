@@ -22,5 +22,6 @@
     <li>1.4</li>
     <li>/</li>
     <li IfModActive="syrchalis.traitvalue">SYRTraitValue</li>
+    <li IfModActive="Ludeon.RimWorld.Biotech">Biotech/1.4</li>
   </v1.4>
 </loadFolders>

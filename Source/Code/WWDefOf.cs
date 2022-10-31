@@ -21,5 +21,7 @@ namespace Werewolf
         public static WerewolfFormDef ROM_Metis;
         public static MentalStateDef ROM_WerewolfFury;
         public static ThoughtDef ROMWW_SawFullMoon;
+        public static GeneDef ROMW_WerewolfGene;
+        public static GeneDef ROM_WerewolfMetisSterile;
     }
 }

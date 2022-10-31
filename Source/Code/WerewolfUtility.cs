@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
 using Verse;
 
 namespace Werewolf
@@ -27,10 +28,27 @@ namespace Werewolf
 
             if (!pawn.IsWerewolf())
             {
+                Trait werewolfTrait = null;
+
                 if (metisChance)
-                    pawn.story.traits.GainTrait(new Trait(WWDefOf.ROM_Werewolf, -1));
+                {
+                    werewolfTrait = new Trait(WWDefOf.ROM_Werewolf, -1);
+                    pawn.story.traits.GainTrait(werewolfTrait);
+                }
                 else
-                    pawn.story.traits.GainTrait(new Trait(WWDefOf.ROM_Werewolf));
+                {
+                    werewolfTrait = new Trait(WWDefOf.ROM_Werewolf);
+                    pawn.story.traits.GainTrait(werewolfTrait);
+                }
+                
+                //If Biotech is activated, add a werewolf gene
+                if (ModsConfig.BiotechActive)
+                {
+                    Gene werewolfGene = GeneMaker.MakeGene(WWDefOf.ROMW_WerewolfGene, pawn);
+                    pawn.genes.Endogenes.Add(werewolfGene);
+                    werewolfTrait.sourceGene = werewolfGene;
+                }
+
 
                 if (showMessage)
                 {
@@ -57,6 +75,10 @@ namespace Werewolf
                 {
                     pawn.CompWW().TransformBack();
                 }
+                
+                //Biotech werewolf gene
+                if (ModsConfig.BiotechActive && pawn.CompWW().WerewolfGene is { } gene)
+                    pawn.genes.RemoveGene(gene);
 
                 pawn.story.traits.allTraits.RemoveAll(x =>
                     x.def == WWDefOf.ROM_Werewolf); //GainTrait(new Trait(WWDefOf.ROM_Werewolf, -1));

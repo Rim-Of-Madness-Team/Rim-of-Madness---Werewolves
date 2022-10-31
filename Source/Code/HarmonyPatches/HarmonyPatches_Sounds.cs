@@ -16,12 +16,12 @@ namespace Werewolf
     {
         public static void HarmonyPatches_Sounds(Harmony harmony)
         {
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(Verb_MeleeAttack), "SoundHitPawn"), new HarmonyMethod(
                 typeof(HarmonyPatches),
                 nameof(SoundHitPawnPrefix)));
 
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(Verb_MeleeAttack), "SoundMiss"), new HarmonyMethod(
                 typeof(HarmonyPatches),
                 nameof(SoundMiss_Prefix)));

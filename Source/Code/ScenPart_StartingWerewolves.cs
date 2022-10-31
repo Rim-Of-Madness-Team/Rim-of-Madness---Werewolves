@@ -173,7 +173,7 @@ namespace Werewolf
                 if (startingPawns == null)
                     startingPawns = new List<Pawn>();
                 startingPawns.Add(p);
-                Log.Message(p.Label);
+                //Log.Message(p.Label);
             }
             WerewolfUtility.Shuffle(startingPawns);
         }

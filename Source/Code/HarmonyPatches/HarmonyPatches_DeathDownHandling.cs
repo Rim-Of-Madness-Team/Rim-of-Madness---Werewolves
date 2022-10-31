@@ -16,26 +16,31 @@ namespace Werewolf
     {
         public static void HarmonyPatches_DeathDownHandling(Harmony harmony)
         {
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), nameof(Pawn_HealthTracker.SetDead)),
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(IgnoreDoubleDeath)));
 
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(HealthUtility), nameof(HealthUtility.DamageUntilDowned)),
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(DebugDownWerewolf)));
             
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(Pawn), nameof(Pawn.Kill)), new HarmonyMethod(typeof(HarmonyPatches),
                 nameof(WerewolfKill)));
 
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(Pawn), nameof(Pawn.Destroy)), new HarmonyMethod(
                 typeof(HarmonyPatches),
                 nameof(WerewolfDestroy)));
+            
+            //DebugMessage()
+            //harmony.Patch(AccessTools.Method(typeof(PawnRenderer), name: "DrawHeadHair"),
+            //    null, null,
+            //    transpiler: new HarmonyMethod(typeof(HarmonyDwarves), nameof(BeardCheckTranspiler)));
 
         }
 

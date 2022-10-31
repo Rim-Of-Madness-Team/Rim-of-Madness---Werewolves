@@ -16,20 +16,20 @@ namespace Werewolf
     {
         public static void HarmonyPatches_HealthAndDamages(Harmony harmony)
         {
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Property(typeof(Pawn), nameof(Pawn.BodySize)).GetGetMethod(), null,
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(WerewolfBodySize)));
 
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Property(typeof(Pawn), nameof(Pawn.HealthScale)).GetGetMethod(), null,
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(WerewolfHealthScale)));
 
             //Damage for Werewolves are decimated (10% of normal) unless they are wielding silver weapons
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(typeof(DamageWorker_AddInjury)
                     .GetMethods(AccessTools.all).First(mi => mi.GetParameters().Length >= 4 &&
                                                              mi.GetParameters().ElementAt(1).ParameterType ==

@@ -16,25 +16,25 @@ namespace Werewolf
     {
         public static void HarmonyPatches_AIJobsEtc(Harmony harmony)
         {
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(Building_Door), nameof(Building_Door.PawnCanOpen)), null,
                 new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(WerewolfCantOpen)));
             
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(
                 AccessTools.Method(typeof(Pawn_PathFollower), "CostToMoveIntoCell",
                     new[] {typeof(Pawn), typeof(IntVec3)}), null, new HarmonyMethod(
                     typeof(HarmonyPatches),
                     nameof(PathOfNature)));
 
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(LordToil_AssaultColony), "UpdateAllDuties"), null,
                 new HarmonyMethod(typeof(HarmonyPatches),
                     nameof(UpdateAllDuties_PostFix)));
 
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(JobGiver_OptimizeApparel), "TryGiveJob"), new HarmonyMethod(
                 typeof(HarmonyPatches),
                 nameof(DontOptimizeWerewolfApparel)));

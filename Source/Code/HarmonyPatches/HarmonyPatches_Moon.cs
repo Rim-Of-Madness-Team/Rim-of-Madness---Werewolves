@@ -16,7 +16,7 @@ namespace Werewolf
     {
         public static void HarmonyPatches_Moon(Harmony harmony)
         {
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(TickManager), nameof(TickManager.DebugSetTicksGame)), null,
                 new HarmonyMethod(
                     typeof(HarmonyPatches),

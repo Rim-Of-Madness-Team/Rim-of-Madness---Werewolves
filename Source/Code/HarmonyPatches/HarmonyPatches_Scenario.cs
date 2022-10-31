@@ -16,7 +16,7 @@ namespace Werewolf
     {
         public static void HarmonyPatches_Scenario(Harmony harmony)
         {
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(Scenario), nameof(Scenario.Notify_PawnGenerated)), null,
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(AddRecentWerewolves)));
         }

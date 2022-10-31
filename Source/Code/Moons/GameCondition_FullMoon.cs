@@ -85,6 +85,7 @@ namespace Werewolf
         private bool ShouldTransform(Pawn pawn, CompWerewolf w)
         {
             return w.IsWerewolf && !w.IsTransformed &&
+                   pawn.ageTracker.Adult && //No werewolf children transformations allowed :)
                    (!w.IsBlooded || w.FuryToggled) &&
                    !pawn.PositionHeld.Fogged(pawn.MapHeld);
         }

@@ -13,7 +13,8 @@ public static class WerewolfDebugActions
         actionType = DebugActionType.ToolMapForPawns)]
     private static void GiveLycanthropyNormal(Pawn p)
     {
-        p.AddWerewolfTrait(false, true);
+        if (p?.RaceProps?.Humanlike == true)
+            p.AddWerewolfTrait(false, true);
     }
     
     
@@ -22,7 +23,8 @@ public static class WerewolfDebugActions
         actionType = DebugActionType.ToolMapForPawns)]
     private static void GiveLycanthropyMetis(Pawn p)
     {
-        p.AddWerewolfTrait(true, true);
+        if (p?.RaceProps?.Humanlike == true)
+            p.AddWerewolfTrait(true, true);
     }
     
     
@@ -31,7 +33,8 @@ public static class WerewolfDebugActions
             DebugActionType.ToolMapForPawns)]
     private static void RemoveLycanthropy(Pawn p)
     {
-        p.RemoveWerewolfTrait(true);
+        if (p?.RaceProps?.Humanlike == true)
+            p.RemoveWerewolfTrait(true);
     }
     
     

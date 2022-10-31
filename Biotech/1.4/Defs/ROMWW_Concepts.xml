@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef>
+    <defName>ROMW_WerewolfGene</defName>
+    <label>werewolf</label>
+    <description>Carriers of this gene are werewolves. All werewolves begin as unblooded until they become adults. Once reaching adulthood, the first full moon will activate a furious transformation that can be devestating for a colony.</description>
+    <iconPath>UI/Icons/Genes/Gene_Werewolf</iconPath>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>9</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+       <def>ROM_Werewolf</def>
+      </li>
+    </forcedTraits>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>wolf</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>wolf</symbol></li>
+        <li><symbol>garou</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+    <GeneDef ParentName="FertilityBase">
+    <defName>ROM_WerewolfMetisSterile</defName>
+    <label>metis</label>
+    <description>Carriers of this gene are werewolves that have mutated past the point of being able to reproduce by natural means.</description>
+    <iconPath>UI/Icons/Genes/Gene_Metis</iconPath>
+    <sterilize>true</sterilize>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <statFactors>
+      <Fertility>0</Fertility>
+    </statFactors>
+  </GeneDef>
+
+</Defs>

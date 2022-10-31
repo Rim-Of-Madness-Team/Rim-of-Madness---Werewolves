@@ -16,11 +16,11 @@ namespace Werewolf
     {
         public static void HarmonyPatches_GraphicRender(Harmony harmony)
         {
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(AccessTools.Method(typeof(PawnGraphicSet), nameof(PawnGraphicSet.ResolveAllGraphics)),
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(ResolveAllGraphicsWereWolf)));
 
-            DebugMessage();
+            //DebugMessage();
             harmony.Patch(
                 AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal"),
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(RenderPawnInternal)));
