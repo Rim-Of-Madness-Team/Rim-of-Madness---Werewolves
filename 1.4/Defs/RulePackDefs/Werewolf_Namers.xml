@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>ROM_NamerFactionWerewolf</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name-&gt;The [adj] [noun]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class="Rule_File">
+          <keyword>adj</keyword>
+          <path>NameBanks/Names_WolfAdjectives</path>
+        </li>
+        <li Class="Rule_File">
+          <keyword>noun</keyword>
+          <path>NameBanks/Names_WolfNouns</path>
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+</Defs>
