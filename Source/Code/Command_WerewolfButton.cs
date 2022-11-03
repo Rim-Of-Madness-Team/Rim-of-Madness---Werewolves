@@ -17,7 +17,9 @@ namespace Werewolf
 
         public override void ProcessInput(Event ev)
         {
+#pragma warning disable CS8321
             void ActionToInput(LocalTargetInfo x)
+#pragma warning restore CS8321
             {
                 action(x.Thing);
             }
