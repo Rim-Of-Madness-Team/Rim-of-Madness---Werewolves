@@ -127,7 +127,9 @@ namespace Werewolf
 
         public override string Summary(Scenario scen)
         {
+#pragma warning disable CS0618
             return "ROM_StartingWerewolvesSummary".Translate(new object[]
+#pragma warning restore CS0618
             {
                 maxWerewolves.ToString(),
                 GetHiddenTrait() ?? "",

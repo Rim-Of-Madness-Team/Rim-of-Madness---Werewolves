@@ -179,6 +179,19 @@ namespace Werewolf
 
         #region Transform Methods
 
+        public override void PostDraw()
+        {
+            if (IsTransformed)
+            {
+                var mat = CurrentWerewolfForm.def.graphicData.Graphic.MeshAt(Pawn.Rotation);
+                Vector3 loc = this.parent.TrueCenter();
+                loc.y = AltitudeLayer.PawnUnused.AltitudeFor() + Altitudes.AltInc * 0.5f;
+                var graphic = CurrentWerewolfForm.def.graphicData.Graphic;
+                graphic.Draw(loc, Pawn.Rotation, this.parent, 0f);
+            }
+            base.PostDraw();
+        }
+
         /// Sets the current werewolf form and calls other sub-methods.
         public void TransformInto(WerewolfForm form, bool moonTransformation = false)
         {
@@ -806,90 +819,46 @@ namespace Werewolf
                 }
             }
         }
-
+        
+        
         /// Equip previously stored equipment after reverting back into the original form.
         private void RestoreEquipment()
         {
             var p = Pawn;
+            
+            //If dead or downed, don't do this
+            if (p.Dead || p.Downed) return;
 
-            //Cycle through old weapons and apparel and restore them.
-            if (p?.inventory is not { } invTracker)
-            {
-                return;
-            }
+            if (p?.inventory is not { } invTracker) return;
+            if (p?.equipment is not { } equipTracker) return;
+            if (p?.apparel is not { } apparelTracker) return;
 
-            //Equip all weapons.
+            //Equip all pre-transformation weapons.
             if (!StoredWeapons.NullOrEmpty())
             {
-                if (p.equipment is { } equipTracker)
+                foreach (var c in StoredWeapons)
                 {
-                    foreach (var c in storedItems)
+                    if (c == null || !Pawn.inventory.innerContainer.Remove(c))
                     {
-                        if (!invTracker.Contains(c)) continue;
-                        if (equipTracker.Contains(c))
-                        {
-                            continue;
-                        }
-
-                        invTracker.RemoveCount(c.def,1,false);
-                        c.holdingOwner = null;
-                        equipTracker.AddEquipment(c);
+                        continue;
                     }
-
-                    if (!storedItems.NullOrEmpty())
-                    {
-                        foreach (var c in storedItems)
-                        {
-                            if (equipTracker.Contains(c))
-                            {
-                                continue;
-                            }
-
-                            c.holdingOwner = null;
-                            equipTracker.AddEquipment(c);
-                        }
-                    }
+                    equipTracker.AddEquipment(c);
                 }
+                StoredWeapons.Clear();
             }
-
+            
             //Wear all pre-transformation apparel
-            if (UpperBodyItems.NullOrEmpty())
+            if (!UpperBodyItems.NullOrEmpty())
             {
-                return;
-            }
-
-            if (p.apparel is not { } apparelTracker)
-            {
-                return;
-            }
-
-            var tempItems = new HashSet<Apparel>(UpperBodyItems);
-            foreach (var a in tempItems)
-            {
-                if (!invTracker.Contains(a) || !invTracker.innerContainer.InnerListForReading.Contains(a) || apparelTracker.Contains(a))
+                if (!UpperBodyItems.NullOrEmpty())
                 {
-                    continue;
-                }
-                
-                invTracker.RemoveCount(a.def, 1, false);
-                apparelTracker.Wear(a);
-                UpperBodyItems.Remove(a);
-            }
-
-            if (UpperBodyItems.NullOrEmpty())
-            {
-                return;
-            }
-
-            foreach (var a in UpperBodyItems)
-            {
-                if (apparelTracker.Contains(a))
-                {
-                    continue;
-                }
-
-                a.holdingOwner = null;
-                apparelTracker.Wear(a);
+                    foreach (var a in UpperBodyItems)
+                    {
+                        invTracker.innerContainer.InnerListForReading.Remove(a);
+                        apparelTracker.Wear(a, false);
+                    }
+                    UpperBodyItems.Clear();
+                }  
             }
         }
 
